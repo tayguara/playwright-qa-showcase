@@ -1,0 +1,39 @@
+{
+  "name": "playwright-qa-showcase",
+  "version": "1.0.0",
+  "description": "QA automation showcase: Playwright + TypeScript with BDD UI tests, typed API tests, accessibility checks and CI sharding.",
+  "private": true,
+  "license": "MIT",
+  "author": "Tayguara Dias Reis",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "bddgen && playwright test",
+    "test:ui": "bddgen && playwright test --project=ui",
+    "test:api": "bddgen && playwright test --project=api",
+    "test:a11y": "bddgen && playwright test --project=a11y",
+    "test:unit": "bddgen && playwright test --project=unit",
+    "test:smoke": "bddgen && playwright test --project=ui --grep @smoke",
+    "report": "playwright show-report",
+    "lint": "eslint . --max-warnings=0",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check": "npm run lint && npm run typecheck && npm run format:check"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^22.20.4",
+    "eslint": "^10.11.0",
+    "eslint-plugin-playwright": "^2.12.0",
+    "playwright-bdd": "^9.2.1",
+    "prettier": "^3.9.9",
+    "typescript": "~6.0.3",
+    "typescript-eslint": "^8.71.0",
+    "zod": "^4.6.5"
+  }
+}
