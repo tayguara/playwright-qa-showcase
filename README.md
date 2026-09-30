@@ -125,7 +125,7 @@ The booking API is a shared sandbox that anyone can write to. Every API test the
 
 ### Known defects are tracked, not skipped
 
-SauceDemo's `problem_user` is broken on purpose. One defect is automated in `features/known-issues.feature` as a scenario that asserts the correct behavior and is tagged `@fail`. It is reported as an expected failure today. If the site is fixed, Playwright reports it as "unexpectedly passed", which is the signal to remove the tag. The tag is a coarse tracker: the scenario passes (as an expected failure) on any failure, including the site being down, so it relies on the other UI tests to show that the site is up. Nothing is skipped: lint rejects `test.skip` and friends in TypeScript, and the `quality` CI job fails if a feature file carries `@skip`, `@fixme` or `@only`, so a disabled test cannot hide in the suite. The other defects are documented in [docs/KNOWN_ISSUES.md](docs/KNOWN_ISSUES.md).
+SauceDemo's `problem_user` is broken on purpose. One defect is automated in `features/known-issues.feature` as a scenario that asserts the correct behavior and is tagged `@fail`. It is reported as an expected failure today. If the site is fixed, Playwright reports it as "unexpectedly passed", which is the signal to remove the tag. The tag is a coarse tracker: the scenario passes (as an expected failure) on any failure, including the site being down, so it relies on the other UI tests to show that the site is up. Nothing is skipped: lint rejects `test.skip` and friends in TypeScript, and the `Gherkin` CI job fails if a feature file carries `@skip`, `@fixme` or `@only`, so a disabled test cannot hide in the suite. The other defects are documented in [docs/KNOWN_ISSUES.md](docs/KNOWN_ISSUES.md).
 
 ### Accessibility baseline
 
@@ -150,17 +150,23 @@ Automated checks such as axe find only a portion of WCAG issues. They are good r
 
 ### CI, sharding and the merged report
 
-The workflow in `.github/workflows/playwright.yml` has three jobs:
+The workflow in `.github/workflows/playwright.yml` runs these jobs. Each one is a separate check on the pull request:
 
-1. `quality` runs `npm run check`, `bddgen` (it fails on a Gherkin step with no definition), the pure-Node `unit` project and a guard that rejects `@skip`, `@fixme` and `@only` in feature files. It fails fast and cheap before any browser starts.
-2. `test` runs after `quality`, as a matrix of two shards in parallel with `fail-fast: false`, so one failing shard does not hide the other. The shards cover the `ui`, `a11y` and `api` projects (14 tests each at the time of writing); the unit tests are not sharded because they need no browser. Each shard uploads a blob report.
-3. `merge-reports` runs even when a shard failed (but not when `test` was skipped because `quality` failed), merges the blob reports into one HTML report, uploads it as an artifact (kept 14 days) and writes a short results table to the job summary.
+1. `Lint`, `Typecheck`, `Format`, `Unit tests` and `Gherkin` run in parallel and need no browser. `Unit tests` is the pure-Node `unit` project. `Gherkin` runs `bddgen` (it fails on a step with no definition) and a guard that rejects `@skip`, `@fixme` and `@only` in feature files. They fail fast and cheap, each with its own name in the PR.
+2. `Tests (shard n/2)` starts after all five, as a matrix of two shards in parallel with `fail-fast: false`, so one failing shard does not hide the other. The shards cover the `ui`, `a11y` and `api` projects (14 tests each at the time of writing); the unit tests are not sharded because they need no browser. Each shard uploads a blob report.
+3. `Merge reports` runs even when a shard failed (but not when the shards were skipped because a quality job failed), merges the blob reports into one HTML report, uploads it as an artifact (kept 14 days) and writes a short results table to the job summary.
+
+Three more workflows add checks to pull requests to `main`:
+
+- `codeql.yml` runs CodeQL static analysis on the TypeScript code and on the workflow files (`CodeQL (javascript-typescript)` and `CodeQL (actions)`). It also runs on pushes to `main` and weekly.
+- `dependency-review.yml` fails a pull request that adds a dependency with a known vulnerability of moderate severity or higher.
+- `actionlint.yml` lints the workflow files. It runs only when `.github/workflows/**` changes.
 
 To scale, raise the matrix in the workflow, for example `shardIndex: [1, 2, 3, 4]` with `shardTotal: [4]`. Nothing else changes, because the merge job collects `blob-report-*` artifacts by pattern. At this size, sharding demonstrates the pattern: a single job would finish sooner than two jobs that each install Chromium. It pays off when the suite grows.
 
-Other CI choices: `permissions: contents: read`, no `pull_request_target`, a concurrency group that cancels superseded runs, dependency caching through `actions/setup-node`, the Node version read from `.nvmrc`, and Dependabot for npm and GitHub Actions updates.
+Other CI choices: least-privilege `permissions` (`contents: read` by default, `security-events: write` only for CodeQL), no `pull_request_target`, checkout without persisted credentials, a concurrency group that cancels superseded runs, dependency caching through `actions/setup-node`, the Node version read from `.nvmrc`, and Dependabot for npm and GitHub Actions updates.
 
-It runs on pushes and pull requests to `main`, on manual dispatch, and nightly at 06:00 UTC (03:00 in Brasilia) to catch drift in the sandboxes. The badge at the top is filtered with `?branch=main&event=push`, so an outage of a public sandbox during a nightly run does not turn it red. GitHub disables scheduled workflows after 60 days without repository activity, so the nightly run may need to be re-enabled on a dormant repository.
+The Playwright workflow runs on pushes and pull requests to `main`, on manual dispatch, and nightly at 06:00 UTC (03:00 in Brasilia) to catch drift in the sandboxes. The badge at the top is filtered with `?branch=main&event=push`, so an outage of a public sandbox during a nightly run does not turn it red. GitHub disables scheduled workflows after 60 days without repository activity, so the nightly run may need to be re-enabled on a dormant repository.
 
 ### Flakiness policy
 

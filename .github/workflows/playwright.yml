@@ -18,8 +18,8 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  quality:
-    name: Lint, typecheck, format
+  lint:
+    name: Lint
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -31,11 +31,69 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
       - run: npm ci
-      - run: npm run check
+      - run: npm run lint
+
+  typecheck:
+    name: Typecheck
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+
+  format:
+    name: Format
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npm run format:check
+
+  unit:
+    name: Unit tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      # Pure Node, so no browser is needed. The script runs bddgen first.
+      - run: npm run test:unit
+
+  gherkin:
+    name: Gherkin
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
       # Fails fast if a Gherkin step has no definition.
       - run: npx bddgen
-      # Unit tests are pure Node, so they run here and need no browser.
-      - run: npm run test:unit
       # Lint covers test.skip in TypeScript. This covers the same escape hatch in Gherkin.
       - name: Reject disabled scenarios
         run: |
@@ -46,7 +104,7 @@ jobs:
 
   test:
     name: Tests (shard ${{ matrix.shardIndex }}/${{ matrix.shardTotal }})
-    needs: quality
+    needs: [lint, typecheck, format, unit, gherkin]
     runs-on: ubuntu-latest
     timeout-minutes: 20
     strategy:
@@ -79,7 +137,7 @@ jobs:
   merge-reports:
     name: Merge reports
     # Run even when a shard failed, so the report is there to explain why. Skip it when the test
-    # job never started (for example quality failed): there is nothing to merge.
+    # job never started (for example lint failed): there is nothing to merge.
     if: ${{ !cancelled() && needs.test.result != 'skipped' }}
     needs: test
     runs-on: ubuntu-latest
