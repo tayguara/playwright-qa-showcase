@@ -1,0 +1,135 @@
+name: Playwright
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    # Nightly, 06:00 UTC (03:00 BRT). Catches drift in the public sandboxes.
+    - cron: '0 6 * * *'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    name: Lint, typecheck, format
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npm run check
+      # Fails fast if a Gherkin step has no definition.
+      - run: npx bddgen
+      # Unit tests are pure Node, so they run here and need no browser.
+      - run: npm run test:unit
+      # Lint covers test.skip in TypeScript. This covers the same escape hatch in Gherkin.
+      - name: Reject disabled scenarios
+        run: |
+          if grep -rnE '(^|[[:space:]])@(skip|fixme|only)([[:space:]]|$)' features --include='*.feature'; then
+            echo '::error::A scenario is disabled with @skip, @fixme or @only. Fix it or track it with @fail.'
+            exit 1
+          fi
+
+  test:
+    name: Tests (shard ${{ matrix.shardIndex }}/${{ matrix.shardTotal }})
+    needs: quality
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        shardIndex: [1, 2]
+        shardTotal: [2]
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npx bddgen
+      - name: Run Playwright tests
+        run: npx playwright test --project=ui --project=a11y --project=api --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
+      - name: Upload blob report
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v7
+        with:
+          name: blob-report-${{ matrix.shardIndex }}
+          path: blob-report
+          retention-days: 1
+          if-no-files-found: error
+
+  merge-reports:
+    name: Merge reports
+    # Run even when a shard failed, so the report is there to explain why. Skip it when the test
+    # job never started (for example quality failed): there is nothing to merge.
+    if: ${{ !cancelled() && needs.test.result != 'skipped' }}
+    needs: test
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - name: Download blob reports
+        uses: actions/download-artifact@v8
+        with:
+          path: all-blob-reports
+          pattern: blob-report-*
+          merge-multiple: true
+      - name: Merge into one HTML report
+        env:
+          PLAYWRIGHT_HTML_OPEN: never
+          PLAYWRIGHT_JSON_OUTPUT_NAME: ${{ runner.temp }}/merged-results.json
+        run: npx playwright merge-reports --reporter html,json ./all-blob-reports
+      - name: Upload HTML report
+        uses: actions/upload-artifact@v7
+        with:
+          name: html-report--attempt-${{ github.run_attempt }}
+          path: playwright-report
+          retention-days: 14
+      - name: Summary
+        if: ${{ !cancelled() }}
+        env:
+          ARTIFACT_NAME: html-report--attempt-${{ github.run_attempt }}
+          RESULTS_JSON: ${{ runner.temp }}/merged-results.json
+        run: |
+          node - >> "$GITHUB_STEP_SUMMARY" <<'EOF'
+          const fs = require("fs");
+          if (!fs.existsSync(process.env.RESULTS_JSON)) {
+            console.log("## Playwright results\n\nNo merged results were produced. See the merge step log.");
+            process.exit(0);
+          }
+          const { stats } = JSON.parse(fs.readFileSync(process.env.RESULTS_JSON, "utf8"));
+          const rows = [
+            ["Passed", stats.expected],
+            ["Failed", stats.unexpected],
+            ["Flaky (passed on retry)", stats.flaky],
+            ["Skipped", stats.skipped],
+          ];
+          console.log("## Playwright results\n\n| Outcome | Tests |\n| --- | ---: |");
+          for (const [label, count] of rows) console.log(`| ${label} | ${count} |`);
+          console.log(`\nThe full HTML report is attached to this run as the \`${process.env.ARTIFACT_NAME}\` artifact (kept for 14 days). Download it and run \`npx playwright show-report <folder>\`.`);
+          EOF

@@ -1,0 +1,35 @@
+{
+  "login": [
+    {
+      "ruleId": "page-has-heading-one",
+      "reason": "Best practice: the page has no level-one heading; the 'Swag Labs' logo is a plain div.",
+      "since": "2026-09"
+    },
+    {
+      "ruleId": "region",
+      "reason": "Best practice: the logo text sits outside any landmark region.",
+      "since": "2026-09"
+    }
+  ],
+  "inventory": [
+    {
+      "ruleId": "page-has-heading-one",
+      "reason": "Best practice: the page has no level-one heading; 'Products' is a span.",
+      "since": "2026-09"
+    }
+  ],
+  "cart": [
+    {
+      "ruleId": "page-has-heading-one",
+      "reason": "Best practice: the page has no level-one heading; 'Your Cart' is a span.",
+      "since": "2026-09"
+    }
+  ],
+  "checkout-step-one": [
+    {
+      "ruleId": "page-has-heading-one",
+      "reason": "Best practice: the page has no level-one heading; the page title is a span.",
+      "since": "2026-09"
+    }
+  ]
+}
