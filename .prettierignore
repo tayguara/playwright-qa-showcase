@@ -6,3 +6,8 @@ test-results/
 all-blob-reports/
 playwright/.cache/
 package-lock.json
+experiments/ai-written-tests/suite-a/
+experiments/ai-written-tests/suite-b/
+experiments/ai-written-tests/results/
+experiments/ai-written-tests/prompts/
+.claude/

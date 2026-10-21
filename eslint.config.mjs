@@ -12,6 +12,11 @@ export default defineConfig([
     'test-results/',
     'all-blob-reports/',
     'playwright/.cache/',
+    // The AI-written suites and the experiment's evidence are measured, never linted by the repo.
+    'experiments/ai-written-tests/suite-a/',
+    'experiments/ai-written-tests/suite-b/',
+    'experiments/ai-written-tests/results/',
+    'experiments/ai-written-tests/prompts/',
   ]),
 
   {
@@ -48,5 +53,25 @@ export default defineConfig([
   {
     files: ['**/*.mjs', '**/*.js'],
     extends: [js.configs.recommended, tseslint.configs.disableTypeChecked],
+  },
+
+  // The experiment's stub and harness are plain Node ESM scripts. The globals they use are listed
+  // here instead of adding the `globals` package.
+  {
+    files: ['experiments/**/*.mjs'],
+    languageOptions: {
+      globals: {
+        process: 'readonly',
+        console: 'readonly',
+        URL: 'readonly',
+        URLSearchParams: 'readonly',
+        fetch: 'readonly',
+        Buffer: 'readonly',
+        setTimeout: 'readonly',
+        clearTimeout: 'readonly',
+        AbortSignal: 'readonly',
+        structuredClone: 'readonly',
+      },
+    },
   },
 ]);

@@ -1,0 +1,8 @@
+# Exact matched texts (one per line, no regex) that scan-secrets.sh must not report, after review.
+# Only the matched text is compared, never the rest of the line.
+# The neutral identity used for commits inside the lab:
+lab@lab.invalid
+# Deliberately wrong demo credentials in the stub tests and in the probe log (bad-credentials cases):
+password: 'nope'
+password: 'wrong'
+password":"nope"

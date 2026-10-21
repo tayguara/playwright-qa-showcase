@@ -19,6 +19,9 @@
     "playwright-report",
     "blob-report",
     "test-results",
-    "all-blob-reports"
+    "all-blob-reports",
+    "experiments/ai-written-tests/suite-a",
+    "experiments/ai-written-tests/suite-b",
+    "experiments/ai-written-tests/prompts"
   ]
 }

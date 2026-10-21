@@ -17,11 +17,18 @@
     "test:unit": "bddgen && playwright test --project=unit",
     "test:smoke": "bddgen && playwright test --project=ui --grep @smoke",
     "report": "playwright show-report",
-    "lint": "eslint . --max-warnings=0",
+    "lint": "eslint . --config eslint.config.mjs --max-warnings=0",
     "typecheck": "tsc --noEmit",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "check": "npm run lint && npm run typecheck && npm run format:check"
+    "check": "npm run lint && npm run typecheck && npm run format:check",
+    "exp:stub": "node experiments/ai-written-tests/stub/server.mjs",
+    "exp:stub:test": "node --test \"experiments/ai-written-tests/stub/test/*.test.mjs\" \"experiments/ai-written-tests/harness/test/*.test.mjs\"",
+    "exp:faults": "node experiments/ai-written-tests/harness/run.mjs faults --suite all",
+    "exp:repeat": "node experiments/ai-written-tests/harness/run.mjs repeat --suite all",
+    "exp:public": "node experiments/ai-written-tests/harness/run.mjs public --suite all",
+    "exp:lint": "node experiments/ai-written-tests/harness/run.mjs lint --suite all",
+    "exp:summary": "node experiments/ai-written-tests/harness/run.mjs summary"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.13.0",
