@@ -96,6 +96,16 @@ describe('bwrapArgs', () => {
     assert.equal(dests('egress').includes('/etc/resolv.conf'), true);
   });
 
+  test('hides any npmrc in the node install with a tmpfs over its etc/', () => {
+    const args = bwrapArgs({ ...base, network: 'none' });
+    const i = args.findIndex(
+      (a, k) => a === '--tmpfs' && args[k + 1] === path.join(NODE_ROOT, 'etc'),
+    );
+    assert.ok(i > 0);
+    const roBind = args.findIndex((a, k) => a === '--ro-bind' && args[k + 1] === NODE_ROOT);
+    assert.ok(roBind >= 0 && roBind < i, 'the tmpfs comes after the node install bind');
+  });
+
   test('always unshares everything and dies with its parent', () => {
     for (const network of ['none', 'egress']) {
       const args = bwrapArgs({ ...base, network });
@@ -111,7 +121,9 @@ describe('pasta wrapper', () => {
     for (const range of ['10.0.0.0/8', '172.16.0.0/12', '192.168.0.0/16', '100.64.0.0/10']) {
       assert.ok(ROUTE_SCRIPT.includes(range), range);
     }
-    assert.equal(ROUTE_SCRIPT.includes('169.254'), false);
+    assert.ok(ROUTE_SCRIPT.includes('169.254.169.254/32'), 'cloud metadata address blocked');
+    assert.equal(ROUTE_SCRIPT.includes('169.254.1.1'), false, 'DNS address stays reachable');
+    assert.equal(ROUTE_SCRIPT.includes('169.254.0.0'), false);
     assert.ok(ROUTE_SCRIPT.endsWith('exec "$@"'));
     assert.ok(ROUTE_SCRIPT.startsWith('set -e;'), 'fails closed');
     assert.equal(ROUTE_SCRIPT.includes('|| true'), false);

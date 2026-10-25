@@ -1,0 +1,500 @@
+{
+  "config": {
+    "argv": [
+      "<home>/.nvm/versions/node/v22.21.0/bin/node",
+      "<repo>/node_modules/@playwright/test/cli.js",
+      "test",
+      "--config",
+      "playwright.config.ts",
+      "--project=api",
+      "--workers=1",
+      "--reporter=json"
+    ],
+    "configFile": "<repo>/playwright.config.ts",
+    "rootDir": "<repo>",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "<repo>/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "ui",
+        "name": "ui",
+        "testDir": "<repo>/.features-gen/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "<repo>/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "a11y",
+        "name": "a11y",
+        "testDir": "<repo>/tests/a11y",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "<repo>/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "api",
+        "name": "api",
+        "testDir": "<repo>/tests/api",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "<repo>/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "unit",
+        "name": "unit",
+        "testDir": "<repo>/tests/unit",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "tests/api/auth.spec.ts",
+      "file": "tests/api/auth.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "POST /auth",
+          "file": "tests/api/auth.spec.ts",
+          "line": 5,
+          "column": 6,
+          "specs": [
+            {
+              "title": "A1: valid credentials return a token",
+              "ok": true,
+              "tags": [
+                "api"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 102,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T18:53:55.809Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d748ac400d08b85935ef-a18bbe4cbae4435403dc",
+              "file": "tests/api/auth.spec.ts",
+              "line": 6,
+              "column": 7
+            },
+            {
+              "title": "A2: invalid credentials answer HTTP 200 with a reason instead of a 4xx",
+              "ok": true,
+              "tags": [
+                "api"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "api-quirk",
+                      "description": "POST /auth answers HTTP 200 (not 401) for bad credentials; the failure is only in the body."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 35,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T18:53:56.006Z",
+                      "annotations": [
+                        {
+                          "type": "api-quirk",
+                          "description": "POST /auth answers HTTP 200 (not 401) for bad credentials; the failure is only in the body."
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d748ac400d08b85935ef-daf2fd3f595dc1162132",
+              "file": "tests/api/auth.spec.ts",
+              "line": 13,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "tests/api/booking.spec.ts",
+      "file": "tests/api/booking.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "/booking",
+          "file": "tests/api/booking.spec.ts",
+          "line": 5,
+          "column": 6,
+          "specs": [
+            {
+              "title": "A3: creates a booking and reads back the same data",
+              "ok": true,
+              "tags": [
+                "api"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 103,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T18:53:56.087Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a3a10f2351dcc49e1cb9-639ec026786a4fcce44d",
+              "file": "tests/api/booking.spec.ts",
+              "line": 6,
+              "column": 7
+            },
+            {
+              "title": "A4: finds a booking by first and last name",
+              "ok": true,
+              "tags": [
+                "api"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 117,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T18:53:56.252Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a3a10f2351dcc49e1cb9-aedbfdafe5119cfd357e",
+              "file": "tests/api/booking.spec.ts",
+              "line": 27,
+              "column": 7
+            },
+            {
+              "title": "A5: PUT replaces the whole booking",
+              "ok": true,
+              "tags": [
+                "api"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 74,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T18:53:56.414Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a3a10f2351dcc49e1cb9-5d44997ab805e106760f",
+              "file": "tests/api/booking.spec.ts",
+              "line": 38,
+              "column": 7
+            },
+            {
+              "title": "A6: PATCH changes only the given fields",
+              "ok": false,
+              "tags": [
+                "api"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 98,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 2\u001b[39m\n\n\u001b[2m  Object {\u001b[22m\n\u001b[32m-   \"additionalneeds\": \"Breakfast\",\u001b[39m\n\u001b[2m    \"bookingdates\": Object {\u001b[22m\n\u001b[2m      \"checkin\": \"2026-11-20\",\u001b[22m\n\u001b[2m      \"checkout\": \"2026-11-23\",\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[32m-   \"depositpaid\": true,\u001b[39m\n\u001b[31m+   \"depositpaid\": false,\u001b[39m\n\u001b[2m    \"firstname\": \"Patched\",\u001b[22m\n\u001b[32m-   \"lastname\": \"Showcase-139e2faa\",\u001b[39m\n\u001b[31m+   \"lastname\": \"\",\u001b[39m\n\u001b[2m    \"totalprice\": 321,\u001b[22m\n\u001b[2m  }\u001b[22m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 2\u001b[39m\n\n\u001b[2m  Object {\u001b[22m\n\u001b[32m-   \"additionalneeds\": \"Breakfast\",\u001b[39m\n\u001b[2m    \"bookingdates\": Object {\u001b[22m\n\u001b[2m      \"checkin\": \"2026-11-20\",\u001b[22m\n\u001b[2m      \"checkout\": \"2026-11-23\",\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[32m-   \"depositpaid\": true,\u001b[39m\n\u001b[31m+   \"depositpaid\": false,\u001b[39m\n\u001b[2m    \"firstname\": \"Patched\",\u001b[22m\n\u001b[32m-   \"lastname\": \"Showcase-139e2faa\",\u001b[39m\n\u001b[31m+   \"lastname\": \"\",\u001b[39m\n\u001b[2m    \"totalprice\": 321,\u001b[22m\n\u001b[2m  }\u001b[22m\n    at <repo>/tests/api/booking.spec.ts:63:61",
+                        "location": {
+                          "file": "<repo>/tests/api/booking.spec.ts",
+                          "column": 61,
+                          "line": 63
+                        },
+                        "snippet": "  61 |     expect(patchResponse.status()).toBe(200);\n  62 |     const expected = { ...booking.payload, ...changes };\n> 63 |     expect(bookingSchema.parse(await patchResponse.json())).toEqual(expected);\n     |                                                             ^\n  64 |\n  65 |     const getResponse = await bookingClient.get(booking.id);\n  66 |     expect(bookingSchema.parse(await getResponse.json())).toEqual(expected);"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "<repo>/tests/api/booking.spec.ts",
+                            "column": 61,
+                            "line": 63
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 3\u001b[39m\n\u001b[31m+ Received  + 2\u001b[39m\n\n\u001b[2m  Object {\u001b[22m\n\u001b[32m-   \"additionalneeds\": \"Breakfast\",\u001b[39m\n\u001b[2m    \"bookingdates\": Object {\u001b[22m\n\u001b[2m      \"checkin\": \"2026-11-20\",\u001b[22m\n\u001b[2m      \"checkout\": \"2026-11-23\",\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[32m-   \"depositpaid\": true,\u001b[39m\n\u001b[31m+   \"depositpaid\": false,\u001b[39m\n\u001b[2m    \"firstname\": \"Patched\",\u001b[22m\n\u001b[32m-   \"lastname\": \"Showcase-139e2faa\",\u001b[39m\n\u001b[31m+   \"lastname\": \"\",\u001b[39m\n\u001b[2m    \"totalprice\": 321,\u001b[22m\n\u001b[2m  }\u001b[22m\n\n  61 |     expect(patchResponse.status()).toBe(200);\n  62 |     const expected = { ...booking.payload, ...changes };\n> 63 |     expect(bookingSchema.parse(await patchResponse.json())).toEqual(expected);\n     |                                                             ^\n  64 |\n  65 |     const getResponse = await bookingClient.get(booking.id);\n  66 |     expect(bookingSchema.parse(await getResponse.json())).toEqual(expected);\n    at <repo>/tests/api/booking.spec.ts:63:61"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T18:53:56.525Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "<repo>/test-results/booking--booking-A6-PATCH-changes-only-the-given-fields-api/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "<repo>/test-results/booking--booking-A6-PATCH-changes-only-the-given-fields-api/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "<repo>/tests/api/booking.spec.ts",
+                        "column": 61,
+                        "line": 63
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a3a10f2351dcc49e1cb9-29752756d8c7e27d8a85",
+              "file": "tests/api/booking.spec.ts",
+              "line": 56,
+              "column": 7
+            },
+            {
+              "title": "A7: PUT without a token is rejected with 403 and changes nothing",
+              "ok": true,
+              "tags": [
+                "api"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 106,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T18:53:58.002Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a3a10f2351dcc49e1cb9-7a79f95b82c7c000841f",
+              "file": "tests/api/booking.spec.ts",
+              "line": 69,
+              "column": 7
+            },
+            {
+              "title": "A8: DELETE removes the booking (answers 201, not 204)",
+              "ok": true,
+              "tags": [
+                "api"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "api-quirk",
+                      "description": "DELETE /booking/:id answers 201 Created (not 200/204); a repeated DELETE answers 405."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 60,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T18:53:58.256Z",
+                      "annotations": [
+                        {
+                          "type": "api-quirk",
+                          "description": "DELETE /booking/:id answers 201 Created (not 200/204); a repeated DELETE answers 405."
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a3a10f2351dcc49e1cb9-575b3a627d82c2ccc33d",
+              "file": "tests/api/booking.spec.ts",
+              "line": 84,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-21T18:53:54.339Z",
+    "duration": 4051.632,
+    "expected": 7,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

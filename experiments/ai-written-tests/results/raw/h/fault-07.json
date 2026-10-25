@@ -1,0 +1,500 @@
+{
+  "config": {
+    "argv": [
+      "<home>/.nvm/versions/node/v22.21.0/bin/node",
+      "<repo>/node_modules/@playwright/test/cli.js",
+      "test",
+      "--config",
+      "playwright.config.ts",
+      "--project=api",
+      "--workers=1",
+      "--reporter=json"
+    ],
+    "configFile": "<repo>/playwright.config.ts",
+    "rootDir": "<repo>",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "<repo>/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "ui",
+        "name": "ui",
+        "testDir": "<repo>/.features-gen/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "<repo>/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "a11y",
+        "name": "a11y",
+        "testDir": "<repo>/tests/a11y",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "<repo>/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "api",
+        "name": "api",
+        "testDir": "<repo>/tests/api",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "<repo>/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "unit",
+        "name": "unit",
+        "testDir": "<repo>/tests/unit",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "tests/api/auth.spec.ts",
+      "file": "tests/api/auth.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "POST /auth",
+          "file": "tests/api/auth.spec.ts",
+          "line": 5,
+          "column": 6,
+          "specs": [
+            {
+              "title": "A1: valid credentials return a token",
+              "ok": true,
+              "tags": [
+                "api"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 96,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T18:54:14.156Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d748ac400d08b85935ef-a18bbe4cbae4435403dc",
+              "file": "tests/api/auth.spec.ts",
+              "line": 6,
+              "column": 7
+            },
+            {
+              "title": "A2: invalid credentials answer HTTP 200 with a reason instead of a 4xx",
+              "ok": false,
+              "tags": [
+                "api"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "api-quirk",
+                      "description": "POST /auth answers HTTP 200 (not 401) for bad credentials; the failure is only in the body."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 86,
+                      "error": {
+                        "message": "ZodError: [\n  {\n    \"code\": \"invalid_value\",\n    \"values\": [\n      \"Bad credentials\"\n    ],\n    \"path\": [\n      \"reason\"\n    ],\n    \"message\": \"Invalid input: expected \\\"Bad credentials\\\"\"\n  }\n]",
+                        "stack": "ZodError: [\n  {\n    \"code\": \"invalid_value\",\n    \"values\": [\n      \"Bad credentials\"\n    ],\n    \"path\": [\n      \"reason\"\n    ],\n    \"message\": \"Invalid input: expected \\\"Bad credentials\\\"\"\n  }\n]\n    at <repo>/tests/api/auth.spec.ts:25:30",
+                        "location": {
+                          "file": "<repo>/tests/api/auth.spec.ts",
+                          "column": 30,
+                          "line": 25
+                        },
+                        "snippet": "  23 |\n  24 |     expect(response.status()).toBe(200);\n> 25 |     expect(authFailureSchema.parse(await response.json())).toEqual({ reason: 'Bad credentials' });\n     |                              ^\n  26 |   });\n  27 | });\n  28 |"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "<repo>/tests/api/auth.spec.ts",
+                            "column": 30,
+                            "line": 25
+                          },
+                          "message": "ZodError: [\n  {\n    \"code\": \"invalid_value\",\n    \"values\": [\n      \"Bad credentials\"\n    ],\n    \"path\": [\n      \"reason\"\n    ],\n    \"message\": \"Invalid input: expected \\\"Bad credentials\\\"\"\n  }\n]\n\n  23 |\n  24 |     expect(response.status()).toBe(200);\n> 25 |     expect(authFailureSchema.parse(await response.json())).toEqual({ reason: 'Bad credentials' });\n     |                              ^\n  26 |   });\n  27 | });\n  28 |\n    at <repo>/tests/api/auth.spec.ts:25:30"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T18:54:14.346Z",
+                      "annotations": [
+                        {
+                          "type": "api-quirk",
+                          "description": "POST /auth answers HTTP 200 (not 401) for bad credentials; the failure is only in the body."
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "<repo>/test-results/auth-POST-auth-A2-invalid--c85be-h-a-reason-instead-of-a-4xx-api/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "<repo>/test-results/auth-POST-auth-A2-invalid--c85be-h-a-reason-instead-of-a-4xx-api/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "<repo>/tests/api/auth.spec.ts",
+                        "column": 30,
+                        "line": 25
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "d748ac400d08b85935ef-daf2fd3f595dc1162132",
+              "file": "tests/api/auth.spec.ts",
+              "line": 13,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "tests/api/booking.spec.ts",
+      "file": "tests/api/booking.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "/booking",
+          "file": "tests/api/booking.spec.ts",
+          "line": 5,
+          "column": 6,
+          "specs": [
+            {
+              "title": "A3: creates a booking and reads back the same data",
+              "ok": true,
+              "tags": [
+                "api"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 79,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T18:54:15.704Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a3a10f2351dcc49e1cb9-639ec026786a4fcce44d",
+              "file": "tests/api/booking.spec.ts",
+              "line": 6,
+              "column": 7
+            },
+            {
+              "title": "A4: finds a booking by first and last name",
+              "ok": true,
+              "tags": [
+                "api"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 60,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T18:54:15.919Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a3a10f2351dcc49e1cb9-aedbfdafe5119cfd357e",
+              "file": "tests/api/booking.spec.ts",
+              "line": 27,
+              "column": 7
+            },
+            {
+              "title": "A5: PUT replaces the whole booking",
+              "ok": true,
+              "tags": [
+                "api"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 64,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T18:54:16.018Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a3a10f2351dcc49e1cb9-5d44997ab805e106760f",
+              "file": "tests/api/booking.spec.ts",
+              "line": 38,
+              "column": 7
+            },
+            {
+              "title": "A6: PATCH changes only the given fields",
+              "ok": true,
+              "tags": [
+                "api"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 48,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T18:54:16.113Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a3a10f2351dcc49e1cb9-29752756d8c7e27d8a85",
+              "file": "tests/api/booking.spec.ts",
+              "line": 56,
+              "column": 7
+            },
+            {
+              "title": "A7: PUT without a token is rejected with 403 and changes nothing",
+              "ok": true,
+              "tags": [
+                "api"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 45,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T18:54:16.202Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a3a10f2351dcc49e1cb9-7a79f95b82c7c000841f",
+              "file": "tests/api/booking.spec.ts",
+              "line": 69,
+              "column": 7
+            },
+            {
+              "title": "A8: DELETE removes the booking (answers 201, not 204)",
+              "ok": true,
+              "tags": [
+                "api"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "api-quirk",
+                      "description": "DELETE /booking/:id answers 201 Created (not 200/204); a repeated DELETE answers 405."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 45,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T18:54:16.312Z",
+                      "annotations": [
+                        {
+                          "type": "api-quirk",
+                          "description": "DELETE /booking/:id answers 201 Created (not 200/204); a repeated DELETE answers 405."
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a3a10f2351dcc49e1cb9-575b3a627d82c2ccc33d",
+              "file": "tests/api/booking.spec.ts",
+              "line": 84,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-21T18:54:12.755Z",
+    "duration": 3681.572,
+    "expected": 7,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

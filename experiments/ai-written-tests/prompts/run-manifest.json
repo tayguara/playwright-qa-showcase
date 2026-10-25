@@ -1,0 +1,211 @@
+{
+  "claudeVersion": "2.1.304 (Claude Code)",
+  "model": "claude-sonnet-5-5",
+  "effort": "not set: the model and CLI default was used (the init event reports per_turn_effort_active=true and no explicit effort level)",
+  "preRegistrationTag": {
+    "name": "exp-ai-tests-prereg",
+    "commit": "55737d1720376a91da999429422e82da386792b0"
+  },
+  "runOrder": [
+    "A",
+    "B"
+  ],
+  "runCommand": "experiments/ai-written-tests/lab/run-agent.sh <suite-a|suite-b>, as committed at the tag (see scripts[].atTag); claude -p --model claude-sonnet-5-5 --setting-sources project --strict-mcp-config --disable-slash-commands --allowedTools \"Read,Write,Edit,Glob,Grep,Bash,WebFetch(domain:restful-booker.herokuapp.com),WebFetch(domain:playwright.dev)\" --disallowedTools \"Bash(npm install*)\" \"Bash(npm i *)\" \"Bash(npm uninstall*)\" \"Bash(npm ci*)\" \"Bash(yarn*)\" \"Bash(pnpm*)\" \"Read(/<repo>/**)\" --output-format stream-json --verbose, started in the pasta+bwrap sandbox with stdin, stdout and stderr redirected inside it",
+  "runs": {
+    "suite-a": {
+      "suite": "A",
+      "startedAt": "2026-10-21T18:43:47Z",
+      "endedAt": "2026-10-21T18:44:19Z",
+      "sessionId": "37c67aee-eafa-42d6-9ee4-701ad1d4b4d6",
+      "model": {
+        "init": "claude-sonnet-5-5",
+        "result": [
+          "claude-sonnet-5-5"
+        ]
+      },
+      "claudeCodeVersion": "2.1.304",
+      "numTurns": 3,
+      "totalCostUsd": 0.06342010000000001,
+      "durationMs": 30633,
+      "exitStatus": 0,
+      "resultSubtype": "success",
+      "isError": false,
+      "finalMessage": "I wrote the suite, and all 8 tests pass against the live sandbox (about 10 seconds).\n\n- **`playwright.config.ts`:** The base URL comes from `BOOKER_BASE_URL` and defaults to `https://restful-booker.herokuapp.com`. It sets one retry and a 30-second timeout.\n- **`tests/booker.spec.ts`:** It covers all seven behaviours:\n  1. Authentication: a valid login returns a token, and a bad password returns no token.\n  2. Creating a booking and reading it back, checked against a zod schema.\n  3. Finding a booking by first and last name, plus a search that matches nothing.\n  4. PUT fully replaces the booking.\n  5. PATCH changes only the fields sent.\n  6. PUT without a token returns 403, and a follow-up GET shows the booking unchanged.\n  7. DELETE returns 201, and a follow-up GET returns 404.\n\nEach test creates its own booking with unique names, so tests don't interfere with each other on the shared sandbox. Any bookings still left at the end are deleted afterwards.\n\nTo run it, use `npx playwright test`. To point it at another server, set the variable first, for example `BOOKER_BASE_URL=http://localhost:3001 npx playwright test`.\n\nI didn't commit anything.",
+      "promptSha256": "ea96958e1861520238183c670fea74f01d48ea9cc24698d9cdfeddd73f4526f7",
+      "scaffoldSha256": "e97ca043fda79cdb853962e18219e30b219aac8be91c945c0fbacf9143d56935",
+      "restarts": 0,
+      "transcripts": {
+        "streamJson": "prompts/transcripts/suite-a.jsonl",
+        "sessionLog": "prompts/transcripts/suite-a.session.jsonl",
+        "rawSha256": {
+          "streamJson": "01804d2316d962a4d87bd03e0da3ce4a574d63929abcef9fc21e49d511f3847c",
+          "sessionLog": "fbdb0435ed7e40e75fc627da25076271c21ea7f94f09bb4e6eb92eb228ebcbb8"
+        },
+        "sanitizedSha256": {
+          "streamJson": "82f3f01dd6b6f5fbda7e902f4059a86509649bc6c0683475ce2a7940d6a04341",
+          "sessionLog": "b08c429ac4d3714e5af3407e5579cb75c6679e4fa6b49dce516255ed3e02d316"
+        }
+      }
+    },
+    "suite-b": {
+      "suite": "B",
+      "startedAt": "2026-10-21T18:44:45Z",
+      "endedAt": "2026-10-21T18:46:06Z",
+      "sessionId": "47c9fb39-4ff5-4325-a813-25cff4709eda",
+      "model": {
+        "init": "claude-sonnet-5-5",
+        "result": [
+          "claude-sonnet-5-5"
+        ]
+      },
+      "claudeCodeVersion": "2.1.304",
+      "numTurns": 4,
+      "totalCostUsd": 0.1373562,
+      "durationMs": 78831,
+      "exitStatus": 0,
+      "resultSubtype": "success",
+      "isError": false,
+      "finalMessage": "I wrote the suite, and `tsc`, ESLint and `npx playwright test` all pass against the live sandbox. The final run was 17 passed, and the \"failing\" test below is counted as a pass because it is marked as expected to fail.\n\n**What's in it**\n- `playwright.config.ts` reads the base URL from `BOOKER_BASE_URL`, defaulting to `https://restful-booker.herokuapp.com`. It also sets one retry per test.\n- `eslint.config.mjs` is a new ESLint config using typescript-eslint and eslint-plugin-playwright.\n- `tests/helpers.ts` holds the zod schemas for response bodies and unique test data. It also has fixtures: `token`, `createBooking` and `trackBooking`. Every booking a test creates is deleted at teardown, even if the test fails.\n- `tests/auth.spec.ts` covers `/auth`: a valid login returns a token that works, a wrong password or unknown user returns no token, and a fake token gets 403.\n- `tests/booking.spec.ts` covers everything else:\n  - create and read back, including 404 for an unknown id and a rejected incomplete payload;\n  - find by first and last name, including a no-match case;\n  - PUT replacement and PUT on an unknown booking;\n  - PATCH with and without a token;\n  - PUT without a token returns 403 and leaves the booking unchanged;\n  - DELETE returns 201 and the booking is then gone from both GET and the list, and DELETE without a token leaves it in place.\n\nEvery test has a one-line comment above it naming the regression it would catch. Nothing uses fixed waits.\n\n**One real API quirk:** when a PUT omits the optional `additionalneeds`, the sandbox keeps the old value instead of dropping it. I kept that check as a separate test marked `test.fail`, so it documents the bug without breaking the run. If the API gets fixed, that test will start failing as \"unexpectedly passed\", which is your cue to remove the marker.\n\n**Run it**\n```\nnpx playwright test\nnpx eslint .\n```\nTo point at another server: `BOOKER_BASE_URL=https://example npx playwright test`.\n\nI haven't committed anything.",
+      "promptSha256": "ea96958e1861520238183c670fea74f01d48ea9cc24698d9cdfeddd73f4526f7",
+      "scaffoldSha256": "e97ca043fda79cdb853962e18219e30b219aac8be91c945c0fbacf9143d56935",
+      "restarts": 0,
+      "transcripts": {
+        "streamJson": "prompts/transcripts/suite-b.jsonl",
+        "sessionLog": "prompts/transcripts/suite-b.session.jsonl",
+        "rawSha256": {
+          "streamJson": "db72b1559ec2495914fb36b3b54e7345a344b08793f22f8a0f68e2ebb4aea0ab",
+          "sessionLog": "0433bf9315bc5d301e4bce9d295552e5cbcfc2f1d369d3b980c82966b4c35bc7"
+        },
+        "sanitizedSha256": {
+          "streamJson": "03a288a881b6adce20dbb3795710ca48e18d9f90aef87a9911cc27d119771d2a",
+          "sessionLog": "f3840eb6a0ea0370cafbbb5e03ca5b6c8e0caadea024c8283efbf97376420cdc"
+        }
+      },
+      "guardrailsSha256": "d67ca6e820d5240c5ad3417419a9a5ddb91c18ad7cc9d90663b2288e2bc5ede5"
+    }
+  },
+  "scriptsUsedForGeneration": [
+    "lab/setup-lab.sh",
+    "lab/run-agent.sh",
+    "lab/copy-regular.sh",
+    "lab/canary-prompt.md (canaries only)"
+  ],
+  "scripts": {
+    "harness/analyze.mjs": {
+      "atTag": "0aaba3f0db1d75a015201eed5ae7a69b0a58cfb839fb348272514b93e9743198",
+      "current": "0aaba3f0db1d75a015201eed5ae7a69b0a58cfb839fb348272514b93e9743198",
+      "changedAfterTag": false
+    },
+    "harness/eslint.measure.config.mjs": {
+      "atTag": "32cf3079d8e39ae88f1b815d93cc128ed57c364ef5b923cfc37c61b3c220ddd1",
+      "current": "32cf3079d8e39ae88f1b815d93cc128ed57c364ef5b923cfc37c61b3c220ddd1",
+      "changedAfterTag": false
+    },
+    "harness/guard.mjs": {
+      "atTag": "ae73eb3f63b1548db180f59e8e2c58cbfb52bee3d0901df338830718e4cef605",
+      "current": "ae73eb3f63b1548db180f59e8e2c58cbfb52bee3d0901df338830718e4cef605",
+      "changedAfterTag": false
+    },
+    "harness/lint-count.mjs": {
+      "atTag": "a463267c0b9bdb88e4d37f9b2c3c9a93381e0f95b1f1388f31b80abe22093cce",
+      "current": "a463267c0b9bdb88e4d37f9b2c3c9a93381e0f95b1f1388f31b80abe22093cce",
+      "changedAfterTag": false
+    },
+    "harness/report.mjs": {
+      "atTag": "d8f655cd74ee488e1f8d73a572d8e83572a1e6838198d295674ebc76aaf4f152",
+      "current": "d8f655cd74ee488e1f8d73a572d8e83572a1e6838198d295674ebc76aaf4f152",
+      "changedAfterTag": false
+    },
+    "harness/run.mjs": {
+      "atTag": "c5de78307be0d91cc7b26596d07d41de83fbc9dc3a63c7c1952e002fbf992408",
+      "current": "c5de78307be0d91cc7b26596d07d41de83fbc9dc3a63c7c1952e002fbf992408",
+      "changedAfterTag": false
+    },
+    "harness/sandbox-entry.mjs": {
+      "atTag": "e9a39a986967846a2985fbb3bb63d7213b487dd8a467368db158b0a1dc103569",
+      "current": "e9a39a986967846a2985fbb3bb63d7213b487dd8a467368db158b0a1dc103569",
+      "changedAfterTag": false
+    },
+    "harness/sandbox.mjs": {
+      "atTag": "83e0d5cf0b97a39ada03322ccedf9d5e898610302777b7a428d80152f7157027",
+      "current": "8b22052a01273e6aec737a6aa167b885de57eef059d7b2a208c9d2256beda298",
+      "changedAfterTag": true
+    },
+    "harness/stub-process.mjs": {
+      "atTag": "ddd05bf631ca5a7df422c5c96c87ad274061f48c185524f44547c43133fb282a",
+      "current": "ddd05bf631ca5a7df422c5c96c87ad274061f48c185524f44547c43133fb282a",
+      "changedAfterTag": false
+    },
+    "harness/suites.mjs": {
+      "atTag": "17e4c30df454966e2ce8a2915bb6374a08bcfea3c58e499f84933a5f7e713a9e",
+      "current": "17e4c30df454966e2ce8a2915bb6374a08bcfea3c58e499f84933a5f7e713a9e",
+      "changedAfterTag": false
+    },
+    "lab/audit-transcripts.sh": {
+      "atTag": "ae29629049d760fe68f678c5e053554f374a7a67d95052293328fdcad951b3cc",
+      "current": "ae29629049d760fe68f678c5e053554f374a7a67d95052293328fdcad951b3cc",
+      "changedAfterTag": false
+    },
+    "lab/canary-prompt.md": {
+      "atTag": "0de39f59a8b482c20c14d0af7a29bcbfc2a478cb07c0bf737dd9fba7b180fb2f",
+      "current": "0de39f59a8b482c20c14d0af7a29bcbfc2a478cb07c0bf737dd9fba7b180fb2f",
+      "changedAfterTag": false
+    },
+    "lab/copy-regular.sh": {
+      "atTag": "0fecc22206822998068d091aacd09fe6e0082850f531c3e6c9cfea9b3b218809",
+      "current": "0fecc22206822998068d091aacd09fe6e0082850f531c3e6c9cfea9b3b218809",
+      "changedAfterTag": false
+    },
+    "lab/copy-suite.sh": {
+      "atTag": "d84947f9e2f3e035c1d1f661d40b9762fcb56085a91c93853e14a69826249017",
+      "current": "27af81a5aef8b4e5e0328624452216b31c5f857d85f6ca03f6eb3788c20d74e8",
+      "changedAfterTag": true
+    },
+    "lab/run-agent.sh": {
+      "atTag": "99ef0887860a9d783605dcf6f6e29db6983f3cf387e34df6122cf73adebb8161",
+      "current": "477e29ac841512c64944bd1126113939c7835f648ce5814373a649a36a3431f8",
+      "changedAfterTag": true
+    },
+    "lab/sanitize-transcripts.sh": {
+      "atTag": "c70e237bb99390fdc2c331e1d4901514d5d60ece732f592aa821b90b5eb69a0b",
+      "current": "32eb0ee1b6c93cb383e61a8d431efddd0255b483dc2d5b1b06f6055a456bab51",
+      "changedAfterTag": true
+    },
+    "lab/scan-allow.txt": {
+      "atTag": "522ff03f1db1abe7c51afbc04f5b1fa67051cd2ae5c410f64bc9de8f5114d517",
+      "current": "4e5db4b06bd97fc640ffc301eb33f6bc890f8d4b6a4a2f2bf77fb18f40cfcb9b",
+      "changedAfterTag": true
+    },
+    "lab/scan-secrets.sh": {
+      "atTag": "251c05a07d86560907fd103d63bb2997572052e14d6229cb4989fae337f593e9",
+      "current": "251c05a07d86560907fd103d63bb2997572052e14d6229cb4989fae337f593e9",
+      "changedAfterTag": false
+    },
+    "lab/setup-lab.sh": {
+      "atTag": "0f0764a27ad5d23a98d0148bbf48ddd2c6fabeaa7443f4b05624ba338fa8c0c8",
+      "current": "0f0764a27ad5d23a98d0148bbf48ddd2c6fabeaa7443f4b05624ba338fa8c0c8",
+      "changedAfterTag": false
+    },
+    "lab/test-copy-regular.sh": {
+      "atTag": "1acbfae737f1132694279a52ef849d87ee882319e1c02db5e876f5701084e8af",
+      "current": "1acbfae737f1132694279a52ef849d87ee882319e1c02db5e876f5701084e8af",
+      "changedAfterTag": false
+    },
+    "stub/faults.mjs": {
+      "atTag": "893fd1480d898a6b6c0f77c121a6b754fedfb2c47bf4d34e3d3dfdef9e8bd825",
+      "current": "893fd1480d898a6b6c0f77c121a6b754fedfb2c47bf4d34e3d3dfdef9e8bd825",
+      "changedAfterTag": false
+    },
+    "stub/server.mjs": {
+      "atTag": "cd11bdaba6c6d2a2b35b5ee68091d9e778d870a0fb00e0328799b2be24e09adb",
+      "current": "cd11bdaba6c6d2a2b35b5ee68091d9e778d870a0fb00e0328799b2be24e09adb",
+      "changedAfterTag": false
+    },
+    "stub/store.mjs": {
+      "atTag": "fe776a0a094dd3e8502c681598dbc98e24331a237d64f6679418d32729596914",
+      "current": "fe776a0a094dd3e8502c681598dbc98e24331a237d64f6679418d32729596914",
+      "changedAfterTag": false
+    }
+  },
+  "note": "scripts[].atTag is the sha256 of the file as committed at the pre-registration tag; scripts[].current is the sha256 of the working-tree file used for the audit, copy and harness steps. changedAfterTag lists the post-tag infrastructure changes described in the README section \"Post-tag changes\". The agent runs themselves used the tagged run-agent.sh and copy-regular.sh."
+}

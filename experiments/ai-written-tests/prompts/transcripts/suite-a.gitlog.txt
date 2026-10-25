@@ -1,0 +1,11 @@
+commit 3791ba9e4cd15f3d75fa833e6a6a778a62ad602d
+Author: lab <lab@lab.invalid>
+Date:   Wed Oct 21 14:53:33 2026 -0300
+
+    scaffold
+
+ .gitignore        |    3 +
+ package-lock.json | 1443 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ package.json      |   17 +
+ tsconfig.json     |   17 +
+ 4 files changed, 1480 insertions(+)

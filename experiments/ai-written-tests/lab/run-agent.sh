@@ -149,7 +149,7 @@ printf 'nameserver 169.254.1.1\n' > "$tmp/resolv.conf"
 # capability to remove them. The script fails closed: `set -e`, and exec only after every route
 # was added. 169.254.0.0/16 stays (the DNS forward is 169.254.1.1). The on-link LAN subnet stays
 # reachable (more specific route). Keep this script identical to ROUTE_SCRIPT in harness/sandbox.mjs.
-route_script='set -e; echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6; echo 1 > /proc/sys/net/ipv6/conf/default/disable_ipv6; for n in 10.0.0.0/8 172.16.0.0/12 192.168.0.0/16 100.64.0.0/10; do ip route add unreachable "$n"; done; exec "$@"'
+route_script='set -e; echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6; echo 1 > /proc/sys/net/ipv6/conf/default/disable_ipv6; for n in 10.0.0.0/8 172.16.0.0/12 192.168.0.0/16 100.64.0.0/10 169.254.169.254/32; do ip route add unreachable "$n"; done; exec "$@"'
 net=(/usr/bin/pasta -4 --config-net --no-map-gw --dns-forward 169.254.1.1 -t none -u none -T none -U none -- /usr/bin/sh -c "$route_script" _)
 
 bw=(
@@ -165,8 +165,13 @@ for f in /etc/ssl /etc/pki /etc/crypto-policies /etc/hosts /etc/nsswitch.conf /e
   /etc/ld.so.cache /etc/ld.so.conf /etc/ld.so.conf.d /etc/os-release; do
   [ -e "$f" ] && bw+=(--ro-bind "$f" "$f")
 done
+# Hide any npmrc in the node install (bwrap cannot create the mount point on a read-only bind, so
+# only when the folder exists).
+node_etc=()
+[ -d "$NODE_DIR/etc" ] && node_etc=(--tmpfs "$NODE_DIR/etc")
 bw+=(
   --ro-bind "$NODE_DIR" "$NODE_DIR"
+  "${node_etc[@]}"
   --ro-bind "$CLAUDE_TARGET" "$CLAUDE_TARGET"
   --symlink "$CLAUDE_TARGET" "$CLAUDE_LINK"
   --bind "$workdir" "$workdir"
@@ -222,6 +227,8 @@ if [ "$name" = sandbox-test ]; then
       case " $allowed " in *" $entry "*) ;; *) unexpected="$unexpected $entry" ;; esac
     done
     if [ -z "$unexpected" ]; then echo "PASS the host home shows only the lab, node and claude folders"; else echo "FAIL the host home shows:$unexpected"; fail=1; fi
+    check "route to the cloud metadata address 169.254.169.254 is blocked" fail ip route get 169.254.169.254
+    check "the DNS address 169.254.1.1 stays routable" ok ip route get 169.254.1.1
     check "the host ~/.ssh is not visible" fail test -e "$host_home/.ssh"
     check "the host ~/.claude is not visible" fail test -e "$host_home/.claude"
     check "/usr is read-only" fail touch /usr/x

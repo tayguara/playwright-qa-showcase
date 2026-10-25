@@ -1,0 +1,131 @@
+{
+  "checklistVersion": "1",
+  "status": "validated",
+  "procedure": "First pass by an AI assistant (not blind: it knew which suite is which), see weak-assertions-preanalysis.md; every proposed hit reviewed and accepted by the author on 2026-10-25. Borderline entries were not counted. The second (blind) LLM rater in the pre-registered plan was not run. See POST-TAG-CHANGES.md.",
+  "validatedAt": "2026-10-25",
+  "suites": {
+    "H": {
+      "tests": 8,
+      "hits": [
+        {
+          "test": "A4: finds a booking by first and last name",
+          "item": "W5",
+          "file": "tests/api/booking.spec.ts",
+          "line": 35,
+          "quote": "expect(ids).toContain(booking.id);",
+          "note": "Search result checked only for containing the created id; the result is not checked to exclude non-matching bookings."
+        }
+      ]
+    },
+    "A": {
+      "tests": 8,
+      "hits": [
+        {
+          "test": "auth: invalid credentials do not return a token",
+          "item": "W2",
+          "file": "experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+          "line": 84,
+          "quote": "expect(body.reason).toBeTruthy();",
+          "note": "toBeTruthy on `reason` although the exact value (\"Bad credentials\") is known."
+        },
+        {
+          "test": "auth: invalid credentials do not return a token",
+          "item": "W4",
+          "file": "experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+          "line": 82,
+          "quote": "const body = await res.json();",
+          "note": "Body used with no schema and no explicit type check on its fields (only toBeUndefined/toBeTruthy)."
+        },
+        {
+          "test": "find a booking by first name and last name",
+          "item": "W4",
+          "file": "experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+          "line": 104,
+          "quote": "const list: { bookingid: number }[] = await res.json();",
+          "note": "Search body typed only by a TS annotation (compile-time); no schema or runtime type check before use."
+        }
+      ]
+    },
+    "B": {
+      "tests": 17,
+      "hits": [
+        {
+          "test": "valid credentials return a token that authorises a write",
+          "item": "W2",
+          "file": "experiments/ai-written-tests/suite-b/tests/auth.spec.ts",
+          "line": 17,
+          "quote": "expect(after.totalprice).toBe(222);",
+          "note": "Read-back checks one field (totalprice) while the full expected object ({...data, totalprice: 222}) is known."
+        },
+        {
+          "test": "valid credentials return a token that authorises a write",
+          "item": "W4",
+          "file": "experiments/ai-written-tests/suite-b/tests/auth.spec.ts",
+          "line": 16,
+          "quote": "const after = await (await request.get(`/booking/${id}`)).json();",
+          "note": "GET body used without a schema or explicit type checks (only one field compared)."
+        },
+        {
+          "test": "an invalid token is rejected and the booking is unchanged",
+          "item": "W2",
+          "file": "experiments/ai-written-tests/suite-b/tests/auth.spec.ts",
+          "line": 43,
+          "quote": "expect(after.firstname).toBe(booking.data.firstname);",
+          "note": "State check compares one field (firstname) while the full expected object (booking.data) is known."
+        },
+        {
+          "test": "an invalid token is rejected and the booking is unchanged",
+          "item": "W4",
+          "file": "experiments/ai-written-tests/suite-b/tests/auth.spec.ts",
+          "line": 42,
+          "quote": "const after = await (await request.get(`/booking/${booking.id}`)).json();",
+          "note": "GET body used without a schema or explicit type checks (only one field compared)."
+        },
+        {
+          "test": "reading an unknown booking returns 404",
+          "item": "W1",
+          "file": "experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+          "line": 20,
+          "quote": "expect(res.status()).toBe(404);",
+          "note": "Only assertion is the status; the 404 body is not checked."
+        },
+        {
+          "test": "creating a booking with an incomplete payload is rejected",
+          "item": "W1",
+          "file": "experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+          "line": 26,
+          "quote": "expect(res.ok()).toBe(false);",
+          "note": "Only assertion is ok() === false; body not checked."
+        },
+        {
+          "test": "creating a booking with an incomplete payload is rejected",
+          "item": "W6",
+          "file": "experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+          "line": 26,
+          "quote": "expect(res.ok()).toBe(false);",
+          "note": "Error test asserts the failure but not that no booking was stored."
+        },
+        {
+          "test": "PUT on an unknown booking is not successful",
+          "item": "W1",
+          "file": "experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+          "line": 90,
+          "quote": "expect(res.ok()).toBe(false);",
+          "note": "Only assertion is ok() === false; body not checked."
+        },
+        {
+          "test": "PUT on an unknown booking is not successful",
+          "item": "W6",
+          "file": "experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+          "line": 90,
+          "quote": "expect(res.ok()).toBe(false);",
+          "note": "Error test asserts the failure but not that booking 999999999 was not created/changed."
+        }
+      ]
+    }
+  },
+  "raters": {
+    "author": "accepted all proposed hits, borderline not counted",
+    "llm": "not run"
+  }
+}

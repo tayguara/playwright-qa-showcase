@@ -1,0 +1,17 @@
+{
+  "name": "booking-api-tests",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "scripts": {},
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@playwright/test": "1.63.0",
+    "@types/node": "22.20.4",
+    "eslint": "10.11.0",
+    "eslint-plugin-playwright": "2.12.0",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.71.0",
+    "zod": "4.6.5"
+  }
+}

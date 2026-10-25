@@ -6,3 +6,7 @@ lab@lab.invalid
 password: 'nope'
 password: 'wrong'
 password":"nope"
+# Reviewed after the agent runs (post-tag): Anthropic's public co-author address that Claude Code's own
+# tool prompts contain, and the deliberately wrong password in suite B's negative auth test.
+noreply@anthropic.com
+password: 'wrong-password'

@@ -1,0 +1,196 @@
+[
+  {
+    "filePath": "<repo>/experiments/ai-written-tests/suite-a/playwright.config.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "<repo>/experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+    "messages": [
+      {
+        "ruleId": "@typescript-eslint/no-unsafe-assignment",
+        "severity": 2,
+        "message": "Unsafe assignment of an `any` value.",
+        "line": 32,
+        "column": 9,
+        "messageId": "anyAssignment",
+        "endLine": 32,
+        "endColumn": 32
+      },
+      {
+        "ruleId": "@typescript-eslint/no-unsafe-member-access",
+        "severity": 2,
+        "message": "Unsafe member access .token on an `any` value.",
+        "line": 33,
+        "column": 15,
+        "messageId": "unsafeMemberExpression",
+        "endLine": 33,
+        "endColumn": 20
+      },
+      {
+        "ruleId": "@typescript-eslint/no-unsafe-return",
+        "severity": 2,
+        "message": "Unsafe return of a value of type `any`.",
+        "line": 34,
+        "column": 3,
+        "messageId": "unsafeReturn",
+        "endLine": 34,
+        "endColumn": 21
+      },
+      {
+        "ruleId": "@typescript-eslint/no-unsafe-member-access",
+        "severity": 2,
+        "message": "Unsafe member access .token on an `any` value.",
+        "line": 34,
+        "column": 15,
+        "messageId": "unsafeMemberExpression",
+        "endLine": 34,
+        "endColumn": 20
+      },
+      {
+        "ruleId": "@typescript-eslint/no-unsafe-assignment",
+        "severity": 2,
+        "message": "Unsafe assignment of an `any` value.",
+        "line": 40,
+        "column": 9,
+        "messageId": "anyAssignment",
+        "endLine": 40,
+        "endColumn": 32
+      },
+      {
+        "ruleId": "@typescript-eslint/no-unsafe-member-access",
+        "severity": 2,
+        "message": "Unsafe member access .bookingid on an `any` value.",
+        "line": 41,
+        "column": 22,
+        "messageId": "unsafeMemberExpression",
+        "endLine": 41,
+        "endColumn": 31
+      },
+      {
+        "ruleId": "@typescript-eslint/no-unsafe-member-access",
+        "severity": 2,
+        "message": "Unsafe member access .bookingid on an `any` value.",
+        "line": 42,
+        "column": 21,
+        "messageId": "unsafeMemberExpression",
+        "endLine": 42,
+        "endColumn": 30
+      },
+      {
+        "ruleId": "@typescript-eslint/no-unsafe-assignment",
+        "severity": 2,
+        "message": "Unsafe assignment of an `any` value.",
+        "line": 42,
+        "column": 48,
+        "messageId": "anyAssignment",
+        "endLine": 42,
+        "endColumn": 52
+      },
+      {
+        "ruleId": "@typescript-eslint/no-unsafe-member-access",
+        "severity": 2,
+        "message": "Unsafe member access .token on an `any` value.",
+        "line": 75,
+        "column": 38,
+        "messageId": "unsafeMemberExpression",
+        "endLine": 75,
+        "endColumn": 43
+      },
+      {
+        "ruleId": "@typescript-eslint/no-unsafe-assignment",
+        "severity": 2,
+        "message": "Unsafe assignment of an `any` value.",
+        "line": 82,
+        "column": 11,
+        "messageId": "anyAssignment",
+        "endLine": 82,
+        "endColumn": 34
+      },
+      {
+        "ruleId": "@typescript-eslint/no-unsafe-member-access",
+        "severity": 2,
+        "message": "Unsafe member access .token on an `any` value.",
+        "line": 83,
+        "column": 17,
+        "messageId": "unsafeMemberExpression",
+        "endLine": 83,
+        "endColumn": 22
+      },
+      {
+        "ruleId": "@typescript-eslint/no-unsafe-member-access",
+        "severity": 2,
+        "message": "Unsafe member access .reason on an `any` value.",
+        "line": 84,
+        "column": 17,
+        "messageId": "unsafeMemberExpression",
+        "endLine": 84,
+        "endColumn": 23
+      },
+      {
+        "ruleId": "@typescript-eslint/no-unsafe-assignment",
+        "severity": 2,
+        "message": "Unsafe object destructuring of a property with an `any` value.",
+        "line": 88,
+        "column": 23,
+        "messageId": "unsafeObjectPattern",
+        "endLine": 88,
+        "endColumn": 27
+      },
+      {
+        "ruleId": "@typescript-eslint/no-unsafe-member-access",
+        "severity": 2,
+        "message": "Unsafe member access .booking on an `any` value.",
+        "line": 89,
+        "column": 17,
+        "messageId": "unsafeMemberExpression",
+        "endLine": 89,
+        "endColumn": 24
+      },
+      {
+        "ruleId": "@typescript-eslint/no-unsafe-assignment",
+        "severity": 2,
+        "message": "Unsafe assignment of an `any` value.",
+        "line": 93,
+        "column": 11,
+        "messageId": "anyAssignment",
+        "endLine": 93,
+        "endColumn": 33
+      },
+      {
+        "ruleId": "@typescript-eslint/no-unsafe-assignment",
+        "severity": 2,
+        "message": "Unsafe assignment of an `any` value.",
+        "line": 104,
+        "column": 11,
+        "messageId": "anyAssignment",
+        "endLine": 104,
+        "endColumn": 59
+      },
+      {
+        "ruleId": "@typescript-eslint/no-unsafe-assignment",
+        "severity": 2,
+        "message": "Unsafe assignment of an `any` value.",
+        "line": 125,
+        "column": 11,
+        "messageId": "anyAssignment",
+        "endLine": 125,
+        "endColumn": 67
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 17,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "import { test, expect, APIRequestContext } from '@playwright/test';\nimport { z } from 'zod';\n\nconst bookingSchema = z.object({\n  firstname: z.string(),\n  lastname: z.string(),\n  totalprice: z.number(),\n  depositpaid: z.boolean(),\n  bookingdates: z.object({ checkin: z.string(), checkout: z.string() }),\n  additionalneeds: z.string().optional(),\n});\n\nconst uniq = () => `${Date.now().toString(36)}${Math.random().toString(36).slice(2, 8)}`;\n\nfunction newBooking(overrides: Record<string, unknown> = {}) {\n  return {\n    firstname: `F${uniq()}`,\n    lastname: `L${uniq()}`,\n    totalprice: 123,\n    depositpaid: true,\n    bookingdates: { checkin: '2026-01-01', checkout: '2026-01-10' },\n    additionalneeds: 'Breakfast',\n    ...overrides,\n  };\n}\n\nasync function getToken(request: APIRequestContext): Promise<string> {\n  const res = await request.post('/auth', {\n    data: { username: 'admin', password: 'password123' },\n  });\n  expect(res.status()).toBe(200);\n  const body = await res.json();\n  expect(body.token).toBeTruthy();\n  return body.token;\n}\n\nasync function createBooking(request: APIRequestContext, data = newBooking()) {\n  const res = await request.post('/booking', { data });\n  expect(res.status()).toBe(200);\n  const body = await res.json();\n  expect(typeof body.bookingid).toBe('number');\n  return { id: body.bookingid as number, data, body };\n}\n\ntest.describe('Restful Booker', () => {\n  let token: string;\n  const created: number[] = [];\n\n  test.beforeAll(async ({ playwright, baseURL }) => {\n    const ctx = await playwright.request.newContext({ baseURL });\n    token = await getToken(ctx);\n    await ctx.dispose();\n  });\n\n  test.afterAll(async ({ playwright, baseURL }) => {\n    const ctx = await playwright.request.newContext({ baseURL });\n    for (const id of created) {\n      await ctx.delete(`/booking/${id}`, { headers: { Cookie: `token=${token}` } });\n    }\n    await ctx.dispose();\n  });\n\n  const make = async (request: APIRequestContext, data = newBooking()) => {\n    const b = await createBooking(request, data);\n    created.push(b.id);\n    return b;\n  };\n  const auth = () => ({ Cookie: `token=${token}` });\n\n  test('auth: valid credentials return a token', async ({ request }) => {\n    const res = await request.post('/auth', {\n      data: { username: 'admin', password: 'password123' },\n    });\n    expect(res.status()).toBe(200);\n    expect(typeof (await res.json()).token).toBe('string');\n  });\n\n  test('auth: invalid credentials do not return a token', async ({ request }) => {\n    const res = await request.post('/auth', {\n      data: { username: 'admin', password: 'wrong' },\n    });\n    const body = await res.json();\n    expect(body.token).toBeUndefined();\n    expect(body.reason).toBeTruthy();\n  });\n\n  test('create a booking and read it back', async ({ request }) => {\n    const { id, data, body } = await make(request);\n    expect(body.booking).toEqual(data);\n\n    const res = await request.get(`/booking/${id}`);\n    expect(res.status()).toBe(200);\n    const got = await res.json();\n    bookingSchema.parse(got);\n    expect(got).toEqual(data);\n  });\n\n  test('find a booking by first name and last name', async ({ request }) => {\n    const { id, data } = await make(request);\n    const res = await request.get('/booking', {\n      params: { firstname: data.firstname, lastname: data.lastname },\n    });\n    expect(res.status()).toBe(200);\n    const list: { bookingid: number }[] = await res.json();\n    expect(list.map((b) => b.bookingid)).toContain(id);\n\n    const none = await request.get('/booking', {\n      params: { firstname: data.firstname, lastname: `nobody${uniq()}` },\n    });\n    expect(await none.json()).toEqual([]);\n  });\n\n  test('PUT fully replaces a booking', async ({ request }) => {\n    const { id } = await make(request);\n    const replacement = newBooking({\n      totalprice: 999,\n      depositpaid: false,\n      additionalneeds: 'Lunch',\n      bookingdates: { checkin: '2026-02-01', checkout: '2026-02-05' },\n    });\n    const res = await request.put(`/booking/${id}`, { data: replacement, headers: auth() });\n    expect(res.status()).toBe(200);\n    expect(await res.json()).toEqual(replacement);\n\n    const got = await (await request.get(`/booking/${id}`)).json();\n    expect(got).toEqual(replacement);\n  });\n\n  test('PATCH partially updates a booking', async ({ request }) => {\n    const { id, data } = await make(request);\n    const res = await request.patch(`/booking/${id}`, {\n      data: { firstname: 'Patched', totalprice: 555 },\n      headers: auth(),\n    });\n    expect(res.status()).toBe(200);\n    const expected = { ...data, firstname: 'Patched', totalprice: 555 };\n    expect(await res.json()).toEqual(expected);\n    expect(await (await request.get(`/booking/${id}`)).json()).toEqual(expected);\n  });\n\n  test('PUT without a token is rejected with 403 and changes nothing', async ({ request }) => {\n    const { id, data } = await make(request);\n    const res = await request.put(`/booking/${id}`, { data: newBooking({ firstname: 'Hacker' }) });\n    expect(res.status()).toBe(403);\n    expect(await (await request.get(`/booking/${id}`)).json()).toEqual(data);\n  });\n\n  test('DELETE answers 201 and the booking is gone', async ({ request }) => {\n    const { id } = await make(request);\n    const res = await request.delete(`/booking/${id}`, { headers: auth() });\n    expect(res.status()).toBe(201);\n    expect((await request.get(`/booking/${id}`)).status()).toBe(404);\n  });\n});\n",
+    "usedDeprecatedRules": []
+  }
+]

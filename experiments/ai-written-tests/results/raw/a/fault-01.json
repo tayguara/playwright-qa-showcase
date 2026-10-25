@@ -1,0 +1,694 @@
+{
+  "config": {
+    "argv": [
+      "<home>/.nvm/versions/node/v22.21.0/bin/node",
+      "<repo>/node_modules/@playwright/test/cli.js",
+      "test",
+      "--workers=1",
+      "--reporter=json",
+      "--output=/tmp/pw-output"
+    ],
+    "configFile": "<repo>/experiments/ai-written-tests/suite-a/playwright.config.ts",
+    "rootDir": "<repo>/experiments/ai-written-tests/suite-a/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/tmp/pw-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "<repo>/experiments/ai-written-tests/suite-a/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "booker.spec.ts",
+      "file": "booker.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Restful Booker",
+          "file": "booker.spec.ts",
+          "line": 45,
+          "column": 6,
+          "specs": [
+            {
+              "title": "auth: valid credentials return a token",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 46,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T18:55:07.686Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "58dedee7808c98108463-37afd63ced4361f1ad0b",
+              "file": "booker.spec.ts",
+              "line": 70,
+              "column": 7
+            },
+            {
+              "title": "auth: invalid credentials do not return a token",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 33,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T18:55:07.949Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "58dedee7808c98108463-bddea2bab1ad06555250",
+              "file": "booker.spec.ts",
+              "line": 78,
+              "column": 7
+            },
+            {
+              "title": "create a booking and read it back",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 63,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[33m@@ -5,7 +5,7 @@\u001b[39m\n\u001b[2m      \"checkout\": \"2026-01-10\",\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"depositpaid\": true,\u001b[22m\n\u001b[2m    \"firstname\": \"Fmvih25uaqh7pe1\",\u001b[22m\n\u001b[2m    \"lastname\": \"Lmvih25uah0z0i4\",\u001b[22m\n\u001b[32m-   \"totalprice\": 123,\u001b[39m\n\u001b[31m+   \"totalprice\": 124,\u001b[39m\n\u001b[2m  }\u001b[22m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[33m@@ -5,7 +5,7 @@\u001b[39m\n\u001b[2m      \"checkout\": \"2026-01-10\",\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"depositpaid\": true,\u001b[22m\n\u001b[2m    \"firstname\": \"Fmvih25uaqh7pe1\",\u001b[22m\n\u001b[2m    \"lastname\": \"Lmvih25uah0z0i4\",\u001b[22m\n\u001b[32m-   \"totalprice\": 123,\u001b[39m\n\u001b[31m+   \"totalprice\": 124,\u001b[39m\n\u001b[2m  }\u001b[22m\n    at <repo>/experiments/ai-written-tests/suite-a/tests/booker.spec.ts:95:17",
+                        "location": {
+                          "file": "<repo>/experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+                          "column": 17,
+                          "line": 95
+                        },
+                        "snippet": "  93 |     const got = await res.json();\n  94 |     bookingSchema.parse(got);\n> 95 |     expect(got).toEqual(data);\n     |                 ^\n  96 |   });\n  97 |\n  98 |   test('find a booking by first name and last name', async ({ request }) => {"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "<repo>/experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+                            "column": 17,
+                            "line": 95
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[33m@@ -5,7 +5,7 @@\u001b[39m\n\u001b[2m      \"checkout\": \"2026-01-10\",\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"depositpaid\": true,\u001b[22m\n\u001b[2m    \"firstname\": \"Fmvih25uaqh7pe1\",\u001b[22m\n\u001b[2m    \"lastname\": \"Lmvih25uah0z0i4\",\u001b[22m\n\u001b[32m-   \"totalprice\": 123,\u001b[39m\n\u001b[31m+   \"totalprice\": 124,\u001b[39m\n\u001b[2m  }\u001b[22m\n\n  93 |     const got = await res.json();\n  94 |     bookingSchema.parse(got);\n> 95 |     expect(got).toEqual(data);\n     |                 ^\n  96 |   });\n  97 |\n  98 |   test('find a booking by first name and last name', async ({ request }) => {\n    at <repo>/experiments/ai-written-tests/suite-a/tests/booker.spec.ts:95:17"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T18:55:08.025Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/tmp/pw-output/booker-Restful-Booker-create-a-booking-and-read-it-back/error-context.md"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/tmp/pw-output/booker-Restful-Booker-create-a-booking-and-read-it-back/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+                        "column": 17,
+                        "line": 95
+                      }
+                    },
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 78,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[33m@@ -5,7 +5,7 @@\u001b[39m\n\u001b[2m      \"checkout\": \"2026-01-10\",\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"depositpaid\": true,\u001b[22m\n\u001b[2m    \"firstname\": \"Fmvih26zdmuer66\",\u001b[22m\n\u001b[2m    \"lastname\": \"Lmvih26zdn5x6rg\",\u001b[22m\n\u001b[32m-   \"totalprice\": 123,\u001b[39m\n\u001b[31m+   \"totalprice\": 124,\u001b[39m\n\u001b[2m  }\u001b[22m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[33m@@ -5,7 +5,7 @@\u001b[39m\n\u001b[2m      \"checkout\": \"2026-01-10\",\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"depositpaid\": true,\u001b[22m\n\u001b[2m    \"firstname\": \"Fmvih26zdmuer66\",\u001b[22m\n\u001b[2m    \"lastname\": \"Lmvih26zdn5x6rg\",\u001b[22m\n\u001b[32m-   \"totalprice\": 123,\u001b[39m\n\u001b[31m+   \"totalprice\": 124,\u001b[39m\n\u001b[2m  }\u001b[22m\n    at <repo>/experiments/ai-written-tests/suite-a/tests/booker.spec.ts:95:17",
+                        "location": {
+                          "file": "<repo>/experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+                          "column": 17,
+                          "line": 95
+                        },
+                        "snippet": "  93 |     const got = await res.json();\n  94 |     bookingSchema.parse(got);\n> 95 |     expect(got).toEqual(data);\n     |                 ^\n  96 |   });\n  97 |\n  98 |   test('find a booking by first name and last name', async ({ request }) => {"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "<repo>/experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+                            "column": 17,
+                            "line": 95
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[33m@@ -5,7 +5,7 @@\u001b[39m\n\u001b[2m      \"checkout\": \"2026-01-10\",\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"depositpaid\": true,\u001b[22m\n\u001b[2m    \"firstname\": \"Fmvih26zdmuer66\",\u001b[22m\n\u001b[2m    \"lastname\": \"Lmvih26zdn5x6rg\",\u001b[22m\n\u001b[32m-   \"totalprice\": 123,\u001b[39m\n\u001b[31m+   \"totalprice\": 124,\u001b[39m\n\u001b[2m  }\u001b[22m\n\n  93 |     const got = await res.json();\n  94 |     bookingSchema.parse(got);\n> 95 |     expect(got).toEqual(data);\n     |                 ^\n  96 |   });\n  97 |\n  98 |   test('find a booking by first name and last name', async ({ request }) => {\n    at <repo>/experiments/ai-written-tests/suite-a/tests/booker.spec.ts:95:17"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2026-10-21T18:55:09.260Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/tmp/pw-output/booker-Restful-Booker-create-a-booking-and-read-it-back-retry1/error-context.md"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/tmp/pw-output/booker-Restful-Booker-create-a-booking-and-read-it-back-retry1/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+                        "column": 17,
+                        "line": 95
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "58dedee7808c98108463-0c4710038e158601ca50",
+              "file": "booker.spec.ts",
+              "line": 87,
+              "column": 7
+            },
+            {
+              "title": "find a booking by first name and last name",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 49,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T18:55:10.805Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "58dedee7808c98108463-8085f66a340d2f30d945",
+              "file": "booker.spec.ts",
+              "line": 98,
+              "column": 7
+            },
+            {
+              "title": "PUT fully replaces a booking",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 58,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[33m@@ -5,7 +5,7 @@\u001b[39m\n\u001b[2m      \"checkout\": \"2026-02-05\",\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"depositpaid\": false,\u001b[22m\n\u001b[2m    \"firstname\": \"Fmvih2880l1sx9d\",\u001b[22m\n\u001b[2m    \"lastname\": \"Lmvih28803ef60o\",\u001b[22m\n\u001b[32m-   \"totalprice\": 999,\u001b[39m\n\u001b[31m+   \"totalprice\": 1000,\u001b[39m\n\u001b[2m  }\u001b[22m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[33m@@ -5,7 +5,7 @@\u001b[39m\n\u001b[2m      \"checkout\": \"2026-02-05\",\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"depositpaid\": false,\u001b[22m\n\u001b[2m    \"firstname\": \"Fmvih2880l1sx9d\",\u001b[22m\n\u001b[2m    \"lastname\": \"Lmvih28803ef60o\",\u001b[22m\n\u001b[32m-   \"totalprice\": 999,\u001b[39m\n\u001b[31m+   \"totalprice\": 1000,\u001b[39m\n\u001b[2m  }\u001b[22m\n    at <repo>/experiments/ai-written-tests/suite-a/tests/booker.spec.ts:126:17",
+                        "location": {
+                          "file": "<repo>/experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+                          "column": 17,
+                          "line": 126
+                        },
+                        "snippet": "  124 |\n  125 |     const got = await (await request.get(`/booking/${id}`)).json();\n> 126 |     expect(got).toEqual(replacement);\n      |                 ^\n  127 |   });\n  128 |\n  129 |   test('PATCH partially updates a booking', async ({ request }) => {"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "<repo>/experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+                            "column": 17,
+                            "line": 126
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[33m@@ -5,7 +5,7 @@\u001b[39m\n\u001b[2m      \"checkout\": \"2026-02-05\",\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"depositpaid\": false,\u001b[22m\n\u001b[2m    \"firstname\": \"Fmvih2880l1sx9d\",\u001b[22m\n\u001b[2m    \"lastname\": \"Lmvih28803ef60o\",\u001b[22m\n\u001b[32m-   \"totalprice\": 999,\u001b[39m\n\u001b[31m+   \"totalprice\": 1000,\u001b[39m\n\u001b[2m  }\u001b[22m\n\n  124 |\n  125 |     const got = await (await request.get(`/booking/${id}`)).json();\n> 126 |     expect(got).toEqual(replacement);\n      |                 ^\n  127 |   });\n  128 |\n  129 |   test('PATCH partially updates a booking', async ({ request }) => {\n    at <repo>/experiments/ai-written-tests/suite-a/tests/booker.spec.ts:126:17"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T18:55:11.096Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/tmp/pw-output/booker-Restful-Booker-PUT-fully-replaces-a-booking/error-context.md"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/tmp/pw-output/booker-Restful-Booker-PUT-fully-replaces-a-booking/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+                        "column": 17,
+                        "line": 126
+                      }
+                    },
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 59,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[33m@@ -5,7 +5,7 @@\u001b[39m\n\u001b[2m      \"checkout\": \"2026-02-05\",\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"depositpaid\": false,\u001b[22m\n\u001b[2m    \"firstname\": \"Fmvih297tl6n4x6\",\u001b[22m\n\u001b[2m    \"lastname\": \"Lmvih297ty8nd2r\",\u001b[22m\n\u001b[32m-   \"totalprice\": 999,\u001b[39m\n\u001b[31m+   \"totalprice\": 1000,\u001b[39m\n\u001b[2m  }\u001b[22m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[33m@@ -5,7 +5,7 @@\u001b[39m\n\u001b[2m      \"checkout\": \"2026-02-05\",\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"depositpaid\": false,\u001b[22m\n\u001b[2m    \"firstname\": \"Fmvih297tl6n4x6\",\u001b[22m\n\u001b[2m    \"lastname\": \"Lmvih297ty8nd2r\",\u001b[22m\n\u001b[32m-   \"totalprice\": 999,\u001b[39m\n\u001b[31m+   \"totalprice\": 1000,\u001b[39m\n\u001b[2m  }\u001b[22m\n    at <repo>/experiments/ai-written-tests/suite-a/tests/booker.spec.ts:126:17",
+                        "location": {
+                          "file": "<repo>/experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+                          "column": 17,
+                          "line": 126
+                        },
+                        "snippet": "  124 |\n  125 |     const got = await (await request.get(`/booking/${id}`)).json();\n> 126 |     expect(got).toEqual(replacement);\n      |                 ^\n  127 |   });\n  128 |\n  129 |   test('PATCH partially updates a booking', async ({ request }) => {"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "<repo>/experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+                            "column": 17,
+                            "line": 126
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[33m@@ -5,7 +5,7 @@\u001b[39m\n\u001b[2m      \"checkout\": \"2026-02-05\",\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"depositpaid\": false,\u001b[22m\n\u001b[2m    \"firstname\": \"Fmvih297tl6n4x6\",\u001b[22m\n\u001b[2m    \"lastname\": \"Lmvih297ty8nd2r\",\u001b[22m\n\u001b[32m-   \"totalprice\": 999,\u001b[39m\n\u001b[31m+   \"totalprice\": 1000,\u001b[39m\n\u001b[2m  }\u001b[22m\n\n  124 |\n  125 |     const got = await (await request.get(`/booking/${id}`)).json();\n> 126 |     expect(got).toEqual(replacement);\n      |                 ^\n  127 |   });\n  128 |\n  129 |   test('PATCH partially updates a booking', async ({ request }) => {\n    at <repo>/experiments/ai-written-tests/suite-a/tests/booker.spec.ts:126:17"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2026-10-21T18:55:12.229Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/tmp/pw-output/booker-Restful-Booker-PUT-fully-replaces-a-booking-retry1/error-context.md"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/tmp/pw-output/booker-Restful-Booker-PUT-fully-replaces-a-booking-retry1/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+                        "column": 17,
+                        "line": 126
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "58dedee7808c98108463-261ea20f4885fb80e53f",
+              "file": "booker.spec.ts",
+              "line": 113,
+              "column": 7
+            },
+            {
+              "title": "PATCH partially updates a booking",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 45,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[33m@@ -5,7 +5,7 @@\u001b[39m\n\u001b[2m      \"checkout\": \"2026-01-10\",\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"depositpaid\": true,\u001b[22m\n\u001b[2m    \"firstname\": \"Patched\",\u001b[22m\n\u001b[2m    \"lastname\": \"Lmvih2abirr4xl8\",\u001b[22m\n\u001b[32m-   \"totalprice\": 555,\u001b[39m\n\u001b[31m+   \"totalprice\": 556,\u001b[39m\n\u001b[2m  }\u001b[22m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[33m@@ -5,7 +5,7 @@\u001b[39m\n\u001b[2m      \"checkout\": \"2026-01-10\",\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"depositpaid\": true,\u001b[22m\n\u001b[2m    \"firstname\": \"Patched\",\u001b[22m\n\u001b[2m    \"lastname\": \"Lmvih2abirr4xl8\",\u001b[22m\n\u001b[32m-   \"totalprice\": 555,\u001b[39m\n\u001b[31m+   \"totalprice\": 556,\u001b[39m\n\u001b[2m  }\u001b[22m\n    at <repo>/experiments/ai-written-tests/suite-a/tests/booker.spec.ts:138:64",
+                        "location": {
+                          "file": "<repo>/experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+                          "column": 64,
+                          "line": 138
+                        },
+                        "snippet": "  136 |     const expected = { ...data, firstname: 'Patched', totalprice: 555 };\n  137 |     expect(await res.json()).toEqual(expected);\n> 138 |     expect(await (await request.get(`/booking/${id}`)).json()).toEqual(expected);\n      |                                                                ^\n  139 |   });\n  140 |\n  141 |   test('PUT without a token is rejected with 403 and changes nothing', async ({ request }) => {"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "<repo>/experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+                            "column": 64,
+                            "line": 138
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[33m@@ -5,7 +5,7 @@\u001b[39m\n\u001b[2m      \"checkout\": \"2026-01-10\",\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"depositpaid\": true,\u001b[22m\n\u001b[2m    \"firstname\": \"Patched\",\u001b[22m\n\u001b[2m    \"lastname\": \"Lmvih2abirr4xl8\",\u001b[22m\n\u001b[32m-   \"totalprice\": 555,\u001b[39m\n\u001b[31m+   \"totalprice\": 556,\u001b[39m\n\u001b[2m  }\u001b[22m\n\n  136 |     const expected = { ...data, firstname: 'Patched', totalprice: 555 };\n  137 |     expect(await res.json()).toEqual(expected);\n> 138 |     expect(await (await request.get(`/booking/${id}`)).json()).toEqual(expected);\n      |                                                                ^\n  139 |   });\n  140 |\n  141 |   test('PUT without a token is rejected with 403 and changes nothing', async ({ request }) => {\n    at <repo>/experiments/ai-written-tests/suite-a/tests/booker.spec.ts:138:64"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T18:55:13.669Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/tmp/pw-output/booker-Restful-Booker-PATCH-partially-updates-a-booking/error-context.md"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/tmp/pw-output/booker-Restful-Booker-PATCH-partially-updates-a-booking/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+                        "column": 64,
+                        "line": 138
+                      }
+                    },
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 60,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[33m@@ -5,7 +5,7 @@\u001b[39m\n\u001b[2m      \"checkout\": \"2026-01-10\",\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"depositpaid\": true,\u001b[22m\n\u001b[2m    \"firstname\": \"Patched\",\u001b[22m\n\u001b[2m    \"lastname\": \"Lmvih2belts34c4\",\u001b[22m\n\u001b[32m-   \"totalprice\": 555,\u001b[39m\n\u001b[31m+   \"totalprice\": 556,\u001b[39m\n\u001b[2m  }\u001b[22m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[33m@@ -5,7 +5,7 @@\u001b[39m\n\u001b[2m      \"checkout\": \"2026-01-10\",\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"depositpaid\": true,\u001b[22m\n\u001b[2m    \"firstname\": \"Patched\",\u001b[22m\n\u001b[2m    \"lastname\": \"Lmvih2belts34c4\",\u001b[22m\n\u001b[32m-   \"totalprice\": 555,\u001b[39m\n\u001b[31m+   \"totalprice\": 556,\u001b[39m\n\u001b[2m  }\u001b[22m\n    at <repo>/experiments/ai-written-tests/suite-a/tests/booker.spec.ts:138:64",
+                        "location": {
+                          "file": "<repo>/experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+                          "column": 64,
+                          "line": 138
+                        },
+                        "snippet": "  136 |     const expected = { ...data, firstname: 'Patched', totalprice: 555 };\n  137 |     expect(await res.json()).toEqual(expected);\n> 138 |     expect(await (await request.get(`/booking/${id}`)).json()).toEqual(expected);\n      |                                                                ^\n  139 |   });\n  140 |\n  141 |   test('PUT without a token is rejected with 403 and changes nothing', async ({ request }) => {"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "<repo>/experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+                            "column": 64,
+                            "line": 138
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[33m@@ -5,7 +5,7 @@\u001b[39m\n\u001b[2m      \"checkout\": \"2026-01-10\",\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"depositpaid\": true,\u001b[22m\n\u001b[2m    \"firstname\": \"Patched\",\u001b[22m\n\u001b[2m    \"lastname\": \"Lmvih2belts34c4\",\u001b[22m\n\u001b[32m-   \"totalprice\": 555,\u001b[39m\n\u001b[31m+   \"totalprice\": 556,\u001b[39m\n\u001b[2m  }\u001b[22m\n\n  136 |     const expected = { ...data, firstname: 'Patched', totalprice: 555 };\n  137 |     expect(await res.json()).toEqual(expected);\n> 138 |     expect(await (await request.get(`/booking/${id}`)).json()).toEqual(expected);\n      |                                                                ^\n  139 |   });\n  140 |\n  141 |   test('PUT without a token is rejected with 403 and changes nothing', async ({ request }) => {\n    at <repo>/experiments/ai-written-tests/suite-a/tests/booker.spec.ts:138:64"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2026-10-21T18:55:15.068Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/tmp/pw-output/booker-Restful-Booker-PATCH-partially-updates-a-booking-retry1/error-context.md"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/tmp/pw-output/booker-Restful-Booker-PATCH-partially-updates-a-booking-retry1/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+                        "column": 64,
+                        "line": 138
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "58dedee7808c98108463-8bc66409ee45017d6079",
+              "file": "booker.spec.ts",
+              "line": 129,
+              "column": 7
+            },
+            {
+              "title": "PUT without a token is rejected with 403 and changes nothing",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 52,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[33m@@ -5,7 +5,7 @@\u001b[39m\n\u001b[2m      \"checkout\": \"2026-01-10\",\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"depositpaid\": true,\u001b[22m\n\u001b[2m    \"firstname\": \"Fmvih2cgih1cun1\",\u001b[22m\n\u001b[2m    \"lastname\": \"Lmvih2cgi5riwck\",\u001b[22m\n\u001b[32m-   \"totalprice\": 123,\u001b[39m\n\u001b[31m+   \"totalprice\": 124,\u001b[39m\n\u001b[2m  }\u001b[22m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[33m@@ -5,7 +5,7 @@\u001b[39m\n\u001b[2m      \"checkout\": \"2026-01-10\",\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"depositpaid\": true,\u001b[22m\n\u001b[2m    \"firstname\": \"Fmvih2cgih1cun1\",\u001b[22m\n\u001b[2m    \"lastname\": \"Lmvih2cgi5riwck\",\u001b[22m\n\u001b[32m-   \"totalprice\": 123,\u001b[39m\n\u001b[31m+   \"totalprice\": 124,\u001b[39m\n\u001b[2m  }\u001b[22m\n    at <repo>/experiments/ai-written-tests/suite-a/tests/booker.spec.ts:145:64",
+                        "location": {
+                          "file": "<repo>/experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+                          "column": 64,
+                          "line": 145
+                        },
+                        "snippet": "  143 |     const res = await request.put(`/booking/${id}`, { data: newBooking({ firstname: 'Hacker' }) });\n  144 |     expect(res.status()).toBe(403);\n> 145 |     expect(await (await request.get(`/booking/${id}`)).json()).toEqual(data);\n      |                                                                ^\n  146 |   });\n  147 |\n  148 |   test('DELETE answers 201 and the booking is gone', async ({ request }) => {"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "<repo>/experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+                            "column": 64,
+                            "line": 145
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[33m@@ -5,7 +5,7 @@\u001b[39m\n\u001b[2m      \"checkout\": \"2026-01-10\",\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"depositpaid\": true,\u001b[22m\n\u001b[2m    \"firstname\": \"Fmvih2cgih1cun1\",\u001b[22m\n\u001b[2m    \"lastname\": \"Lmvih2cgi5riwck\",\u001b[22m\n\u001b[32m-   \"totalprice\": 123,\u001b[39m\n\u001b[31m+   \"totalprice\": 124,\u001b[39m\n\u001b[2m  }\u001b[22m\n\n  143 |     const res = await request.put(`/booking/${id}`, { data: newBooking({ firstname: 'Hacker' }) });\n  144 |     expect(res.status()).toBe(403);\n> 145 |     expect(await (await request.get(`/booking/${id}`)).json()).toEqual(data);\n      |                                                                ^\n  146 |   });\n  147 |\n  148 |   test('DELETE answers 201 and the booking is gone', async ({ request }) => {\n    at <repo>/experiments/ai-written-tests/suite-a/tests/booker.spec.ts:145:64"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T18:55:16.425Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/tmp/pw-output/booker-Restful-Booker-PUT--669d1-ith-403-and-changes-nothing/error-context.md"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/tmp/pw-output/booker-Restful-Booker-PUT--669d1-ith-403-and-changes-nothing/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+                        "column": 64,
+                        "line": 145
+                      }
+                    },
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 54,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[33m@@ -5,7 +5,7 @@\u001b[39m\n\u001b[2m      \"checkout\": \"2026-01-10\",\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"depositpaid\": true,\u001b[22m\n\u001b[2m    \"firstname\": \"Fmvih2djl5durny\",\u001b[22m\n\u001b[2m    \"lastname\": \"Lmvih2djlcm55mg\",\u001b[22m\n\u001b[32m-   \"totalprice\": 123,\u001b[39m\n\u001b[31m+   \"totalprice\": 124,\u001b[39m\n\u001b[2m  }\u001b[22m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[33m@@ -5,7 +5,7 @@\u001b[39m\n\u001b[2m      \"checkout\": \"2026-01-10\",\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"depositpaid\": true,\u001b[22m\n\u001b[2m    \"firstname\": \"Fmvih2djl5durny\",\u001b[22m\n\u001b[2m    \"lastname\": \"Lmvih2djlcm55mg\",\u001b[22m\n\u001b[32m-   \"totalprice\": 123,\u001b[39m\n\u001b[31m+   \"totalprice\": 124,\u001b[39m\n\u001b[2m  }\u001b[22m\n    at <repo>/experiments/ai-written-tests/suite-a/tests/booker.spec.ts:145:64",
+                        "location": {
+                          "file": "<repo>/experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+                          "column": 64,
+                          "line": 145
+                        },
+                        "snippet": "  143 |     const res = await request.put(`/booking/${id}`, { data: newBooking({ firstname: 'Hacker' }) });\n  144 |     expect(res.status()).toBe(403);\n> 145 |     expect(await (await request.get(`/booking/${id}`)).json()).toEqual(data);\n      |                                                                ^\n  146 |   });\n  147 |\n  148 |   test('DELETE answers 201 and the booking is gone', async ({ request }) => {"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "<repo>/experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+                            "column": 64,
+                            "line": 145
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[33m@@ -5,7 +5,7 @@\u001b[39m\n\u001b[2m      \"checkout\": \"2026-01-10\",\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"depositpaid\": true,\u001b[22m\n\u001b[2m    \"firstname\": \"Fmvih2djl5durny\",\u001b[22m\n\u001b[2m    \"lastname\": \"Lmvih2djlcm55mg\",\u001b[22m\n\u001b[32m-   \"totalprice\": 123,\u001b[39m\n\u001b[31m+   \"totalprice\": 124,\u001b[39m\n\u001b[2m  }\u001b[22m\n\n  143 |     const res = await request.put(`/booking/${id}`, { data: newBooking({ firstname: 'Hacker' }) });\n  144 |     expect(res.status()).toBe(403);\n> 145 |     expect(await (await request.get(`/booking/${id}`)).json()).toEqual(data);\n      |                                                                ^\n  146 |   });\n  147 |\n  148 |   test('DELETE answers 201 and the booking is gone', async ({ request }) => {\n    at <repo>/experiments/ai-written-tests/suite-a/tests/booker.spec.ts:145:64"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2026-10-21T18:55:17.863Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/tmp/pw-output/booker-Restful-Booker-PUT--669d1-ith-403-and-changes-nothing-retry1/error-context.md"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/tmp/pw-output/booker-Restful-Booker-PUT--669d1-ith-403-and-changes-nothing-retry1/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+                        "column": 64,
+                        "line": 145
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "58dedee7808c98108463-18eac80cb1bbd7c6ea16",
+              "file": "booker.spec.ts",
+              "line": 141,
+              "column": 7
+            },
+            {
+              "title": "DELETE answers 201 and the booking is gone",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 60,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T18:55:19.113Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "58dedee7808c98108463-a5177a7b56bde0d7fdb1",
+              "file": "booker.spec.ts",
+              "line": 148,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-21T18:55:06.260Z",
+    "duration": 13238.691,
+    "expected": 4,
+    "skipped": 0,
+    "unexpected": 4,
+    "flaky": 0
+  }
+}

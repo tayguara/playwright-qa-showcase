@@ -1,0 +1,884 @@
+{
+  "checklistVersion": "1",
+  "status": "pending-author-validation",
+  "rater": "assistant-first-pass",
+  "blind": false,
+  "note": "First pass by an AI assistant (not blind: it knew which suite is which). Pending validation by the author. Not a result until validated.",
+  "suites": {
+    "H": {
+      "tests": 8,
+      "testTitles": [
+        "A1: valid credentials return a token",
+        "A2: invalid credentials answer HTTP 200 with a reason instead of a 4xx",
+        "A3: creates a booking and reads back the same data",
+        "A4: finds a booking by first and last name",
+        "A5: PUT replaces the whole booking",
+        "A6: PATCH changes only the given fields",
+        "A7: PUT without a token is rejected with 403 and changes nothing",
+        "A8: DELETE removes the booking (answers 201, not 204)"
+      ],
+      "annotatedTests": {
+        "A2: invalid credentials answer HTTP 200 with a reason instead of a 4xx": "annotated (api-quirk)",
+        "A8: DELETE removes the booking (answers 201, not 204)": "annotated (api-quirk)"
+      },
+      "testsWithHits": 1,
+      "hitsByItem": {
+        "W1": 0,
+        "W2": 0,
+        "W3": 0,
+        "W4": 0,
+        "W5": 1,
+        "W6": 0,
+        "W7": 0,
+        "W8": 0
+      },
+      "totalHits": 1,
+      "hits": [
+        {
+          "test": "A4: finds a booking by first and last name",
+          "item": "W5",
+          "file": "tests/api/booking.spec.ts",
+          "line": 35,
+          "quote": "expect(ids).toContain(booking.id);",
+          "note": "Search result checked only for containing the created id; the result is not checked to exclude non-matching bookings."
+        }
+      ],
+      "borderline": [
+        {
+          "test": "A1: valid credentials return a token",
+          "item": "W3",
+          "file": "tests/api/auth.spec.ts",
+          "line": 7,
+          "quote": "const response = await bookingClient.auth(env.booker.username, env.booker.password);",
+          "note": "POST /auth (a POST) is not followed by a read-back and the token is not used in this test. W3 targets persisted state; whether a login counts as a mutation is for the author."
+        },
+        {
+          "test": "A2: invalid credentials answer HTTP 200 with a reason instead of a 4xx",
+          "item": "W6",
+          "file": "tests/api/auth.spec.ts",
+          "line": 25,
+          "quote": "expect(authFailureSchema.parse(await response.json())).toEqual({ reason: 'Bad credentials' });",
+          "note": "Auth-failure test without a state check, but a failed POST /auth changes no stored state that could be checked. Literal W6 wording applies; likely reject."
+        },
+        {
+          "test": "A3: creates a booking and reads back the same data",
+          "item": "W8",
+          "file": "tests/api/booking.spec.ts",
+          "line": [
+            15,
+            22
+          ],
+          "quote": "try { ... } finally {",
+          "note": "Expects inside try/finally (not try/catch): failures still propagate, nothing is swallowed. Listed only because W8 names try; likely reject."
+        },
+        {
+          "test": "A3: creates a booking and reads back the same data",
+          "item": "W3",
+          "file": "tests/api/booking.spec.ts",
+          "line": 23,
+          "quote": "await bookingClient.delete(created.bookingid, authToken);",
+          "note": "Cleanup DELETE in finally: status not asserted, no read-back. Cleanup, not the subject of the test."
+        },
+        {
+          "test": "A7: PUT without a token is rejected with 403 and changes nothing",
+          "item": "W1",
+          "file": "tests/api/booking.spec.ts",
+          "line": 78,
+          "quote": "expect(response.status()).toBe(403);",
+          "note": "Primary response asserted only by its status (body not checked), but a GET read-back/state check follows. W1 literally applies to the primary response; author to decide whether the read-back takes it out of \"status-only\"."
+        },
+        {
+          "test": "A8: DELETE removes the booking (answers 201, not 204)",
+          "item": "W1",
+          "file": "tests/api/booking.spec.ts",
+          "line": 97,
+          "quote": "expect(deleteResponse.status()).toBe(201);",
+          "note": "Primary response asserted only by its status (body not checked), but a GET read-back/state check follows. W1 literally applies to the primary response; author to decide whether the read-back takes it out of \"status-only\"."
+        },
+        {
+          "test": "A4: finds a booking by first and last name",
+          "item": "W3",
+          "file": "src/fixtures/api.fixtures.ts",
+          "line": 59,
+          "quote": "const createResponse = await bookingClient.create(payload);",
+          "note": "Shared `booking` fixture: setup POST checked by status + schema only, not read back by GET (setup, not the subject of the test)."
+        },
+        {
+          "test": "A5: PUT replaces the whole booking",
+          "item": "W3",
+          "file": "src/fixtures/api.fixtures.ts",
+          "line": 59,
+          "quote": "const createResponse = await bookingClient.create(payload);",
+          "note": "Shared `booking` fixture: setup POST checked by status + schema only, not read back by GET (setup, not the subject of the test)."
+        },
+        {
+          "test": "A6: PATCH changes only the given fields",
+          "item": "W3",
+          "file": "src/fixtures/api.fixtures.ts",
+          "line": 59,
+          "quote": "const createResponse = await bookingClient.create(payload);",
+          "note": "Shared `booking` fixture: setup POST checked by status + schema only, not read back by GET (setup, not the subject of the test)."
+        },
+        {
+          "test": "A7: PUT without a token is rejected with 403 and changes nothing",
+          "item": "W3",
+          "file": "src/fixtures/api.fixtures.ts",
+          "line": 59,
+          "quote": "const createResponse = await bookingClient.create(payload);",
+          "note": "Shared `booking` fixture: setup POST checked by status + schema only, not read back by GET (setup, not the subject of the test)."
+        },
+        {
+          "test": "A8: DELETE removes the booking (answers 201, not 204)",
+          "item": "W3",
+          "file": "src/fixtures/api.fixtures.ts",
+          "line": 59,
+          "quote": "const createResponse = await bookingClient.create(payload);",
+          "note": "Shared `booking` fixture: setup POST checked by status + schema only, not read back by GET (setup, not the subject of the test)."
+        },
+        {
+          "test": "A4: finds a booking by first and last name",
+          "item": "W7",
+          "file": "src/fixtures/api.fixtures.ts",
+          "line": 66,
+          "quote": "expect(TOLERATED_CLEANUP_STATUSES).toContain(cleanup.status());",
+          "note": "Shared `booking` fixture teardown accepts any of [201, 404, 405] for the cleanup DELETE. Alternatives, but the status legitimately depends on whether the test already deleted the booking."
+        },
+        {
+          "test": "A5: PUT replaces the whole booking",
+          "item": "W7",
+          "file": "src/fixtures/api.fixtures.ts",
+          "line": 66,
+          "quote": "expect(TOLERATED_CLEANUP_STATUSES).toContain(cleanup.status());",
+          "note": "Shared `booking` fixture teardown accepts any of [201, 404, 405] for the cleanup DELETE. Alternatives, but the status legitimately depends on whether the test already deleted the booking."
+        },
+        {
+          "test": "A6: PATCH changes only the given fields",
+          "item": "W7",
+          "file": "src/fixtures/api.fixtures.ts",
+          "line": 66,
+          "quote": "expect(TOLERATED_CLEANUP_STATUSES).toContain(cleanup.status());",
+          "note": "Shared `booking` fixture teardown accepts any of [201, 404, 405] for the cleanup DELETE. Alternatives, but the status legitimately depends on whether the test already deleted the booking."
+        },
+        {
+          "test": "A7: PUT without a token is rejected with 403 and changes nothing",
+          "item": "W7",
+          "file": "src/fixtures/api.fixtures.ts",
+          "line": 66,
+          "quote": "expect(TOLERATED_CLEANUP_STATUSES).toContain(cleanup.status());",
+          "note": "Shared `booking` fixture teardown accepts any of [201, 404, 405] for the cleanup DELETE. Alternatives, but the status legitimately depends on whether the test already deleted the booking."
+        },
+        {
+          "test": "A8: DELETE removes the booking (answers 201, not 204)",
+          "item": "W7",
+          "file": "src/fixtures/api.fixtures.ts",
+          "line": 66,
+          "quote": "expect(TOLERATED_CLEANUP_STATUSES).toContain(cleanup.status());",
+          "note": "Shared `booking` fixture teardown accepts any of [201, 404, 405] for the cleanup DELETE. Alternatives, but the status legitimately depends on whether the test already deleted the booking."
+        }
+      ]
+    },
+    "A": {
+      "tests": 8,
+      "testTitles": [
+        "auth: valid credentials return a token",
+        "auth: invalid credentials do not return a token",
+        "create a booking and read it back",
+        "find a booking by first name and last name",
+        "PUT fully replaces a booking",
+        "PATCH partially updates a booking",
+        "PUT without a token is rejected with 403 and changes nothing",
+        "DELETE answers 201 and the booking is gone"
+      ],
+      "annotatedTests": {},
+      "testsWithHits": 2,
+      "hitsByItem": {
+        "W1": 0,
+        "W2": 1,
+        "W3": 0,
+        "W4": 2,
+        "W5": 0,
+        "W6": 0,
+        "W7": 0,
+        "W8": 0
+      },
+      "totalHits": 3,
+      "hits": [
+        {
+          "test": "auth: invalid credentials do not return a token",
+          "item": "W2",
+          "file": "experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+          "line": 84,
+          "quote": "expect(body.reason).toBeTruthy();",
+          "note": "toBeTruthy on `reason` although the exact value (\"Bad credentials\") is known."
+        },
+        {
+          "test": "auth: invalid credentials do not return a token",
+          "item": "W4",
+          "file": "experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+          "line": 82,
+          "quote": "const body = await res.json();",
+          "note": "Body used with no schema and no explicit type check on its fields (only toBeUndefined/toBeTruthy)."
+        },
+        {
+          "test": "find a booking by first name and last name",
+          "item": "W4",
+          "file": "experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+          "line": 104,
+          "quote": "const list: { bookingid: number }[] = await res.json();",
+          "note": "Search body typed only by a TS annotation (compile-time); no schema or runtime type check before use."
+        }
+      ],
+      "borderline": [
+        {
+          "test": "auth: valid credentials return a token",
+          "item": "W3",
+          "file": "experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+          "line": 71,
+          "quote": "const res = await request.post('/auth', {",
+          "note": "POST /auth (a POST) is not followed by a read-back and the token is not used in this test. W3 targets persisted state; whether a login counts as a mutation is for the author."
+        },
+        {
+          "test": "auth: invalid credentials do not return a token",
+          "item": "W6",
+          "file": "experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+          "line": 83,
+          "quote": "expect(body.token).toBeUndefined();",
+          "note": "Auth-failure test without a state check, but a failed POST /auth changes no stored state that could be checked. Literal W6 wording applies; likely reject."
+        },
+        {
+          "test": "create a booking and read it back",
+          "item": "W4",
+          "file": "experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+          "line": 89,
+          "quote": "expect(body.booking).toEqual(data);",
+          "note": "POST body.booking compared by exact toEqual with no schema (bookingid has a typeof check; the GET body is schema-validated). Literal W4 may apply to the POST body; likely reject."
+        },
+        {
+          "test": "find a booking by first name and last name",
+          "item": "W5",
+          "file": "experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+          "line": 105,
+          "quote": "expect(list.map((b) => b.bookingid)).toContain(id);",
+          "note": "Matching search checked only with toContain(id); exclusion is checked separately by a second query with a non-matching lastname expecting [] (line 110). Author to decide whether that counts as excluding non-matching items."
+        },
+        {
+          "test": "PUT fully replaces a booking",
+          "item": "W4",
+          "file": "experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+          "line": 123,
+          "quote": "expect(await res.json()).toEqual(replacement);",
+          "note": "Body validated only by exact toEqual against the known object, with no schema/explicit type check. Literal W4 wording applies, but exact equality is stronger than a type check."
+        },
+        {
+          "test": "PATCH partially updates a booking",
+          "item": "W4",
+          "file": "experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+          "line": 137,
+          "quote": "expect(await res.json()).toEqual(expected);",
+          "note": "Body validated only by exact toEqual against the known object, with no schema/explicit type check. Literal W4 wording applies, but exact equality is stronger than a type check."
+        },
+        {
+          "test": "PUT without a token is rejected with 403 and changes nothing",
+          "item": "W1",
+          "file": "experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+          "line": 144,
+          "quote": "expect(res.status()).toBe(403);",
+          "note": "Primary response asserted only by its status (body not checked), but a GET read-back/state check follows. W1 literally applies to the primary response; author to decide whether the read-back takes it out of \"status-only\"."
+        },
+        {
+          "test": "PUT without a token is rejected with 403 and changes nothing",
+          "item": "W4",
+          "file": "experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+          "line": 145,
+          "quote": "expect(await (await request.get(`/booking/${id}`)).json()).toEqual(data);",
+          "note": "Body validated only by exact toEqual against the known object, with no schema/explicit type check. Literal W4 wording applies, but exact equality is stronger than a type check."
+        },
+        {
+          "test": "DELETE answers 201 and the booking is gone",
+          "item": "W1",
+          "file": "experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+          "line": 151,
+          "quote": "expect(res.status()).toBe(201);",
+          "note": "Primary response asserted only by its status (body not checked), but a GET read-back/state check follows. W1 literally applies to the primary response; author to decide whether the read-back takes it out of \"status-only\"."
+        },
+        {
+          "test": "find a booking by first name and last name",
+          "item": "W3",
+          "file": "experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+          "line": 38,
+          "quote": "const res = await request.post('/booking', { data });",
+          "note": "Shared `createBooking` helper (via make): setup POST not read back by GET (setup, not the subject of the test)."
+        },
+        {
+          "test": "PUT fully replaces a booking",
+          "item": "W3",
+          "file": "experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+          "line": 38,
+          "quote": "const res = await request.post('/booking', { data });",
+          "note": "Shared `createBooking` helper (via make): setup POST not read back by GET (setup, not the subject of the test)."
+        },
+        {
+          "test": "PATCH partially updates a booking",
+          "item": "W3",
+          "file": "experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+          "line": 38,
+          "quote": "const res = await request.post('/booking', { data });",
+          "note": "Shared `createBooking` helper (via make): setup POST not read back by GET (setup, not the subject of the test)."
+        },
+        {
+          "test": "PUT without a token is rejected with 403 and changes nothing",
+          "item": "W3",
+          "file": "experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+          "line": 38,
+          "quote": "const res = await request.post('/booking', { data });",
+          "note": "Shared `createBooking` helper (via make): setup POST not read back by GET (setup, not the subject of the test)."
+        },
+        {
+          "test": "DELETE answers 201 and the booking is gone",
+          "item": "W3",
+          "file": "experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+          "line": 38,
+          "quote": "const res = await request.post('/booking', { data });",
+          "note": "Shared `createBooking` helper (via make): setup POST not read back by GET (setup, not the subject of the test)."
+        },
+        {
+          "test": "find a booking by first name and last name",
+          "item": "W2",
+          "file": "experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+          "line": 41,
+          "quote": "expect(typeof body.bookingid).toBe('number');",
+          "note": "Shared `createBooking` helper: checks one field (typeof bookingid) while the full expected booking is known; body.booking is not compared in this test."
+        },
+        {
+          "test": "PUT fully replaces a booking",
+          "item": "W2",
+          "file": "experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+          "line": 41,
+          "quote": "expect(typeof body.bookingid).toBe('number');",
+          "note": "Shared `createBooking` helper: checks one field (typeof bookingid) while the full expected booking is known; body.booking is not compared in this test."
+        },
+        {
+          "test": "PATCH partially updates a booking",
+          "item": "W2",
+          "file": "experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+          "line": 41,
+          "quote": "expect(typeof body.bookingid).toBe('number');",
+          "note": "Shared `createBooking` helper: checks one field (typeof bookingid) while the full expected booking is known; body.booking is not compared in this test."
+        },
+        {
+          "test": "PUT without a token is rejected with 403 and changes nothing",
+          "item": "W2",
+          "file": "experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+          "line": 41,
+          "quote": "expect(typeof body.bookingid).toBe('number');",
+          "note": "Shared `createBooking` helper: checks one field (typeof bookingid) while the full expected booking is known; body.booking is not compared in this test."
+        },
+        {
+          "test": "DELETE answers 201 and the booking is gone",
+          "item": "W2",
+          "file": "experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+          "line": 41,
+          "quote": "expect(typeof body.bookingid).toBe('number');",
+          "note": "Shared `createBooking` helper: checks one field (typeof bookingid) while the full expected booking is known; body.booking is not compared in this test."
+        },
+        {
+          "test": "PUT fully replaces a booking",
+          "item": "W4",
+          "file": "experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+          "line": 33,
+          "quote": "expect(body.token).toBeTruthy();",
+          "note": "`getToken` in beforeAll (hook, not a fixture): auth body used without schema/type check, only toBeTruthy (W2 not proposed: token value is not known in advance). Listed for tests that use the token; the hook runs before all 8 tests. Author to decide whether hook assertions count as helper assertions."
+        },
+        {
+          "test": "PATCH partially updates a booking",
+          "item": "W4",
+          "file": "experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+          "line": 33,
+          "quote": "expect(body.token).toBeTruthy();",
+          "note": "`getToken` in beforeAll (hook, not a fixture): auth body used without schema/type check, only toBeTruthy (W2 not proposed: token value is not known in advance). Listed for tests that use the token; the hook runs before all 8 tests. Author to decide whether hook assertions count as helper assertions."
+        },
+        {
+          "test": "DELETE answers 201 and the booking is gone",
+          "item": "W4",
+          "file": "experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+          "line": 33,
+          "quote": "expect(body.token).toBeTruthy();",
+          "note": "`getToken` in beforeAll (hook, not a fixture): auth body used without schema/type check, only toBeTruthy (W2 not proposed: token value is not known in advance). Listed for tests that use the token; the hook runs before all 8 tests. Author to decide whether hook assertions count as helper assertions."
+        },
+        {
+          "test": "create a booking and read it back",
+          "item": "W3",
+          "file": "experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+          "line": 58,
+          "quote": "await ctx.delete(`/booking/${id}`, { headers: { Cookie: `token=${token}` } });",
+          "note": "afterAll cleanup DELETE: status not asserted, no read-back. Cleanup in a hook, not the subject of the test."
+        },
+        {
+          "test": "find a booking by first name and last name",
+          "item": "W3",
+          "file": "experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+          "line": 58,
+          "quote": "await ctx.delete(`/booking/${id}`, { headers: { Cookie: `token=${token}` } });",
+          "note": "afterAll cleanup DELETE: status not asserted, no read-back. Cleanup in a hook, not the subject of the test."
+        },
+        {
+          "test": "PUT fully replaces a booking",
+          "item": "W3",
+          "file": "experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+          "line": 58,
+          "quote": "await ctx.delete(`/booking/${id}`, { headers: { Cookie: `token=${token}` } });",
+          "note": "afterAll cleanup DELETE: status not asserted, no read-back. Cleanup in a hook, not the subject of the test."
+        },
+        {
+          "test": "PATCH partially updates a booking",
+          "item": "W3",
+          "file": "experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+          "line": 58,
+          "quote": "await ctx.delete(`/booking/${id}`, { headers: { Cookie: `token=${token}` } });",
+          "note": "afterAll cleanup DELETE: status not asserted, no read-back. Cleanup in a hook, not the subject of the test."
+        },
+        {
+          "test": "PUT without a token is rejected with 403 and changes nothing",
+          "item": "W3",
+          "file": "experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+          "line": 58,
+          "quote": "await ctx.delete(`/booking/${id}`, { headers: { Cookie: `token=${token}` } });",
+          "note": "afterAll cleanup DELETE: status not asserted, no read-back. Cleanup in a hook, not the subject of the test."
+        },
+        {
+          "test": "DELETE answers 201 and the booking is gone",
+          "item": "W3",
+          "file": "experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+          "line": 58,
+          "quote": "await ctx.delete(`/booking/${id}`, { headers: { Cookie: `token=${token}` } });",
+          "note": "afterAll cleanup DELETE: status not asserted, no read-back. Cleanup in a hook, not the subject of the test."
+        }
+      ]
+    },
+    "B": {
+      "tests": 17,
+      "testTitles": [
+        "valid credentials return a token that authorises a write",
+        "wrong password yields no token",
+        "unknown user yields no token",
+        "an invalid token is rejected and the booking is unchanged",
+        "create a booking and read it back",
+        "reading an unknown booking returns 404",
+        "creating a booking with an incomplete payload is rejected",
+        "find a booking by first and last name",
+        "searching with a non-matching last name finds nothing",
+        "PUT fully replaces the booking",
+        "PUT drops optional fields omitted from the replacement",
+        "PUT on an unknown booking is not successful",
+        "PATCH updates only the given fields",
+        "PATCH without a token is rejected and changes nothing",
+        "PUT without a token returns 403 and changes nothing",
+        "DELETE answers 201 and the booking is gone",
+        "DELETE without a token is rejected and the booking remains"
+      ],
+      "annotatedTests": {
+        "PUT drops optional fields omitted from the replacement": "test.fail(true, ...): expected to fail"
+      },
+      "testsWithHits": 5,
+      "hitsByItem": {
+        "W1": 3,
+        "W2": 2,
+        "W3": 0,
+        "W4": 2,
+        "W5": 0,
+        "W6": 2,
+        "W7": 0,
+        "W8": 0
+      },
+      "totalHits": 9,
+      "hits": [
+        {
+          "test": "valid credentials return a token that authorises a write",
+          "item": "W2",
+          "file": "experiments/ai-written-tests/suite-b/tests/auth.spec.ts",
+          "line": 17,
+          "quote": "expect(after.totalprice).toBe(222);",
+          "note": "Read-back checks one field (totalprice) while the full expected object ({...data, totalprice: 222}) is known."
+        },
+        {
+          "test": "valid credentials return a token that authorises a write",
+          "item": "W4",
+          "file": "experiments/ai-written-tests/suite-b/tests/auth.spec.ts",
+          "line": 16,
+          "quote": "const after = await (await request.get(`/booking/${id}`)).json();",
+          "note": "GET body used without a schema or explicit type checks (only one field compared)."
+        },
+        {
+          "test": "an invalid token is rejected and the booking is unchanged",
+          "item": "W2",
+          "file": "experiments/ai-written-tests/suite-b/tests/auth.spec.ts",
+          "line": 43,
+          "quote": "expect(after.firstname).toBe(booking.data.firstname);",
+          "note": "State check compares one field (firstname) while the full expected object (booking.data) is known."
+        },
+        {
+          "test": "an invalid token is rejected and the booking is unchanged",
+          "item": "W4",
+          "file": "experiments/ai-written-tests/suite-b/tests/auth.spec.ts",
+          "line": 42,
+          "quote": "const after = await (await request.get(`/booking/${booking.id}`)).json();",
+          "note": "GET body used without a schema or explicit type checks (only one field compared)."
+        },
+        {
+          "test": "reading an unknown booking returns 404",
+          "item": "W1",
+          "file": "experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+          "line": 20,
+          "quote": "expect(res.status()).toBe(404);",
+          "note": "Only assertion is the status; the 404 body is not checked."
+        },
+        {
+          "test": "creating a booking with an incomplete payload is rejected",
+          "item": "W1",
+          "file": "experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+          "line": 26,
+          "quote": "expect(res.ok()).toBe(false);",
+          "note": "Only assertion is ok() === false; body not checked."
+        },
+        {
+          "test": "creating a booking with an incomplete payload is rejected",
+          "item": "W6",
+          "file": "experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+          "line": 26,
+          "quote": "expect(res.ok()).toBe(false);",
+          "note": "Error test asserts the failure but not that no booking was stored."
+        },
+        {
+          "test": "PUT on an unknown booking is not successful",
+          "item": "W1",
+          "file": "experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+          "line": 90,
+          "quote": "expect(res.ok()).toBe(false);",
+          "note": "Only assertion is ok() === false; body not checked."
+        },
+        {
+          "test": "PUT on an unknown booking is not successful",
+          "item": "W6",
+          "file": "experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+          "line": 90,
+          "quote": "expect(res.ok()).toBe(false);",
+          "note": "Error test asserts the failure but not that booking 999999999 was not created/changed."
+        }
+      ],
+      "borderline": [
+        {
+          "test": "valid credentials return a token that authorises a write",
+          "item": "W1",
+          "file": "experiments/ai-written-tests/suite-b/tests/auth.spec.ts",
+          "line": 15,
+          "quote": "expect(put.status()).toBe(200);",
+          "note": "PUT asserted only by status (its booking body is not checked); the subject is /auth and a GET read-back follows. Author to decide which response is primary."
+        },
+        {
+          "test": "wrong password yields no token",
+          "item": "W6",
+          "file": "experiments/ai-written-tests/suite-b/tests/auth.spec.ts",
+          "line": 24,
+          "quote": "expect(body.reason).toBe('Bad credentials');",
+          "note": "Auth-failure test without a state check, but a failed POST /auth changes no stored state that could be checked. Literal W6 wording applies; likely reject."
+        },
+        {
+          "test": "wrong password yields no token",
+          "item": "W8",
+          "file": "experiments/ai-written-tests/suite-b/tests/auth.spec.ts",
+          "line": 25,
+          "quote": "expect(body).not.toHaveProperty('token');",
+          "note": "Vacuous assertion: z.object() strips unknown keys (verified with zod 4.6.5 in suite-b), so `body` can never have `token` and this expect can never fail. Not clearly named by W8 (\"may not run or are swallowed\"); author to decide."
+        },
+        {
+          "test": "unknown user yields no token",
+          "item": "W2",
+          "file": "experiments/ai-written-tests/suite-b/tests/auth.spec.ts",
+          "line": 31,
+          "quote": "const body = z.object({ reason: z.string() }).parse(await res.json());",
+          "note": "`reason` only checked as z.string() while the exact value (\"Bad credentials\", asserted in the sibling test) is known. A type check rather than a listed existence matcher; author to decide."
+        },
+        {
+          "test": "unknown user yields no token",
+          "item": "W6",
+          "file": "experiments/ai-written-tests/suite-b/tests/auth.spec.ts",
+          "line": 32,
+          "quote": "expect(body).not.toHaveProperty('token');",
+          "note": "Auth-failure test without a state check, but a failed POST /auth changes no stored state that could be checked. Literal W6 wording applies; likely reject."
+        },
+        {
+          "test": "unknown user yields no token",
+          "item": "W8",
+          "file": "experiments/ai-written-tests/suite-b/tests/auth.spec.ts",
+          "line": 32,
+          "quote": "expect(body).not.toHaveProperty('token');",
+          "note": "Vacuous assertion: z.object() strips unknown keys (verified with zod 4.6.5 in suite-b), so this expect can never fail. Not clearly named by W8; author to decide."
+        },
+        {
+          "test": "an invalid token is rejected and the booking is unchanged",
+          "item": "W1",
+          "file": "experiments/ai-written-tests/suite-b/tests/auth.spec.ts",
+          "line": 41,
+          "quote": "expect(res.status()).toBe(403);",
+          "note": "Primary response asserted only by its status (body not checked), but a GET read-back/state check follows. W1 literally applies to the primary response; author to decide whether the read-back takes it out of \"status-only\"."
+        },
+        {
+          "test": "reading an unknown booking returns 404",
+          "item": "W6",
+          "file": "experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+          "line": 20,
+          "quote": "expect(res.status()).toBe(404);",
+          "note": "Error test without a state check, but the request is a GET that cannot change state. Likely reject."
+        },
+        {
+          "test": "creating a booking with an incomplete payload is rejected",
+          "item": "W7",
+          "file": "experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+          "line": 26,
+          "quote": "expect(res.ok()).toBe(false);",
+          "note": "ok() === false accepts any non-2xx. The real status is exact (500 per stub/FIDELITY.md probe) but not documented by the API docs; W7 requires \"exact and documented\"."
+        },
+        {
+          "test": "PUT drops optional fields omitted from the replacement",
+          "item": "W1",
+          "file": "experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+          "line": 79,
+          "quote": "expect(res.status()).toBe(200);",
+          "note": "Primary response asserted only by its status (body not checked), but a GET read-back/state check follows. W1 literally applies to the primary response; author to decide whether the read-back takes it out of \"status-only\"."
+        },
+        {
+          "test": "PUT drops optional fields omitted from the replacement",
+          "item": "W8",
+          "file": "experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+          "line": 72,
+          "quote": "test.fail(true, 'Restful Booker keeps additionalneeds when a PUT omits it');",
+          "note": "test.fail(): the test passes if ANY assertion fails (including the status check at line 79), so a failure of the intended assertion is indistinguishable from an unrelated one. Arguably \"swallowed\"; author to decide."
+        },
+        {
+          "test": "PUT on an unknown booking is not successful",
+          "item": "W7",
+          "file": "experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+          "line": 90,
+          "quote": "expect(res.ok()).toBe(false);",
+          "note": "ok() === false accepts any non-2xx. The real status is exact (405 per stub/FIDELITY.md probe) but not documented by the API docs; W7 requires \"exact and documented\"."
+        },
+        {
+          "test": "PATCH without a token is rejected and changes nothing",
+          "item": "W1",
+          "file": "experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+          "line": 110,
+          "quote": "expect(res.status()).toBe(403);",
+          "note": "Primary response asserted only by its status (body not checked), but a GET read-back/state check follows. W1 literally applies to the primary response; author to decide whether the read-back takes it out of \"status-only\"."
+        },
+        {
+          "test": "PUT without a token returns 403 and changes nothing",
+          "item": "W1",
+          "file": "experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+          "line": 120,
+          "quote": "expect(res.status()).toBe(403);",
+          "note": "Primary response asserted only by its status (body not checked), but a GET read-back/state check follows. W1 literally applies to the primary response; author to decide whether the read-back takes it out of \"status-only\"."
+        },
+        {
+          "test": "DELETE answers 201 and the booking is gone",
+          "item": "W1",
+          "file": "experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+          "line": 129,
+          "quote": "expect(res.status()).toBe(201);",
+          "note": "Primary response asserted only by its status (body not checked), but a GET read-back/state check follows. W1 literally applies to the primary response; author to decide whether the read-back takes it out of \"status-only\"."
+        },
+        {
+          "test": "DELETE without a token is rejected and the booking remains",
+          "item": "W1",
+          "file": "experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+          "line": 141,
+          "quote": "expect(res.status()).toBe(403);",
+          "note": "Primary response asserted only by its status (body not checked), but a GET read-back/state check follows. W1 literally applies to the primary response; author to decide whether the read-back takes it out of \"status-only\"."
+        },
+        {
+          "test": "valid credentials return a token that authorises a write",
+          "item": "W3",
+          "file": "experiments/ai-written-tests/suite-b/tests/helpers.ts",
+          "line": 69,
+          "quote": "const res = await request.post('/booking', { data });",
+          "note": "Shared `createBooking` fixture: setup POST checked by status + schema only, not read back by GET (setup, not the subject of the test)."
+        },
+        {
+          "test": "an invalid token is rejected and the booking is unchanged",
+          "item": "W3",
+          "file": "experiments/ai-written-tests/suite-b/tests/helpers.ts",
+          "line": 69,
+          "quote": "const res = await request.post('/booking', { data });",
+          "note": "Shared `createBooking` fixture: setup POST checked by status + schema only, not read back by GET (setup, not the subject of the test)."
+        },
+        {
+          "test": "find a booking by first and last name",
+          "item": "W3",
+          "file": "experiments/ai-written-tests/suite-b/tests/helpers.ts",
+          "line": 69,
+          "quote": "const res = await request.post('/booking', { data });",
+          "note": "Shared `createBooking` fixture: setup POST checked by status + schema only, not read back by GET (setup, not the subject of the test)."
+        },
+        {
+          "test": "searching with a non-matching last name finds nothing",
+          "item": "W3",
+          "file": "experiments/ai-written-tests/suite-b/tests/helpers.ts",
+          "line": 69,
+          "quote": "const res = await request.post('/booking', { data });",
+          "note": "Shared `createBooking` fixture: setup POST checked by status + schema only, not read back by GET (setup, not the subject of the test)."
+        },
+        {
+          "test": "PUT fully replaces the booking",
+          "item": "W3",
+          "file": "experiments/ai-written-tests/suite-b/tests/helpers.ts",
+          "line": 69,
+          "quote": "const res = await request.post('/booking', { data });",
+          "note": "Shared `createBooking` fixture: setup POST checked by status + schema only, not read back by GET (setup, not the subject of the test)."
+        },
+        {
+          "test": "PUT drops optional fields omitted from the replacement",
+          "item": "W3",
+          "file": "experiments/ai-written-tests/suite-b/tests/helpers.ts",
+          "line": 69,
+          "quote": "const res = await request.post('/booking', { data });",
+          "note": "Shared `createBooking` fixture: setup POST checked by status + schema only, not read back by GET (setup, not the subject of the test)."
+        },
+        {
+          "test": "PATCH updates only the given fields",
+          "item": "W3",
+          "file": "experiments/ai-written-tests/suite-b/tests/helpers.ts",
+          "line": 69,
+          "quote": "const res = await request.post('/booking', { data });",
+          "note": "Shared `createBooking` fixture: setup POST checked by status + schema only, not read back by GET (setup, not the subject of the test)."
+        },
+        {
+          "test": "PATCH without a token is rejected and changes nothing",
+          "item": "W3",
+          "file": "experiments/ai-written-tests/suite-b/tests/helpers.ts",
+          "line": 69,
+          "quote": "const res = await request.post('/booking', { data });",
+          "note": "Shared `createBooking` fixture: setup POST checked by status + schema only, not read back by GET (setup, not the subject of the test)."
+        },
+        {
+          "test": "PUT without a token returns 403 and changes nothing",
+          "item": "W3",
+          "file": "experiments/ai-written-tests/suite-b/tests/helpers.ts",
+          "line": 69,
+          "quote": "const res = await request.post('/booking', { data });",
+          "note": "Shared `createBooking` fixture: setup POST checked by status + schema only, not read back by GET (setup, not the subject of the test)."
+        },
+        {
+          "test": "DELETE answers 201 and the booking is gone",
+          "item": "W3",
+          "file": "experiments/ai-written-tests/suite-b/tests/helpers.ts",
+          "line": 69,
+          "quote": "const res = await request.post('/booking', { data });",
+          "note": "Shared `createBooking` fixture: setup POST checked by status + schema only, not read back by GET (setup, not the subject of the test)."
+        },
+        {
+          "test": "DELETE without a token is rejected and the booking remains",
+          "item": "W3",
+          "file": "experiments/ai-written-tests/suite-b/tests/helpers.ts",
+          "line": 69,
+          "quote": "const res = await request.post('/booking', { data });",
+          "note": "Shared `createBooking` fixture: setup POST checked by status + schema only, not read back by GET (setup, not the subject of the test)."
+        },
+        {
+          "test": "valid credentials return a token that authorises a write",
+          "item": "W3",
+          "file": "experiments/ai-written-tests/suite-b/tests/helpers.ts",
+          "line": 61,
+          "quote": "await request.delete(`/booking/${id}`, { headers: { Cookie: `token=${token}` } });",
+          "note": "Shared `trackedIds` teardown DELETE: status not asserted, no read-back. Cleanup, not the subject of the test."
+        },
+        {
+          "test": "an invalid token is rejected and the booking is unchanged",
+          "item": "W3",
+          "file": "experiments/ai-written-tests/suite-b/tests/helpers.ts",
+          "line": 61,
+          "quote": "await request.delete(`/booking/${id}`, { headers: { Cookie: `token=${token}` } });",
+          "note": "Shared `trackedIds` teardown DELETE: status not asserted, no read-back. Cleanup, not the subject of the test."
+        },
+        {
+          "test": "create a booking and read it back",
+          "item": "W3",
+          "file": "experiments/ai-written-tests/suite-b/tests/helpers.ts",
+          "line": 61,
+          "quote": "await request.delete(`/booking/${id}`, { headers: { Cookie: `token=${token}` } });",
+          "note": "Shared `trackedIds` teardown DELETE: status not asserted, no read-back. Cleanup, not the subject of the test."
+        },
+        {
+          "test": "find a booking by first and last name",
+          "item": "W3",
+          "file": "experiments/ai-written-tests/suite-b/tests/helpers.ts",
+          "line": 61,
+          "quote": "await request.delete(`/booking/${id}`, { headers: { Cookie: `token=${token}` } });",
+          "note": "Shared `trackedIds` teardown DELETE: status not asserted, no read-back. Cleanup, not the subject of the test."
+        },
+        {
+          "test": "searching with a non-matching last name finds nothing",
+          "item": "W3",
+          "file": "experiments/ai-written-tests/suite-b/tests/helpers.ts",
+          "line": 61,
+          "quote": "await request.delete(`/booking/${id}`, { headers: { Cookie: `token=${token}` } });",
+          "note": "Shared `trackedIds` teardown DELETE: status not asserted, no read-back. Cleanup, not the subject of the test."
+        },
+        {
+          "test": "PUT fully replaces the booking",
+          "item": "W3",
+          "file": "experiments/ai-written-tests/suite-b/tests/helpers.ts",
+          "line": 61,
+          "quote": "await request.delete(`/booking/${id}`, { headers: { Cookie: `token=${token}` } });",
+          "note": "Shared `trackedIds` teardown DELETE: status not asserted, no read-back. Cleanup, not the subject of the test."
+        },
+        {
+          "test": "PUT drops optional fields omitted from the replacement",
+          "item": "W3",
+          "file": "experiments/ai-written-tests/suite-b/tests/helpers.ts",
+          "line": 61,
+          "quote": "await request.delete(`/booking/${id}`, { headers: { Cookie: `token=${token}` } });",
+          "note": "Shared `trackedIds` teardown DELETE: status not asserted, no read-back. Cleanup, not the subject of the test."
+        },
+        {
+          "test": "PATCH updates only the given fields",
+          "item": "W3",
+          "file": "experiments/ai-written-tests/suite-b/tests/helpers.ts",
+          "line": 61,
+          "quote": "await request.delete(`/booking/${id}`, { headers: { Cookie: `token=${token}` } });",
+          "note": "Shared `trackedIds` teardown DELETE: status not asserted, no read-back. Cleanup, not the subject of the test."
+        },
+        {
+          "test": "PATCH without a token is rejected and changes nothing",
+          "item": "W3",
+          "file": "experiments/ai-written-tests/suite-b/tests/helpers.ts",
+          "line": 61,
+          "quote": "await request.delete(`/booking/${id}`, { headers: { Cookie: `token=${token}` } });",
+          "note": "Shared `trackedIds` teardown DELETE: status not asserted, no read-back. Cleanup, not the subject of the test."
+        },
+        {
+          "test": "PUT without a token returns 403 and changes nothing",
+          "item": "W3",
+          "file": "experiments/ai-written-tests/suite-b/tests/helpers.ts",
+          "line": 61,
+          "quote": "await request.delete(`/booking/${id}`, { headers: { Cookie: `token=${token}` } });",
+          "note": "Shared `trackedIds` teardown DELETE: status not asserted, no read-back. Cleanup, not the subject of the test."
+        },
+        {
+          "test": "DELETE answers 201 and the booking is gone",
+          "item": "W3",
+          "file": "experiments/ai-written-tests/suite-b/tests/helpers.ts",
+          "line": 61,
+          "quote": "await request.delete(`/booking/${id}`, { headers: { Cookie: `token=${token}` } });",
+          "note": "Shared `trackedIds` teardown DELETE: status not asserted, no read-back. Cleanup, not the subject of the test."
+        },
+        {
+          "test": "DELETE without a token is rejected and the booking remains",
+          "item": "W3",
+          "file": "experiments/ai-written-tests/suite-b/tests/helpers.ts",
+          "line": 61,
+          "quote": "await request.delete(`/booking/${id}`, { headers: { Cookie: `token=${token}` } });",
+          "note": "Shared `trackedIds` teardown DELETE: status not asserted, no read-back. Cleanup, not the subject of the test."
+        }
+      ]
+    }
+  }
+}

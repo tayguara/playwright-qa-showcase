@@ -1,0 +1,445 @@
+{
+  "config": {
+    "argv": [
+      "<home>/.nvm/versions/node/v22.21.0/bin/node",
+      "<repo>/node_modules/@playwright/test/cli.js",
+      "test",
+      "--workers=1",
+      "--reporter=json",
+      "--output=/tmp/pw-output"
+    ],
+    "configFile": "<repo>/experiments/ai-written-tests/suite-a/playwright.config.ts",
+    "rootDir": "<repo>/experiments/ai-written-tests/suite-a/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/tmp/pw-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "<repo>/experiments/ai-written-tests/suite-a/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "booker.spec.ts",
+      "file": "booker.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Restful Booker",
+          "file": "booker.spec.ts",
+          "line": 45,
+          "column": 6,
+          "specs": [
+            {
+              "title": "auth: valid credentials return a token",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 28,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T18:56:02.358Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "58dedee7808c98108463-37afd63ced4361f1ad0b",
+              "file": "booker.spec.ts",
+              "line": 70,
+              "column": 7
+            },
+            {
+              "title": "auth: invalid credentials do not return a token",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 24,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeUndefined\u001b[2m()\u001b[22m\n\nReceived: \u001b[31m\"a2f2b0b588bcc84\"\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeUndefined\u001b[2m()\u001b[22m\n\nReceived: \u001b[31m\"a2f2b0b588bcc84\"\u001b[39m\n    at <repo>/experiments/ai-written-tests/suite-a/tests/booker.spec.ts:83:24",
+                        "location": {
+                          "file": "<repo>/experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+                          "column": 24,
+                          "line": 83
+                        },
+                        "snippet": "  81 |     });\n  82 |     const body = await res.json();\n> 83 |     expect(body.token).toBeUndefined();\n     |                        ^\n  84 |     expect(body.reason).toBeTruthy();\n  85 |   });\n  86 |"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "<repo>/experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+                            "column": 24,
+                            "line": 83
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeUndefined\u001b[2m()\u001b[22m\n\nReceived: \u001b[31m\"a2f2b0b588bcc84\"\u001b[39m\n\n  81 |     });\n  82 |     const body = await res.json();\n> 83 |     expect(body.token).toBeUndefined();\n     |                        ^\n  84 |     expect(body.reason).toBeTruthy();\n  85 |   });\n  86 |\n    at <repo>/experiments/ai-written-tests/suite-a/tests/booker.spec.ts:83:24"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T18:56:02.562Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/tmp/pw-output/booker-Restful-Booker-auth-a50f1-tials-do-not-return-a-token/error-context.md"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/tmp/pw-output/booker-Restful-Booker-auth-a50f1-tials-do-not-return-a-token/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+                        "column": 24,
+                        "line": 83
+                      }
+                    },
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 24,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeUndefined\u001b[2m()\u001b[22m\n\nReceived: \u001b[31m\"6fcb1cf1b113a34\"\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeUndefined\u001b[2m()\u001b[22m\n\nReceived: \u001b[31m\"6fcb1cf1b113a34\"\u001b[39m\n    at <repo>/experiments/ai-written-tests/suite-a/tests/booker.spec.ts:83:24",
+                        "location": {
+                          "file": "<repo>/experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+                          "column": 24,
+                          "line": 83
+                        },
+                        "snippet": "  81 |     });\n  82 |     const body = await res.json();\n> 83 |     expect(body.token).toBeUndefined();\n     |                        ^\n  84 |     expect(body.reason).toBeTruthy();\n  85 |   });\n  86 |"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "<repo>/experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+                            "column": 24,
+                            "line": 83
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeUndefined\u001b[2m()\u001b[22m\n\nReceived: \u001b[31m\"6fcb1cf1b113a34\"\u001b[39m\n\n  81 |     });\n  82 |     const body = await res.json();\n> 83 |     expect(body.token).toBeUndefined();\n     |                        ^\n  84 |     expect(body.reason).toBeTruthy();\n  85 |   });\n  86 |\n    at <repo>/experiments/ai-written-tests/suite-a/tests/booker.spec.ts:83:24"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2026-10-21T18:56:03.683Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/tmp/pw-output/booker-Restful-Booker-auth-a50f1-tials-do-not-return-a-token-retry1/error-context.md"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/tmp/pw-output/booker-Restful-Booker-auth-a50f1-tials-do-not-return-a-token-retry1/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-a/tests/booker.spec.ts",
+                        "column": 24,
+                        "line": 83
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "58dedee7808c98108463-bddea2bab1ad06555250",
+              "file": "booker.spec.ts",
+              "line": 78,
+              "column": 7
+            },
+            {
+              "title": "create a booking and read it back",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 38,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T18:56:04.916Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "58dedee7808c98108463-0c4710038e158601ca50",
+              "file": "booker.spec.ts",
+              "line": 87,
+              "column": 7
+            },
+            {
+              "title": "find a booking by first name and last name",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 35,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T18:56:05.130Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "58dedee7808c98108463-8085f66a340d2f30d945",
+              "file": "booker.spec.ts",
+              "line": 98,
+              "column": 7
+            },
+            {
+              "title": "PUT fully replaces a booking",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 46,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T18:56:05.185Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "58dedee7808c98108463-261ea20f4885fb80e53f",
+              "file": "booker.spec.ts",
+              "line": 113,
+              "column": 7
+            },
+            {
+              "title": "PATCH partially updates a booking",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 38,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T18:56:05.257Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "58dedee7808c98108463-8bc66409ee45017d6079",
+              "file": "booker.spec.ts",
+              "line": 129,
+              "column": 7
+            },
+            {
+              "title": "PUT without a token is rejected with 403 and changes nothing",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 36,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T18:56:05.322Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "58dedee7808c98108463-18eac80cb1bbd7c6ea16",
+              "file": "booker.spec.ts",
+              "line": 141,
+              "column": 7
+            },
+            {
+              "title": "DELETE answers 201 and the booking is gone",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 27,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T18:56:05.381Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "58dedee7808c98108463-a5177a7b56bde0d7fdb1",
+              "file": "booker.spec.ts",
+              "line": 148,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-21T18:56:01.084Z",
+    "duration": 4437.825,
+    "expected": 7,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

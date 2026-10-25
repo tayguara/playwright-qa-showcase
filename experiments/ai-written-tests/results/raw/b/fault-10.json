@@ -1,0 +1,1357 @@
+{
+  "config": {
+    "argv": [
+      "<home>/.nvm/versions/node/v22.21.0/bin/node",
+      "<repo>/node_modules/@playwright/test/cli.js",
+      "test",
+      "--workers=1",
+      "--reporter=json",
+      "--output=/tmp/pw-output"
+    ],
+    "configFile": "<repo>/experiments/ai-written-tests/suite-b/playwright.config.ts",
+    "rootDir": "<repo>/experiments/ai-written-tests/suite-b/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/tmp/pw-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "<repo>/experiments/ai-written-tests/suite-b/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "auth.spec.ts",
+      "file": "auth.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "valid credentials return a token that authorises a write",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 153,
+                  "error": {
+                    "message": "SyntaxError: Unexpected token 'I', \"Internal S\"... is not valid JSON",
+                    "stack": "SyntaxError: Unexpected token 'I', \"Internal S\"... is not valid JSON\n    at <repo>/experiments/ai-written-tests/suite-b/tests/auth.spec.ts:16:17",
+                    "location": {
+                      "file": "<repo>/experiments/ai-written-tests/suite-b/tests/auth.spec.ts",
+                      "column": 17,
+                      "line": 16
+                    },
+                    "snippet": "  14 |   });\n  15 |   expect(put.status()).toBe(200);\n> 16 |   const after = await (await request.get(`/booking/${id}`)).json();\n     |                 ^\n  17 |   expect(after.totalprice).toBe(222);\n  18 | });\n  19 |"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-b/tests/auth.spec.ts",
+                        "column": 17,
+                        "line": 16
+                      },
+                      "message": "SyntaxError: Unexpected token 'I', \"Internal S\"... is not valid JSON\n\n  14 |   });\n  15 |   expect(put.status()).toBe(200);\n> 16 |   const after = await (await request.get(`/booking/${id}`)).json();\n     |                 ^\n  17 |   expect(after.totalprice).toBe(222);\n  18 | });\n  19 |\n    at <repo>/experiments/ai-written-tests/suite-b/tests/auth.spec.ts:16:17"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T18:59:25.142Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/tmp/pw-output/auth-valid-credentials-ret-f2066-ken-that-authorises-a-write/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "<repo>/experiments/ai-written-tests/suite-b/tests/auth.spec.ts",
+                    "column": 17,
+                    "line": 16
+                  }
+                },
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 127,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m500\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m500\u001b[39m\n    at <repo>/experiments/ai-written-tests/suite-b/tests/auth.spec.ts:15:24",
+                    "location": {
+                      "file": "<repo>/experiments/ai-written-tests/suite-b/tests/auth.spec.ts",
+                      "column": 24,
+                      "line": 15
+                    },
+                    "snippet": "  13 |     data: { ...data, totalprice: 222 },\n  14 |   });\n> 15 |   expect(put.status()).toBe(200);\n     |                        ^\n  16 |   const after = await (await request.get(`/booking/${id}`)).json();\n  17 |   expect(after.totalprice).toBe(222);\n  18 | });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-b/tests/auth.spec.ts",
+                        "column": 24,
+                        "line": 15
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m500\u001b[39m\n\n  13 |     data: { ...data, totalprice: 222 },\n  14 |   });\n> 15 |   expect(put.status()).toBe(200);\n     |                        ^\n  16 |   const after = await (await request.get(`/booking/${id}`)).json();\n  17 |   expect(after.totalprice).toBe(222);\n  18 | });\n    at <repo>/experiments/ai-written-tests/suite-b/tests/auth.spec.ts:15:24"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-10-21T18:59:26.289Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/tmp/pw-output/auth-valid-credentials-ret-f2066-ken-that-authorises-a-write-retry1/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "<repo>/experiments/ai-written-tests/suite-b/tests/auth.spec.ts",
+                    "column": 24,
+                    "line": 15
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "d748ac400d08b85935ef-290b9a12598f111359a5",
+          "file": "auth.spec.ts",
+          "line": 5,
+          "column": 5
+        },
+        {
+          "title": "wrong password yields no token",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 76,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T18:59:27.510Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d748ac400d08b85935ef-bd66978ccb06fabfed53",
+          "file": "auth.spec.ts",
+          "line": 21,
+          "column": 5
+        },
+        {
+          "title": "unknown user yields no token",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 41,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T18:59:27.666Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d748ac400d08b85935ef-964b535665198700ebde",
+          "file": "auth.spec.ts",
+          "line": 29,
+          "column": 5
+        },
+        {
+          "title": "an invalid token is rejected and the booking is unchanged",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 47,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m500\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m500\u001b[39m\n    at <repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:70:28\n    at Object.booking (<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:77:15)",
+                    "location": {
+                      "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                      "column": 28,
+                      "line": 70
+                    },
+                    "snippet": "   at helpers.ts:70\n\n  68 |     await use(async (data = newBooking()) => {\n  69 |       const res = await request.post('/booking', { data });\n> 70 |       expect(res.status()).toBe(200);\n     |                            ^\n  71 |       const body = createdSchema.parse(await res.json());\n  72 |       trackedIds.push(body.bookingid);\n  73 |       return { id: body.bookingid, data };"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                        "column": 28,
+                        "line": 70
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m500\u001b[39m\n\n   at helpers.ts:70\n\n  68 |     await use(async (data = newBooking()) => {\n  69 |       const res = await request.post('/booking', { data });\n> 70 |       expect(res.status()).toBe(200);\n     |                            ^\n  71 |       const body = createdSchema.parse(await res.json());\n  72 |       trackedIds.push(body.bookingid);\n  73 |       return { id: body.bookingid, data };\n    at <repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:70:28\n    at Object.booking (<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:77:15)"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T18:59:27.744Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/tmp/pw-output/auth-an-invalid-token-is-r-e898a-nd-the-booking-is-unchanged/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                    "column": 28,
+                    "line": 70
+                  }
+                },
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 121,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-10-21T18:59:28.826Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "flaky"
+            }
+          ],
+          "id": "d748ac400d08b85935ef-ff8fe46cb7a1f40c5576",
+          "file": "auth.spec.ts",
+          "line": 36,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "booking.spec.ts",
+      "file": "booking.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "create a booking and read it back",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 38,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T18:59:29.062Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-532b0f98d129ab5577bd",
+          "file": "booking.spec.ts",
+          "line": 4,
+          "column": 5
+        },
+        {
+          "title": "reading an unknown booking returns 404",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 18,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m404\u001b[39m\nReceived: \u001b[31m500\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m404\u001b[39m\nReceived: \u001b[31m500\u001b[39m\n    at <repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts:20:24",
+                    "location": {
+                      "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                      "column": 24,
+                      "line": 20
+                    },
+                    "snippet": "  18 | test('reading an unknown booking returns 404', async ({ request }) => {\n  19 |   const res = await request.get('/booking/999999999');\n> 20 |   expect(res.status()).toBe(404);\n     |                        ^\n  21 | });\n  22 |\n  23 | // Regression: creating a booking with missing required fields succeeds instead of failing."
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                        "column": 24,
+                        "line": 20
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m404\u001b[39m\nReceived: \u001b[31m500\u001b[39m\n\n  18 | test('reading an unknown booking returns 404', async ({ request }) => {\n  19 |   const res = await request.get('/booking/999999999');\n> 20 |   expect(res.status()).toBe(404);\n     |                        ^\n  21 | });\n  22 |\n  23 | // Regression: creating a booking with missing required fields succeeds instead of failing.\n    at <repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts:20:24"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T18:59:29.136Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/tmp/pw-output/booking-reading-an-unknown-booking-returns-404/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                    "column": 24,
+                    "line": 20
+                  }
+                },
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 60,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-10-21T18:59:30.242Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "flaky"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-4ced4795b7f712c05b70",
+          "file": "booking.spec.ts",
+          "line": 18,
+          "column": 5
+        },
+        {
+          "title": "creating a booking with an incomplete payload is rejected",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 25,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T18:59:30.371Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-dcd826d633fdf6807603",
+          "file": "booking.spec.ts",
+          "line": 24,
+          "column": 5
+        },
+        {
+          "title": "find a booking by first and last name",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 49,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m500\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m500\u001b[39m\n    at <repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:70:28\n    at <repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts:32:3",
+                    "location": {
+                      "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                      "column": 28,
+                      "line": 70
+                    },
+                    "snippet": "   at helpers.ts:70\n\n  68 |     await use(async (data = newBooking()) => {\n  69 |       const res = await request.post('/booking', { data });\n> 70 |       expect(res.status()).toBe(200);\n     |                            ^\n  71 |       const body = createdSchema.parse(await res.json());\n  72 |       trackedIds.push(body.bookingid);\n  73 |       return { id: body.bookingid, data };"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                        "column": 28,
+                        "line": 70
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m500\u001b[39m\n\n   at helpers.ts:70\n\n  68 |     await use(async (data = newBooking()) => {\n  69 |       const res = await request.post('/booking', { data });\n> 70 |       expect(res.status()).toBe(200);\n     |                            ^\n  71 |       const body = createdSchema.parse(await res.json());\n  72 |       trackedIds.push(body.bookingid);\n  73 |       return { id: body.bookingid, data };\n    at <repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:70:28\n    at <repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts:32:3"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T18:59:30.424Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/tmp/pw-output/booking-find-a-booking-by-first-and-last-name/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                    "column": 28,
+                    "line": 70
+                  }
+                },
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 97,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m500\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m500\u001b[39m\n    at <repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts:37:24",
+                    "location": {
+                      "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                      "column": 24,
+                      "line": 37
+                    },
+                    "snippet": "  35 |     params: { firstname: data.firstname, lastname: data.lastname },\n  36 |   });\n> 37 |   expect(res.status()).toBe(200);\n     |                        ^\n  38 |   const ids = idListSchema.parse(await res.json());\n  39 |   expect(ids).toEqual([{ bookingid: id }]);\n  40 | });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                        "column": 24,
+                        "line": 37
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m500\u001b[39m\n\n  35 |     params: { firstname: data.firstname, lastname: data.lastname },\n  36 |   });\n> 37 |   expect(res.status()).toBe(200);\n     |                        ^\n  38 |   const ids = idListSchema.parse(await res.json());\n  39 |   expect(ids).toEqual([{ bookingid: id }]);\n  40 | });\n    at <repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts:37:24"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-10-21T18:59:31.446Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/tmp/pw-output/booking-find-a-booking-by-first-and-last-name-retry1/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                    "column": 24,
+                    "line": 37
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-7b2899078d66c29a9178",
+          "file": "booking.spec.ts",
+          "line": 30,
+          "column": 5
+        },
+        {
+          "title": "searching with a non-matching last name finds nothing",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 94,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m500\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m500\u001b[39m\n    at <repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts:47:24",
+                    "location": {
+                      "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                      "column": 24,
+                      "line": 47
+                    },
+                    "snippet": "  45 |     params: { firstname: booking.data.firstname, lastname: 'NoSuchLastName' },\n  46 |   });\n> 47 |   expect(res.status()).toBe(200);\n     |                        ^\n  48 |   expect(idListSchema.parse(await res.json())).toEqual([]);\n  49 | });\n  50 |"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                        "column": 24,
+                        "line": 47
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m500\u001b[39m\n\n  45 |     params: { firstname: booking.data.firstname, lastname: 'NoSuchLastName' },\n  46 |   });\n> 47 |   expect(res.status()).toBe(200);\n     |                        ^\n  48 |   expect(idListSchema.parse(await res.json())).toEqual([]);\n  49 | });\n  50 |\n    at <repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts:47:24"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T18:59:32.567Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/tmp/pw-output/booking-searching-with-a-n-0cf10-ing-last-name-finds-nothing/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                    "column": 24,
+                    "line": 47
+                  }
+                },
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 94,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-10-21T18:59:33.706Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "flaky"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-d4fb03a7e504eb4741ff",
+          "file": "booking.spec.ts",
+          "line": 43,
+          "column": 5
+        },
+        {
+          "title": "PUT fully replaces the booking",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 50,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T18:59:33.875Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-fb43ddde8fffb0164478",
+          "file": "booking.spec.ts",
+          "line": 52,
+          "column": 5
+        },
+        {
+          "title": "PUT drops optional fields omitted from the replacement",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [
+                {
+                  "type": "fail",
+                  "description": "Restful Booker keeps additionalneeds when a PUT omits it",
+                  "location": {
+                    "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                    "line": 72,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "failed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 45,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 0\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[33m@@ -1,6 +1,7 @@\u001b[39m\n\u001b[2m  Object {\u001b[22m\n\u001b[31m+   \"additionalneeds\": \"Breakfast\",\u001b[39m\n\u001b[2m    \"bookingdates\": Object {\u001b[22m\n\u001b[2m      \"checkin\": \"2030-01-01\",\u001b[22m\n\u001b[2m      \"checkout\": \"2030-01-10\",\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"depositpaid\": true,\u001b[22m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 0\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[33m@@ -1,6 +1,7 @@\u001b[39m\n\u001b[2m  Object {\u001b[22m\n\u001b[31m+   \"additionalneeds\": \"Breakfast\",\u001b[39m\n\u001b[2m    \"bookingdates\": Object {\u001b[22m\n\u001b[2m      \"checkin\": \"2030-01-01\",\u001b[22m\n\u001b[2m      \"checkout\": \"2030-01-10\",\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"depositpaid\": true,\u001b[22m\n    at <repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts:81:49",
+                    "location": {
+                      "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                      "column": 49,
+                      "line": 81
+                    },
+                    "snippet": "  79 |   expect(res.status()).toBe(200);\n  80 |   const get = await request.get(`/booking/${booking.id}`);\n> 81 |   expect(bookingSchema.parse(await get.json())).toEqual(replacement);\n     |                                                 ^\n  82 | });\n  83 |\n  84 | // Regression: PUT with a valid token on a non-existent booking succeeds."
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                        "column": 49,
+                        "line": 81
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 0\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[33m@@ -1,6 +1,7 @@\u001b[39m\n\u001b[2m  Object {\u001b[22m\n\u001b[31m+   \"additionalneeds\": \"Breakfast\",\u001b[39m\n\u001b[2m    \"bookingdates\": Object {\u001b[22m\n\u001b[2m      \"checkin\": \"2030-01-01\",\u001b[22m\n\u001b[2m      \"checkout\": \"2030-01-10\",\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"depositpaid\": true,\u001b[22m\n\n  79 |   expect(res.status()).toBe(200);\n  80 |   const get = await request.get(`/booking/${booking.id}`);\n> 81 |   expect(bookingSchema.parse(await get.json())).toEqual(replacement);\n     |                                                 ^\n  82 | });\n  83 |\n  84 | // Regression: PUT with a valid token on a non-existent booking succeeds.\n    at <repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts:81:49"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T18:59:33.960Z",
+                  "annotations": [
+                    {
+                      "type": "fail",
+                      "description": "Restful Booker keeps additionalneeds when a PUT omits it",
+                      "location": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                        "line": 72,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/tmp/pw-output/booking-PUT-drops-optional-c65dc-mitted-from-the-replacement/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                    "column": 49,
+                    "line": 81
+                  }
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-03f682a58232d55fe827",
+          "file": "booking.spec.ts",
+          "line": 71,
+          "column": 5
+        },
+        {
+          "title": "PUT on an unknown booking is not successful",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 25,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T18:59:34.035Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-b29da4ff717e4db568a2",
+          "file": "booking.spec.ts",
+          "line": 85,
+          "column": 5
+        },
+        {
+          "title": "PATCH updates only the given fields",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 34,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m500\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m500\u001b[39m\n    at <repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts:99:24",
+                    "location": {
+                      "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                      "column": 24,
+                      "line": 99
+                    },
+                    "snippet": "   97 |     data: { firstname: 'Patched', totalprice: 5 },\n   98 |   });\n>  99 |   expect(res.status()).toBe(200);\n      |                        ^\n  100 |   const expected = { ...booking.data, firstname: 'Patched', totalprice: 5 };\n  101 |   expect(bookingSchema.parse(await res.json())).toEqual(expected);\n  102 |"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                        "column": 24,
+                        "line": 99
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m500\u001b[39m\n\n   97 |     data: { firstname: 'Patched', totalprice: 5 },\n   98 |   });\n>  99 |   expect(res.status()).toBe(200);\n      |                        ^\n  100 |   const expected = { ...booking.data, firstname: 'Patched', totalprice: 5 };\n  101 |   expect(bookingSchema.parse(await res.json())).toEqual(expected);\n  102 |\n    at <repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts:99:24"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T18:59:34.083Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/tmp/pw-output/booking-PATCH-updates-only-the-given-fields/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                    "column": 24,
+                    "line": 99
+                  }
+                },
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 94,
+                  "error": {
+                    "message": "SyntaxError: Unexpected token 'I', \"Internal S\"... is not valid JSON",
+                    "stack": "SyntaxError: Unexpected token 'I', \"Internal S\"... is not valid JSON\n    at <repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts:104:30",
+                    "location": {
+                      "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                      "column": 30,
+                      "line": 104
+                    },
+                    "snippet": "  102 |\n  103 |   const get = await request.get(`/booking/${booking.id}`);\n> 104 |   expect(bookingSchema.parse(await get.json())).toEqual(expected);\n      |                              ^\n  105 | });\n  106 |\n  107 | // Regression: PATCH works without authentication."
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                        "column": 30,
+                        "line": 104
+                      },
+                      "message": "SyntaxError: Unexpected token 'I', \"Internal S\"... is not valid JSON\n\n  102 |\n  103 |   const get = await request.get(`/booking/${booking.id}`);\n> 104 |   expect(bookingSchema.parse(await get.json())).toEqual(expected);\n      |                              ^\n  105 | });\n  106 |\n  107 | // Regression: PATCH works without authentication.\n    at <repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts:104:30"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-10-21T18:59:35.118Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/tmp/pw-output/booking-PATCH-updates-only-the-given-fields-retry1/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                    "column": 30,
+                    "line": 104
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-6da994f9ab96efa4f80c",
+          "file": "booking.spec.ts",
+          "line": 94,
+          "column": 5
+        },
+        {
+          "title": "PATCH without a token is rejected and changes nothing",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 105,
+                  "error": {
+                    "message": "SyntaxError: Unexpected token 'I', \"Internal S\"... is not valid JSON",
+                    "stack": "SyntaxError: Unexpected token 'I', \"Internal S\"... is not valid JSON\n    at <repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts:112:30",
+                    "location": {
+                      "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                      "column": 30,
+                      "line": 112
+                    },
+                    "snippet": "  110 |   expect(res.status()).toBe(403);\n  111 |   const get = await request.get(`/booking/${booking.id}`);\n> 112 |   expect(bookingSchema.parse(await get.json())).toEqual(booking.data);\n      |                              ^\n  113 | });\n  114 |\n  115 | // Regression: PUT without a token is accepted or modifies the booking anyway."
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                        "column": 30,
+                        "line": 112
+                      },
+                      "message": "SyntaxError: Unexpected token 'I', \"Internal S\"... is not valid JSON\n\n  110 |   expect(res.status()).toBe(403);\n  111 |   const get = await request.get(`/booking/${booking.id}`);\n> 112 |   expect(bookingSchema.parse(await get.json())).toEqual(booking.data);\n      |                              ^\n  113 | });\n  114 |\n  115 | // Regression: PUT without a token is accepted or modifies the booking anyway.\n    at <repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts:112:30"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T18:59:36.236Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/tmp/pw-output/booking-PATCH-without-a-to-cffef-ejected-and-changes-nothing/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                    "column": 30,
+                    "line": 112
+                  }
+                },
+                {
+                  "workerIndex": 10,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 90,
+                  "error": {
+                    "message": "SyntaxError: Unexpected token 'I', \"Internal S\"... is not valid JSON",
+                    "stack": "SyntaxError: Unexpected token 'I', \"Internal S\"... is not valid JSON\n    at <repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts:112:30",
+                    "location": {
+                      "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                      "column": 30,
+                      "line": 112
+                    },
+                    "snippet": "  110 |   expect(res.status()).toBe(403);\n  111 |   const get = await request.get(`/booking/${booking.id}`);\n> 112 |   expect(bookingSchema.parse(await get.json())).toEqual(booking.data);\n      |                              ^\n  113 | });\n  114 |\n  115 | // Regression: PUT without a token is accepted or modifies the booking anyway."
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                        "column": 30,
+                        "line": 112
+                      },
+                      "message": "SyntaxError: Unexpected token 'I', \"Internal S\"... is not valid JSON\n\n  110 |   expect(res.status()).toBe(403);\n  111 |   const get = await request.get(`/booking/${booking.id}`);\n> 112 |   expect(bookingSchema.parse(await get.json())).toEqual(booking.data);\n      |                              ^\n  113 | });\n  114 |\n  115 | // Regression: PUT without a token is accepted or modifies the booking anyway.\n    at <repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts:112:30"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-10-21T18:59:37.374Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/tmp/pw-output/booking-PATCH-without-a-to-cffef-ejected-and-changes-nothing-retry1/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                    "column": 30,
+                    "line": 112
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-4894142792fc1094b4fd",
+          "file": "booking.spec.ts",
+          "line": 108,
+          "column": 5
+        },
+        {
+          "title": "PUT without a token returns 403 and changes nothing",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 11,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 95,
+                  "error": {
+                    "message": "SyntaxError: Unexpected token 'I', \"Internal S\"... is not valid JSON",
+                    "stack": "SyntaxError: Unexpected token 'I', \"Internal S\"... is not valid JSON\n    at <repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts:123:30",
+                    "location": {
+                      "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                      "column": 30,
+                      "line": 123
+                    },
+                    "snippet": "  121 |\n  122 |   const get = await request.get(`/booking/${booking.id}`);\n> 123 |   expect(bookingSchema.parse(await get.json())).toEqual(booking.data);\n      |                              ^\n  124 | });\n  125 |\n  126 | // Regression: DELETE does not answer 201 or leaves the booking readable/listed."
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                        "column": 30,
+                        "line": 123
+                      },
+                      "message": "SyntaxError: Unexpected token 'I', \"Internal S\"... is not valid JSON\n\n  121 |\n  122 |   const get = await request.get(`/booking/${booking.id}`);\n> 123 |   expect(bookingSchema.parse(await get.json())).toEqual(booking.data);\n      |                              ^\n  124 | });\n  125 |\n  126 | // Regression: DELETE does not answer 201 or leaves the booking readable/listed.\n    at <repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts:123:30"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T18:59:38.527Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/tmp/pw-output/booking-PUT-without-a-token-returns-403-and-changes-nothing/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                    "column": 30,
+                    "line": 123
+                  }
+                },
+                {
+                  "workerIndex": 12,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 98,
+                  "error": {
+                    "message": "SyntaxError: Unexpected token 'I', \"Internal S\"... is not valid JSON",
+                    "stack": "SyntaxError: Unexpected token 'I', \"Internal S\"... is not valid JSON\n    at <repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts:123:30",
+                    "location": {
+                      "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                      "column": 30,
+                      "line": 123
+                    },
+                    "snippet": "  121 |\n  122 |   const get = await request.get(`/booking/${booking.id}`);\n> 123 |   expect(bookingSchema.parse(await get.json())).toEqual(booking.data);\n      |                              ^\n  124 | });\n  125 |\n  126 | // Regression: DELETE does not answer 201 or leaves the booking readable/listed."
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                        "column": 30,
+                        "line": 123
+                      },
+                      "message": "SyntaxError: Unexpected token 'I', \"Internal S\"... is not valid JSON\n\n  121 |\n  122 |   const get = await request.get(`/booking/${booking.id}`);\n> 123 |   expect(bookingSchema.parse(await get.json())).toEqual(booking.data);\n      |                              ^\n  124 | });\n  125 |\n  126 | // Regression: DELETE does not answer 201 or leaves the booking readable/listed.\n    at <repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts:123:30"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-10-21T18:59:39.762Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/tmp/pw-output/booking-PUT-without-a-token-returns-403-and-changes-nothing-retry1/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                    "column": 30,
+                    "line": 123
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-4081753a5480b1001cb2",
+          "file": "booking.spec.ts",
+          "line": 116,
+          "column": 5
+        },
+        {
+          "title": "DELETE answers 201 and the booking is gone",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 13,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 108,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m404\u001b[39m\nReceived: \u001b[31m500\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m404\u001b[39m\nReceived: \u001b[31m500\u001b[39m\n    at <repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts:131:66",
+                    "location": {
+                      "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                      "column": 66,
+                      "line": 131
+                    },
+                    "snippet": "  129 |   expect(res.status()).toBe(201);\n  130 |\n> 131 |   expect((await request.get(`/booking/${booking.id}`)).status()).toBe(404);\n      |                                                                  ^\n  132 |   const list = await request.get('/booking', {\n  133 |     params: { firstname: booking.data.firstname, lastname: booking.data.lastname },\n  134 |   });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                        "column": 66,
+                        "line": 131
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m404\u001b[39m\nReceived: \u001b[31m500\u001b[39m\n\n  129 |   expect(res.status()).toBe(201);\n  130 |\n> 131 |   expect((await request.get(`/booking/${booking.id}`)).status()).toBe(404);\n      |                                                                  ^\n  132 |   const list = await request.get('/booking', {\n  133 |     params: { firstname: booking.data.firstname, lastname: booking.data.lastname },\n  134 |   });\n    at <repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts:131:66"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T18:59:40.864Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/tmp/pw-output/booking-DELETE-answers-201-and-the-booking-is-gone/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                    "column": 66,
+                    "line": 131
+                  }
+                },
+                {
+                  "workerIndex": 14,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 113,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m404\u001b[39m\nReceived: \u001b[31m500\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m404\u001b[39m\nReceived: \u001b[31m500\u001b[39m\n    at <repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts:131:66",
+                    "location": {
+                      "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                      "column": 66,
+                      "line": 131
+                    },
+                    "snippet": "  129 |   expect(res.status()).toBe(201);\n  130 |\n> 131 |   expect((await request.get(`/booking/${booking.id}`)).status()).toBe(404);\n      |                                                                  ^\n  132 |   const list = await request.get('/booking', {\n  133 |     params: { firstname: booking.data.firstname, lastname: booking.data.lastname },\n  134 |   });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                        "column": 66,
+                        "line": 131
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m404\u001b[39m\nReceived: \u001b[31m500\u001b[39m\n\n  129 |   expect(res.status()).toBe(201);\n  130 |\n> 131 |   expect((await request.get(`/booking/${booking.id}`)).status()).toBe(404);\n      |                                                                  ^\n  132 |   const list = await request.get('/booking', {\n  133 |     params: { firstname: booking.data.firstname, lastname: booking.data.lastname },\n  134 |   });\n    at <repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts:131:66"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-10-21T18:59:41.989Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/tmp/pw-output/booking-DELETE-answers-201-and-the-booking-is-gone-retry1/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                    "column": 66,
+                    "line": 131
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-41bf1a129c9027a09887",
+          "file": "booking.spec.ts",
+          "line": 127,
+          "column": 5
+        },
+        {
+          "title": "DELETE without a token is rejected and the booking remains",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 15,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 107,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m500\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m500\u001b[39m\n    at <repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts:143:24",
+                    "location": {
+                      "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                      "column": 24,
+                      "line": 143
+                    },
+                    "snippet": "  141 |   expect(res.status()).toBe(403);\n  142 |   const get = await request.get(`/booking/${booking.id}`);\n> 143 |   expect(get.status()).toBe(200);\n      |                        ^\n  144 |   expect(bookingSchema.parse(await get.json())).toEqual(booking.data);\n  145 | });\n  146 |"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                        "column": 24,
+                        "line": 143
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m500\u001b[39m\n\n  141 |   expect(res.status()).toBe(403);\n  142 |   const get = await request.get(`/booking/${booking.id}`);\n> 143 |   expect(get.status()).toBe(200);\n      |                        ^\n  144 |   expect(bookingSchema.parse(await get.json())).toEqual(booking.data);\n  145 | });\n  146 |\n    at <repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts:143:24"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T18:59:43.142Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/tmp/pw-output/booking-DELETE-without-a-t-2f78d-ted-and-the-booking-remains/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                    "column": 24,
+                    "line": 143
+                  }
+                },
+                {
+                  "workerIndex": 16,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 102,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m500\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m500\u001b[39m\n    at <repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts:143:24",
+                    "location": {
+                      "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                      "column": 24,
+                      "line": 143
+                    },
+                    "snippet": "  141 |   expect(res.status()).toBe(403);\n  142 |   const get = await request.get(`/booking/${booking.id}`);\n> 143 |   expect(get.status()).toBe(200);\n      |                        ^\n  144 |   expect(bookingSchema.parse(await get.json())).toEqual(booking.data);\n  145 | });\n  146 |"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                        "column": 24,
+                        "line": 143
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m500\u001b[39m\n\n  141 |   expect(res.status()).toBe(403);\n  142 |   const get = await request.get(`/booking/${booking.id}`);\n> 143 |   expect(get.status()).toBe(200);\n      |                        ^\n  144 |   expect(bookingSchema.parse(await get.json())).toEqual(booking.data);\n  145 | });\n  146 |\n    at <repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts:143:24"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-10-21T18:59:44.342Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/tmp/pw-output/booking-DELETE-without-a-t-2f78d-ted-and-the-booking-remains-retry1/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                    "column": 24,
+                    "line": 143
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-ef14cdb319618a9d66ca",
+          "file": "booking.spec.ts",
+          "line": 139,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-21T18:59:23.860Z",
+    "duration": 20713.559999999998,
+    "expected": 7,
+    "skipped": 0,
+    "unexpected": 7,
+    "flaky": 3
+  }
+}

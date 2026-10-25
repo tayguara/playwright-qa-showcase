@@ -1,0 +1,665 @@
+{
+  "config": {
+    "argv": [
+      "<home>/.nvm/versions/node/v22.21.0/bin/node",
+      "<repo>/node_modules/@playwright/test/cli.js",
+      "test",
+      "--config",
+      "playwright.config.ts",
+      "--project=api",
+      "--workers=1",
+      "--reporter=json"
+    ],
+    "configFile": "<repo>/playwright.config.ts",
+    "rootDir": "<repo>",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "<repo>/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "ui",
+        "name": "ui",
+        "testDir": "<repo>/.features-gen/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "<repo>/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "a11y",
+        "name": "a11y",
+        "testDir": "<repo>/tests/a11y",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "<repo>/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "api",
+        "name": "api",
+        "testDir": "<repo>/tests/api",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "<repo>/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "unit",
+        "name": "unit",
+        "testDir": "<repo>/tests/unit",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "tests/api/auth.spec.ts",
+      "file": "tests/api/auth.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "POST /auth",
+          "file": "tests/api/auth.spec.ts",
+          "line": 5,
+          "column": 6,
+          "specs": [
+            {
+              "title": "A1: valid credentials return a token",
+              "ok": true,
+              "tags": [
+                "api"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 90,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T18:54:29.082Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d748ac400d08b85935ef-a18bbe4cbae4435403dc",
+              "file": "tests/api/auth.spec.ts",
+              "line": 6,
+              "column": 7
+            },
+            {
+              "title": "A2: invalid credentials answer HTTP 200 with a reason instead of a 4xx",
+              "ok": true,
+              "tags": [
+                "api"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "api-quirk",
+                      "description": "POST /auth answers HTTP 200 (not 401) for bad credentials; the failure is only in the body."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 36,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T18:54:29.286Z",
+                      "annotations": [
+                        {
+                          "type": "api-quirk",
+                          "description": "POST /auth answers HTTP 200 (not 401) for bad credentials; the failure is only in the body."
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d748ac400d08b85935ef-daf2fd3f595dc1162132",
+              "file": "tests/api/auth.spec.ts",
+              "line": 13,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "tests/api/booking.spec.ts",
+      "file": "tests/api/booking.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "/booking",
+          "file": "tests/api/booking.spec.ts",
+          "line": 5,
+          "column": 6,
+          "specs": [
+            {
+              "title": "A3: creates a booking and reads back the same data",
+              "ok": false,
+              "tags": [
+                "api"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 69,
+                      "error": {
+                        "message": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]",
+                        "stack": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]\n    at <repo>/tests/api/booking.spec.ts:13:42",
+                        "location": {
+                          "file": "<repo>/tests/api/booking.spec.ts",
+                          "column": 42,
+                          "line": 13
+                        },
+                        "snippet": "  11 |     const createResponse = await bookingClient.create(payload);\n  12 |     expect(createResponse.status()).toBe(200);\n> 13 |     const created = createdBookingSchema.parse(await createResponse.json());\n     |                                          ^\n  14 |\n  15 |     try {\n  16 |       expect(created.booking).toEqual(payload);"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "<repo>/tests/api/booking.spec.ts",
+                            "column": 42,
+                            "line": 13
+                          },
+                          "message": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]\n\n  11 |     const createResponse = await bookingClient.create(payload);\n  12 |     expect(createResponse.status()).toBe(200);\n> 13 |     const created = createdBookingSchema.parse(await createResponse.json());\n     |                                          ^\n  14 |\n  15 |     try {\n  16 |       expect(created.booking).toEqual(payload);\n    at <repo>/tests/api/booking.spec.ts:13:42"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T18:54:29.347Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "<repo>/test-results/booking--booking-A3-create-195e6-nd-reads-back-the-same-data-api/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "<repo>/test-results/booking--booking-A3-create-195e6-nd-reads-back-the-same-data-api/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "<repo>/tests/api/booking.spec.ts",
+                        "column": 42,
+                        "line": 13
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a3a10f2351dcc49e1cb9-639ec026786a4fcce44d",
+              "file": "tests/api/booking.spec.ts",
+              "line": 6,
+              "column": 7
+            },
+            {
+              "title": "A4: finds a booking by first and last name",
+              "ok": false,
+              "tags": [
+                "api"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 112,
+                      "error": {
+                        "message": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]",
+                        "stack": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]\n    at Object.booking (<repo>/src/fixtures/api.fixtures.ts:61:48)",
+                        "location": {
+                          "file": "<repo>/src/fixtures/api.fixtures.ts",
+                          "column": 48,
+                          "line": 61
+                        },
+                        "snippet": "   at src/fixtures/api.fixtures.ts:61\n\n  59 |     const createResponse = await bookingClient.create(payload);\n  60 |     expect(createResponse.status(), 'POST /booking while preparing the fixture').toBe(200);\n> 61 |     const { bookingid } = createdBookingSchema.parse(await createResponse.json());\n     |                                                ^\n  62 |\n  63 |     await use({ id: bookingid, payload });\n  64 |"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "<repo>/src/fixtures/api.fixtures.ts",
+                            "column": 48,
+                            "line": 61
+                          },
+                          "message": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]\n\n   at src/fixtures/api.fixtures.ts:61\n\n  59 |     const createResponse = await bookingClient.create(payload);\n  60 |     expect(createResponse.status(), 'POST /booking while preparing the fixture').toBe(200);\n> 61 |     const { bookingid } = createdBookingSchema.parse(await createResponse.json());\n     |                                                ^\n  62 |\n  63 |     await use({ id: bookingid, payload });\n  64 |\n    at Object.booking (<repo>/src/fixtures/api.fixtures.ts:61:48)"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T18:54:30.766Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "<repo>/test-results/booking--booking-A4-finds-a-booking-by-first-and-last-name-api/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "<repo>/test-results/booking--booking-A4-finds-a-booking-by-first-and-last-name-api/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "<repo>/src/fixtures/api.fixtures.ts",
+                        "column": 48,
+                        "line": 61
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a3a10f2351dcc49e1cb9-aedbfdafe5119cfd357e",
+              "file": "tests/api/booking.spec.ts",
+              "line": 27,
+              "column": 7
+            },
+            {
+              "title": "A5: PUT replaces the whole booking",
+              "ok": false,
+              "tags": [
+                "api"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 98,
+                      "error": {
+                        "message": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]",
+                        "stack": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]\n    at Object.booking (<repo>/src/fixtures/api.fixtures.ts:61:48)",
+                        "location": {
+                          "file": "<repo>/src/fixtures/api.fixtures.ts",
+                          "column": 48,
+                          "line": 61
+                        },
+                        "snippet": "   at src/fixtures/api.fixtures.ts:61\n\n  59 |     const createResponse = await bookingClient.create(payload);\n  60 |     expect(createResponse.status(), 'POST /booking while preparing the fixture').toBe(200);\n> 61 |     const { bookingid } = createdBookingSchema.parse(await createResponse.json());\n     |                                                ^\n  62 |\n  63 |     await use({ id: bookingid, payload });\n  64 |"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "<repo>/src/fixtures/api.fixtures.ts",
+                            "column": 48,
+                            "line": 61
+                          },
+                          "message": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]\n\n   at src/fixtures/api.fixtures.ts:61\n\n  59 |     const createResponse = await bookingClient.create(payload);\n  60 |     expect(createResponse.status(), 'POST /booking while preparing the fixture').toBe(200);\n> 61 |     const { bookingid } = createdBookingSchema.parse(await createResponse.json());\n     |                                                ^\n  62 |\n  63 |     await use({ id: bookingid, payload });\n  64 |\n    at Object.booking (<repo>/src/fixtures/api.fixtures.ts:61:48)"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T18:54:32.341Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "<repo>/test-results/booking--booking-A5-PUT-replaces-the-whole-booking-api/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "<repo>/test-results/booking--booking-A5-PUT-replaces-the-whole-booking-api/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "<repo>/src/fixtures/api.fixtures.ts",
+                        "column": 48,
+                        "line": 61
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a3a10f2351dcc49e1cb9-5d44997ab805e106760f",
+              "file": "tests/api/booking.spec.ts",
+              "line": 38,
+              "column": 7
+            },
+            {
+              "title": "A6: PATCH changes only the given fields",
+              "ok": false,
+              "tags": [
+                "api"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 118,
+                      "error": {
+                        "message": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]",
+                        "stack": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]\n    at Object.booking (<repo>/src/fixtures/api.fixtures.ts:61:48)",
+                        "location": {
+                          "file": "<repo>/src/fixtures/api.fixtures.ts",
+                          "column": 48,
+                          "line": 61
+                        },
+                        "snippet": "   at src/fixtures/api.fixtures.ts:61\n\n  59 |     const createResponse = await bookingClient.create(payload);\n  60 |     expect(createResponse.status(), 'POST /booking while preparing the fixture').toBe(200);\n> 61 |     const { bookingid } = createdBookingSchema.parse(await createResponse.json());\n     |                                                ^\n  62 |\n  63 |     await use({ id: bookingid, payload });\n  64 |"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "<repo>/src/fixtures/api.fixtures.ts",
+                            "column": 48,
+                            "line": 61
+                          },
+                          "message": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]\n\n   at src/fixtures/api.fixtures.ts:61\n\n  59 |     const createResponse = await bookingClient.create(payload);\n  60 |     expect(createResponse.status(), 'POST /booking while preparing the fixture').toBe(200);\n> 61 |     const { bookingid } = createdBookingSchema.parse(await createResponse.json());\n     |                                                ^\n  62 |\n  63 |     await use({ id: bookingid, payload });\n  64 |\n    at Object.booking (<repo>/src/fixtures/api.fixtures.ts:61:48)"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T18:54:33.776Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "<repo>/test-results/booking--booking-A6-PATCH-changes-only-the-given-fields-api/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "<repo>/test-results/booking--booking-A6-PATCH-changes-only-the-given-fields-api/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "<repo>/src/fixtures/api.fixtures.ts",
+                        "column": 48,
+                        "line": 61
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a3a10f2351dcc49e1cb9-29752756d8c7e27d8a85",
+              "file": "tests/api/booking.spec.ts",
+              "line": 56,
+              "column": 7
+            },
+            {
+              "title": "A7: PUT without a token is rejected with 403 and changes nothing",
+              "ok": false,
+              "tags": [
+                "api"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 117,
+                      "error": {
+                        "message": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]",
+                        "stack": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]\n    at Object.booking (<repo>/src/fixtures/api.fixtures.ts:61:48)",
+                        "location": {
+                          "file": "<repo>/src/fixtures/api.fixtures.ts",
+                          "column": 48,
+                          "line": 61
+                        },
+                        "snippet": "   at src/fixtures/api.fixtures.ts:61\n\n  59 |     const createResponse = await bookingClient.create(payload);\n  60 |     expect(createResponse.status(), 'POST /booking while preparing the fixture').toBe(200);\n> 61 |     const { bookingid } = createdBookingSchema.parse(await createResponse.json());\n     |                                                ^\n  62 |\n  63 |     await use({ id: bookingid, payload });\n  64 |"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "<repo>/src/fixtures/api.fixtures.ts",
+                            "column": 48,
+                            "line": 61
+                          },
+                          "message": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]\n\n   at src/fixtures/api.fixtures.ts:61\n\n  59 |     const createResponse = await bookingClient.create(payload);\n  60 |     expect(createResponse.status(), 'POST /booking while preparing the fixture').toBe(200);\n> 61 |     const { bookingid } = createdBookingSchema.parse(await createResponse.json());\n     |                                                ^\n  62 |\n  63 |     await use({ id: bookingid, payload });\n  64 |\n    at Object.booking (<repo>/src/fixtures/api.fixtures.ts:61:48)"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T18:54:35.176Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "<repo>/test-results/booking--booking-A7-PUT-wi-c6fa5-ith-403-and-changes-nothing-api/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "<repo>/test-results/booking--booking-A7-PUT-wi-c6fa5-ith-403-and-changes-nothing-api/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "<repo>/src/fixtures/api.fixtures.ts",
+                        "column": 48,
+                        "line": 61
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a3a10f2351dcc49e1cb9-7a79f95b82c7c000841f",
+              "file": "tests/api/booking.spec.ts",
+              "line": 69,
+              "column": 7
+            },
+            {
+              "title": "A8: DELETE removes the booking (answers 201, not 204)",
+              "ok": false,
+              "tags": [
+                "api"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 121,
+                      "error": {
+                        "message": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]",
+                        "stack": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]\n    at Object.booking (<repo>/src/fixtures/api.fixtures.ts:61:48)",
+                        "location": {
+                          "file": "<repo>/src/fixtures/api.fixtures.ts",
+                          "column": 48,
+                          "line": 61
+                        },
+                        "snippet": "   at src/fixtures/api.fixtures.ts:61\n\n  59 |     const createResponse = await bookingClient.create(payload);\n  60 |     expect(createResponse.status(), 'POST /booking while preparing the fixture').toBe(200);\n> 61 |     const { bookingid } = createdBookingSchema.parse(await createResponse.json());\n     |                                                ^\n  62 |\n  63 |     await use({ id: bookingid, payload });\n  64 |"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "<repo>/src/fixtures/api.fixtures.ts",
+                            "column": 48,
+                            "line": 61
+                          },
+                          "message": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]\n\n   at src/fixtures/api.fixtures.ts:61\n\n  59 |     const createResponse = await bookingClient.create(payload);\n  60 |     expect(createResponse.status(), 'POST /booking while preparing the fixture').toBe(200);\n> 61 |     const { bookingid } = createdBookingSchema.parse(await createResponse.json());\n     |                                                ^\n  62 |\n  63 |     await use({ id: bookingid, payload });\n  64 |\n    at Object.booking (<repo>/src/fixtures/api.fixtures.ts:61:48)"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T18:54:36.641Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "<repo>/test-results/booking--booking-A8-DELETE-d0d99-ooking-answers-201-not-204--api/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "<repo>/test-results/booking--booking-A8-DELETE-d0d99-ooking-answers-201-not-204--api/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "<repo>/src/fixtures/api.fixtures.ts",
+                        "column": 48,
+                        "line": 61
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a3a10f2351dcc49e1cb9-575b3a627d82c2ccc33d",
+              "file": "tests/api/booking.spec.ts",
+              "line": 84,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-21T18:54:27.803Z",
+    "duration": 9223.592,
+    "expected": 2,
+    "skipped": 0,
+    "unexpected": 6,
+    "flaky": 0
+  }
+}

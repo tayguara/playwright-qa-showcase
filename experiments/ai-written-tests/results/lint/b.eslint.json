@@ -1,0 +1,99 @@
+[
+  {
+    "filePath": "<repo>/experiments/ai-written-tests/suite-b/eslint.config.mjs",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "<repo>/experiments/ai-written-tests/suite-b/playwright.config.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "<repo>/experiments/ai-written-tests/suite-b/tests/auth.spec.ts",
+    "messages": [
+      {
+        "ruleId": "@typescript-eslint/no-unsafe-assignment",
+        "severity": 2,
+        "message": "Unsafe assignment of an `any` value.",
+        "line": 16,
+        "column": 9,
+        "messageId": "anyAssignment",
+        "endLine": 16,
+        "endColumn": 67
+      },
+      {
+        "ruleId": "@typescript-eslint/no-unsafe-member-access",
+        "severity": 2,
+        "message": "Unsafe member access .totalprice on an `any` value.",
+        "line": 17,
+        "column": 16,
+        "messageId": "unsafeMemberExpression",
+        "endLine": 17,
+        "endColumn": 26
+      },
+      {
+        "ruleId": "@typescript-eslint/no-unsafe-assignment",
+        "severity": 2,
+        "message": "Unsafe assignment of an `any` value.",
+        "line": 42,
+        "column": 9,
+        "messageId": "anyAssignment",
+        "endLine": 42,
+        "endColumn": 75
+      },
+      {
+        "ruleId": "@typescript-eslint/no-unsafe-member-access",
+        "severity": 2,
+        "message": "Unsafe member access .firstname on an `any` value.",
+        "line": 43,
+        "column": 16,
+        "messageId": "unsafeMemberExpression",
+        "endLine": 43,
+        "endColumn": 25
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 4,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "import { test, expect, tokenSchema } from './helpers';\nimport { z } from 'zod';\n\n// Regression: /auth stops issuing a usable token for valid admin credentials.\ntest('valid credentials return a token that authorises a write', async ({ request, createBooking }) => {\n  const res = await request.post('/auth', { data: { username: 'admin', password: 'password123' } });\n  expect(res.status()).toBe(200);\n  const { token } = tokenSchema.parse(await res.json());\n\n  const { id, data } = await createBooking();\n  const put = await request.put(`/booking/${id}`, {\n    headers: { Cookie: `token=${token}` },\n    data: { ...data, totalprice: 222 },\n  });\n  expect(put.status()).toBe(200);\n  const after = await (await request.get(`/booking/${id}`)).json();\n  expect(after.totalprice).toBe(222);\n});\n\n// Regression: /auth issues a token for a wrong password.\ntest('wrong password yields no token', async ({ request }) => {\n  const res = await request.post('/auth', { data: { username: 'admin', password: 'wrong-password' } });\n  const body = z.object({ reason: z.string() }).parse(await res.json());\n  expect(body.reason).toBe('Bad credentials');\n  expect(body).not.toHaveProperty('token');\n});\n\n// Regression: /auth issues a token for an unknown user.\ntest('unknown user yields no token', async ({ request }) => {\n  const res = await request.post('/auth', { data: { username: 'nobody', password: 'password123' } });\n  const body = z.object({ reason: z.string() }).parse(await res.json());\n  expect(body).not.toHaveProperty('token');\n});\n\n// Regression: a made-up token is accepted for write operations.\ntest('an invalid token is rejected and the booking is unchanged', async ({ request, booking }) => {\n  const res = await request.put(`/booking/${booking.id}`, {\n    headers: { Cookie: 'token=not-a-real-token' },\n    data: { ...booking.data, firstname: 'Hacked' },\n  });\n  expect(res.status()).toBe(403);\n  const after = await (await request.get(`/booking/${booking.id}`)).json();\n  expect(after.firstname).toBe(booking.data.firstname);\n});\n",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  }
+]

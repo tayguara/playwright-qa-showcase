@@ -1,0 +1,228 @@
+{
+  "suite": "A",
+  "label": "AI agent, no guardrails",
+  "source": "experiments/ai-written-tests/suite-a",
+  "gitSha": "55737d1720376a91da999429422e82da386792b0",
+  "stubSha256": "3768a2ba1cd2177a909141ce24724e3e52983de687900f2150568f12b84e4380",
+  "stub": {
+    "complete": true,
+    "completedAt": "2026-10-21T18:57:06.056Z",
+    "stubSha256": "3768a2ba1cd2177a909141ce24724e3e52983de687900f2150568f12b84e4380",
+    "clean": {
+      "total": 8,
+      "passed": 8,
+      "failed": 0,
+      "flaky": 0,
+      "skipped": 0,
+      "passRate": 1,
+      "requests": 26,
+      "globalErrors": 0,
+      "tests": [
+        {
+          "key": " › booker.spec.ts › Restful Booker › auth: valid credentials return a token",
+          "status": "expected"
+        },
+        {
+          "key": " › booker.spec.ts › Restful Booker › auth: invalid credentials do not return a token",
+          "status": "expected"
+        },
+        {
+          "key": " › booker.spec.ts › Restful Booker › create a booking and read it back",
+          "status": "expected"
+        },
+        {
+          "key": " › booker.spec.ts › Restful Booker › find a booking by first name and last name",
+          "status": "expected"
+        },
+        {
+          "key": " › booker.spec.ts › Restful Booker › PUT fully replaces a booking",
+          "status": "expected"
+        },
+        {
+          "key": " › booker.spec.ts › Restful Booker › PATCH partially updates a booking",
+          "status": "expected"
+        },
+        {
+          "key": " › booker.spec.ts › Restful Booker › PUT without a token is rejected with 403 and changes nothing",
+          "status": "expected"
+        },
+        {
+          "key": " › booker.spec.ts › Restful Booker › DELETE answers 201 and the booking is gone",
+          "status": "expected"
+        }
+      ]
+    },
+    "faults": [
+      {
+        "fault": 1,
+        "slug": "get-wrong-totalprice",
+        "status": "caught",
+        "failingTests": [
+          " › booker.spec.ts › Restful Booker › PATCH partially updates a booking",
+          " › booker.spec.ts › Restful Booker › PUT fully replaces a booking",
+          " › booker.spec.ts › Restful Booker › PUT without a token is rejected with 403 and changes nothing",
+          " › booker.spec.ts › Restful Booker › create a booking and read it back"
+        ],
+        "flakyTests": [],
+        "newGlobalErrors": 0,
+        "unknownFailingTests": [],
+        "requests": 49
+      },
+      {
+        "fault": 2,
+        "slug": "get-omits-additionalneeds",
+        "status": "caught",
+        "failingTests": [
+          " › booker.spec.ts › Restful Booker › PATCH partially updates a booking",
+          " › booker.spec.ts › Restful Booker › PUT fully replaces a booking",
+          " › booker.spec.ts › Restful Booker › PUT without a token is rejected with 403 and changes nothing",
+          " › booker.spec.ts › Restful Booker › create a booking and read it back"
+        ],
+        "flakyTests": [],
+        "newGlobalErrors": 0,
+        "unknownFailingTests": [],
+        "requests": 49
+      },
+      {
+        "fault": 3,
+        "slug": "patch-changes-unsent-fields",
+        "status": "caught",
+        "failingTests": [
+          " › booker.spec.ts › Restful Booker › PATCH partially updates a booking"
+        ],
+        "flakyTests": [],
+        "newGlobalErrors": 0,
+        "unknownFailingTests": [],
+        "requests": 30
+      },
+      {
+        "fault": 4,
+        "slug": "put-without-token-accepted",
+        "status": "caught",
+        "failingTests": [
+          " › booker.spec.ts › Restful Booker › PUT without a token is rejected with 403 and changes nothing"
+        ],
+        "flakyTests": [],
+        "newGlobalErrors": 0,
+        "unknownFailingTests": [],
+        "requests": 30
+      },
+      {
+        "fault": 5,
+        "slug": "delete-not-deleting",
+        "status": "caught",
+        "failingTests": [
+          " › booker.spec.ts › Restful Booker › DELETE answers 201 and the booking is gone"
+        ],
+        "flakyTests": [],
+        "newGlobalErrors": 0,
+        "unknownFailingTests": [],
+        "requests": 31
+      },
+      {
+        "fault": 6,
+        "slug": "name-filter-ignored",
+        "status": "caught",
+        "failingTests": [
+          " › booker.spec.ts › Restful Booker › find a booking by first name and last name"
+        ],
+        "flakyTests": [],
+        "newGlobalErrors": 0,
+        "unknownFailingTests": [],
+        "requests": 32
+      },
+      {
+        "fault": 7,
+        "slug": "auth-accepts-any-credentials",
+        "status": "caught",
+        "failingTests": [
+          " › booker.spec.ts › Restful Booker › auth: invalid credentials do not return a token"
+        ],
+        "flakyTests": [],
+        "newGlobalErrors": 0,
+        "unknownFailingTests": [],
+        "requests": 29
+      },
+      {
+        "fault": 8,
+        "slug": "dates-swapped-on-read",
+        "status": "caught",
+        "failingTests": [
+          " › booker.spec.ts › Restful Booker › PATCH partially updates a booking",
+          " › booker.spec.ts › Restful Booker › PUT fully replaces a booking",
+          " › booker.spec.ts › Restful Booker › PUT without a token is rejected with 403 and changes nothing",
+          " › booker.spec.ts › Restful Booker › create a booking and read it back"
+        ],
+        "flakyTests": [],
+        "newGlobalErrors": 0,
+        "unknownFailingTests": [],
+        "requests": 49
+      },
+      {
+        "fault": 9,
+        "slug": "depositpaid-as-string",
+        "status": "caught",
+        "failingTests": [
+          " › booker.spec.ts › Restful Booker › PATCH partially updates a booking",
+          " › booker.spec.ts › Restful Booker › PUT fully replaces a booking",
+          " › booker.spec.ts › Restful Booker › PUT without a token is rejected with 403 and changes nothing",
+          " › booker.spec.ts › Restful Booker › create a booking and read it back"
+        ],
+        "flakyTests": [],
+        "newGlobalErrors": 0,
+        "unknownFailingTests": [],
+        "requests": 43
+      },
+      {
+        "fault": 10,
+        "slug": "every-5th-request-500",
+        "status": "caught",
+        "failingTests": [
+          " › booker.spec.ts › Restful Booker › DELETE answers 201 and the booking is gone",
+          " › booker.spec.ts › Restful Booker › PATCH partially updates a booking",
+          " › booker.spec.ts › Restful Booker › PUT fully replaces a booking",
+          " › booker.spec.ts › Restful Booker › PUT without a token is rejected with 403 and changes nothing",
+          " › booker.spec.ts › Restful Booker › find a booking by first name and last name"
+        ],
+        "flakyTests": [
+          " › booker.spec.ts › Restful Booker › create a booking and read it back"
+        ],
+        "newGlobalErrors": 0,
+        "unknownFailingTests": [],
+        "requests": 56
+      }
+    ],
+    "fault10Deterministic": true,
+    "faultsCaught": 10
+  },
+  "repeat": {
+    "repeatEach": 5,
+    "executions": 40,
+    "stubSha256": "3768a2ba1cd2177a909141ce24724e3e52983de687900f2150568f12b84e4380",
+    "flakyTests": [],
+    "consistentlyFailing": []
+  },
+  "lint": {
+    "files": 2,
+    "errors": 17,
+    "warnings": 0,
+    "fatal": 0,
+    "byRule": {
+      "@typescript-eslint/no-unsafe-assignment": 8,
+      "@typescript-eslint/no-unsafe-member-access": 8,
+      "@typescript-eslint/no-unsafe-return": 1
+    }
+  },
+  "typecheck": {
+    "errors": 0
+  },
+  "public": {
+    "ranAt": "2026-10-21T19:01:40.823Z",
+    "total": 8,
+    "passed": 8,
+    "failed": 0,
+    "flaky": 0,
+    "skipped": 0,
+    "passRate": 1
+  }
+}

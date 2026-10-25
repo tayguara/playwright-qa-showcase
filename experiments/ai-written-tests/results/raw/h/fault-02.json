@@ -1,0 +1,605 @@
+{
+  "config": {
+    "argv": [
+      "<home>/.nvm/versions/node/v22.21.0/bin/node",
+      "<repo>/node_modules/@playwright/test/cli.js",
+      "test",
+      "--config",
+      "playwright.config.ts",
+      "--project=api",
+      "--workers=1",
+      "--reporter=json"
+    ],
+    "configFile": "<repo>/playwright.config.ts",
+    "rootDir": "<repo>",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "<repo>/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "ui",
+        "name": "ui",
+        "testDir": "<repo>/.features-gen/ui",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "<repo>/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "a11y",
+        "name": "a11y",
+        "testDir": "<repo>/tests/a11y",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "<repo>/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "api",
+        "name": "api",
+        "testDir": "<repo>/tests/api",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "<repo>/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "unit",
+        "name": "unit",
+        "testDir": "<repo>/tests/unit",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "tests/api/auth.spec.ts",
+      "file": "tests/api/auth.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "POST /auth",
+          "file": "tests/api/auth.spec.ts",
+          "line": 5,
+          "column": 6,
+          "specs": [
+            {
+              "title": "A1: valid credentials return a token",
+              "ok": true,
+              "tags": [
+                "api"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 109,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T18:53:46.222Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d748ac400d08b85935ef-a18bbe4cbae4435403dc",
+              "file": "tests/api/auth.spec.ts",
+              "line": 6,
+              "column": 7
+            },
+            {
+              "title": "A2: invalid credentials answer HTTP 200 with a reason instead of a 4xx",
+              "ok": true,
+              "tags": [
+                "api"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "api-quirk",
+                      "description": "POST /auth answers HTTP 200 (not 401) for bad credentials; the failure is only in the body."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 43,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T18:53:46.451Z",
+                      "annotations": [
+                        {
+                          "type": "api-quirk",
+                          "description": "POST /auth answers HTTP 200 (not 401) for bad credentials; the failure is only in the body."
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d748ac400d08b85935ef-daf2fd3f595dc1162132",
+              "file": "tests/api/auth.spec.ts",
+              "line": 13,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "tests/api/booking.spec.ts",
+      "file": "tests/api/booking.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "/booking",
+          "file": "tests/api/booking.spec.ts",
+          "line": 5,
+          "column": 6,
+          "specs": [
+            {
+              "title": "A3: creates a booking and reads back the same data",
+              "ok": false,
+              "tags": [
+                "api"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 107,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 0\u001b[39m\n\n\u001b[33m@@ -1,7 +1,6 @@\u001b[39m\n\u001b[2m  Object {\u001b[22m\n\u001b[32m-   \"additionalneeds\": \"Breakfast\",\u001b[39m\n\u001b[2m    \"bookingdates\": Object {\u001b[22m\n\u001b[2m      \"checkin\": \"2026-11-20\",\u001b[22m\n\u001b[2m      \"checkout\": \"2026-11-23\",\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"depositpaid\": true,\u001b[22m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 0\u001b[39m\n\n\u001b[33m@@ -1,7 +1,6 @@\u001b[39m\n\u001b[2m  Object {\u001b[22m\n\u001b[32m-   \"additionalneeds\": \"Breakfast\",\u001b[39m\n\u001b[2m    \"bookingdates\": Object {\u001b[22m\n\u001b[2m      \"checkin\": \"2026-11-20\",\u001b[22m\n\u001b[2m      \"checkout\": \"2026-11-23\",\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"depositpaid\": true,\u001b[22m\n    at <repo>/tests/api/booking.spec.ts:21:61",
+                        "location": {
+                          "file": "<repo>/tests/api/booking.spec.ts",
+                          "column": 61,
+                          "line": 21
+                        },
+                        "snippet": "  19 |\n  20 |       expect(getResponse.status()).toBe(200);\n> 21 |       expect(bookingSchema.parse(await getResponse.json())).toEqual(payload);\n     |                                                             ^\n  22 |     } finally {\n  23 |       await bookingClient.delete(created.bookingid, authToken);\n  24 |     }"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "<repo>/tests/api/booking.spec.ts",
+                            "column": 61,
+                            "line": 21
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 0\u001b[39m\n\n\u001b[33m@@ -1,7 +1,6 @@\u001b[39m\n\u001b[2m  Object {\u001b[22m\n\u001b[32m-   \"additionalneeds\": \"Breakfast\",\u001b[39m\n\u001b[2m    \"bookingdates\": Object {\u001b[22m\n\u001b[2m      \"checkin\": \"2026-11-20\",\u001b[22m\n\u001b[2m      \"checkout\": \"2026-11-23\",\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"depositpaid\": true,\u001b[22m\n\n  19 |\n  20 |       expect(getResponse.status()).toBe(200);\n> 21 |       expect(bookingSchema.parse(await getResponse.json())).toEqual(payload);\n     |                                                             ^\n  22 |     } finally {\n  23 |       await bookingClient.delete(created.bookingid, authToken);\n  24 |     }\n    at <repo>/tests/api/booking.spec.ts:21:61"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T18:53:46.536Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "<repo>/test-results/booking--booking-A3-create-195e6-nd-reads-back-the-same-data-api/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "<repo>/test-results/booking--booking-A3-create-195e6-nd-reads-back-the-same-data-api/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "<repo>/tests/api/booking.spec.ts",
+                        "column": 61,
+                        "line": 21
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a3a10f2351dcc49e1cb9-639ec026786a4fcce44d",
+              "file": "tests/api/booking.spec.ts",
+              "line": 6,
+              "column": 7
+            },
+            {
+              "title": "A4: finds a booking by first and last name",
+              "ok": true,
+              "tags": [
+                "api"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 79,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T18:53:47.897Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a3a10f2351dcc49e1cb9-aedbfdafe5119cfd357e",
+              "file": "tests/api/booking.spec.ts",
+              "line": 27,
+              "column": 7
+            },
+            {
+              "title": "A5: PUT replaces the whole booking",
+              "ok": false,
+              "tags": [
+                "api"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 118,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 0\u001b[39m\n\n\u001b[33m@@ -1,7 +1,6 @@\u001b[39m\n\u001b[2m  Object {\u001b[22m\n\u001b[32m-   \"additionalneeds\": \"Late checkout\",\u001b[39m\n\u001b[2m    \"bookingdates\": Object {\u001b[22m\n\u001b[2m      \"checkin\": \"2026-11-20\",\u001b[22m\n\u001b[2m      \"checkout\": \"2026-11-23\",\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"depositpaid\": false,\u001b[22m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 0\u001b[39m\n\n\u001b[33m@@ -1,7 +1,6 @@\u001b[39m\n\u001b[2m  Object {\u001b[22m\n\u001b[32m-   \"additionalneeds\": \"Late checkout\",\u001b[39m\n\u001b[2m    \"bookingdates\": Object {\u001b[22m\n\u001b[2m      \"checkin\": \"2026-11-20\",\u001b[22m\n\u001b[2m      \"checkout\": \"2026-11-23\",\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"depositpaid\": false,\u001b[22m\n    at <repo>/tests/api/booking.spec.ts:53:59",
+                        "location": {
+                          "file": "<repo>/tests/api/booking.spec.ts",
+                          "column": 59,
+                          "line": 53
+                        },
+                        "snippet": "  51 |\n  52 |     const getResponse = await bookingClient.get(booking.id);\n> 53 |     expect(bookingSchema.parse(await getResponse.json())).toEqual(replacement);\n     |                                                           ^\n  54 |   });\n  55 |\n  56 |   test('A6: PATCH changes only the given fields', async ({ bookingClient, authToken, booking }) => {"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "<repo>/tests/api/booking.spec.ts",
+                            "column": 59,
+                            "line": 53
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 0\u001b[39m\n\n\u001b[33m@@ -1,7 +1,6 @@\u001b[39m\n\u001b[2m  Object {\u001b[22m\n\u001b[32m-   \"additionalneeds\": \"Late checkout\",\u001b[39m\n\u001b[2m    \"bookingdates\": Object {\u001b[22m\n\u001b[2m      \"checkin\": \"2026-11-20\",\u001b[22m\n\u001b[2m      \"checkout\": \"2026-11-23\",\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"depositpaid\": false,\u001b[22m\n\n  51 |\n  52 |     const getResponse = await bookingClient.get(booking.id);\n> 53 |     expect(bookingSchema.parse(await getResponse.json())).toEqual(replacement);\n     |                                                           ^\n  54 |   });\n  55 |\n  56 |   test('A6: PATCH changes only the given fields', async ({ bookingClient, authToken, booking }) => {\n    at <repo>/tests/api/booking.spec.ts:53:59"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T18:53:48.113Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "<repo>/test-results/booking--booking-A5-PUT-replaces-the-whole-booking-api/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "<repo>/test-results/booking--booking-A5-PUT-replaces-the-whole-booking-api/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "<repo>/tests/api/booking.spec.ts",
+                        "column": 59,
+                        "line": 53
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a3a10f2351dcc49e1cb9-5d44997ab805e106760f",
+              "file": "tests/api/booking.spec.ts",
+              "line": 38,
+              "column": 7
+            },
+            {
+              "title": "A6: PATCH changes only the given fields",
+              "ok": false,
+              "tags": [
+                "api"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 148,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 0\u001b[39m\n\n\u001b[33m@@ -1,7 +1,6 @@\u001b[39m\n\u001b[2m  Object {\u001b[22m\n\u001b[32m-   \"additionalneeds\": \"Breakfast\",\u001b[39m\n\u001b[2m    \"bookingdates\": Object {\u001b[22m\n\u001b[2m      \"checkin\": \"2026-11-20\",\u001b[22m\n\u001b[2m      \"checkout\": \"2026-11-23\",\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"depositpaid\": true,\u001b[22m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 0\u001b[39m\n\n\u001b[33m@@ -1,7 +1,6 @@\u001b[39m\n\u001b[2m  Object {\u001b[22m\n\u001b[32m-   \"additionalneeds\": \"Breakfast\",\u001b[39m\n\u001b[2m    \"bookingdates\": Object {\u001b[22m\n\u001b[2m      \"checkin\": \"2026-11-20\",\u001b[22m\n\u001b[2m      \"checkout\": \"2026-11-23\",\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"depositpaid\": true,\u001b[22m\n    at <repo>/tests/api/booking.spec.ts:66:59",
+                        "location": {
+                          "file": "<repo>/tests/api/booking.spec.ts",
+                          "column": 59,
+                          "line": 66
+                        },
+                        "snippet": "  64 |\n  65 |     const getResponse = await bookingClient.get(booking.id);\n> 66 |     expect(bookingSchema.parse(await getResponse.json())).toEqual(expected);\n     |                                                           ^\n  67 |   });\n  68 |\n  69 |   test('A7: PUT without a token is rejected with 403 and changes nothing', async ({"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "<repo>/tests/api/booking.spec.ts",
+                            "column": 59,
+                            "line": 66
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 0\u001b[39m\n\n\u001b[33m@@ -1,7 +1,6 @@\u001b[39m\n\u001b[2m  Object {\u001b[22m\n\u001b[32m-   \"additionalneeds\": \"Breakfast\",\u001b[39m\n\u001b[2m    \"bookingdates\": Object {\u001b[22m\n\u001b[2m      \"checkin\": \"2026-11-20\",\u001b[22m\n\u001b[2m      \"checkout\": \"2026-11-23\",\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"depositpaid\": true,\u001b[22m\n\n  64 |\n  65 |     const getResponse = await bookingClient.get(booking.id);\n> 66 |     expect(bookingSchema.parse(await getResponse.json())).toEqual(expected);\n     |                                                           ^\n  67 |   });\n  68 |\n  69 |   test('A7: PUT without a token is rejected with 403 and changes nothing', async ({\n    at <repo>/tests/api/booking.spec.ts:66:59"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T18:53:49.430Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "<repo>/test-results/booking--booking-A6-PATCH-changes-only-the-given-fields-api/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "<repo>/test-results/booking--booking-A6-PATCH-changes-only-the-given-fields-api/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "<repo>/tests/api/booking.spec.ts",
+                        "column": 59,
+                        "line": 66
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a3a10f2351dcc49e1cb9-29752756d8c7e27d8a85",
+              "file": "tests/api/booking.spec.ts",
+              "line": 56,
+              "column": 7
+            },
+            {
+              "title": "A7: PUT without a token is rejected with 403 and changes nothing",
+              "ok": false,
+              "tags": [
+                "api"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 154,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 0\u001b[39m\n\n\u001b[33m@@ -1,7 +1,6 @@\u001b[39m\n\u001b[2m  Object {\u001b[22m\n\u001b[32m-   \"additionalneeds\": \"Breakfast\",\u001b[39m\n\u001b[2m    \"bookingdates\": Object {\u001b[22m\n\u001b[2m      \"checkin\": \"2026-11-20\",\u001b[22m\n\u001b[2m      \"checkout\": \"2026-11-23\",\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"depositpaid\": true,\u001b[22m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 0\u001b[39m\n\n\u001b[33m@@ -1,7 +1,6 @@\u001b[39m\n\u001b[2m  Object {\u001b[22m\n\u001b[32m-   \"additionalneeds\": \"Breakfast\",\u001b[39m\n\u001b[2m    \"bookingdates\": Object {\u001b[22m\n\u001b[2m      \"checkin\": \"2026-11-20\",\u001b[22m\n\u001b[2m      \"checkout\": \"2026-11-23\",\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"depositpaid\": true,\u001b[22m\n    at <repo>/tests/api/booking.spec.ts:81:59",
+                        "location": {
+                          "file": "<repo>/tests/api/booking.spec.ts",
+                          "column": 59,
+                          "line": 81
+                        },
+                        "snippet": "  79 |\n  80 |     const getResponse = await bookingClient.get(booking.id);\n> 81 |     expect(bookingSchema.parse(await getResponse.json())).toEqual(booking.payload);\n     |                                                           ^\n  82 |   });\n  83 |\n  84 |   test('A8: DELETE removes the booking (answers 201, not 204)', async ({"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "<repo>/tests/api/booking.spec.ts",
+                            "column": 59,
+                            "line": 81
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 0\u001b[39m\n\n\u001b[33m@@ -1,7 +1,6 @@\u001b[39m\n\u001b[2m  Object {\u001b[22m\n\u001b[32m-   \"additionalneeds\": \"Breakfast\",\u001b[39m\n\u001b[2m    \"bookingdates\": Object {\u001b[22m\n\u001b[2m      \"checkin\": \"2026-11-20\",\u001b[22m\n\u001b[2m      \"checkout\": \"2026-11-23\",\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"depositpaid\": true,\u001b[22m\n\n  79 |\n  80 |     const getResponse = await bookingClient.get(booking.id);\n> 81 |     expect(bookingSchema.parse(await getResponse.json())).toEqual(booking.payload);\n     |                                                           ^\n  82 |   });\n  83 |\n  84 |   test('A8: DELETE removes the booking (answers 201, not 204)', async ({\n    at <repo>/tests/api/booking.spec.ts:81:59"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T18:53:51.024Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "<repo>/test-results/booking--booking-A7-PUT-wi-c6fa5-ith-403-and-changes-nothing-api/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "<repo>/test-results/booking--booking-A7-PUT-wi-c6fa5-ith-403-and-changes-nothing-api/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "<repo>/tests/api/booking.spec.ts",
+                        "column": 59,
+                        "line": 81
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a3a10f2351dcc49e1cb9-7a79f95b82c7c000841f",
+              "file": "tests/api/booking.spec.ts",
+              "line": 69,
+              "column": 7
+            },
+            {
+              "title": "A8: DELETE removes the booking (answers 201, not 204)",
+              "ok": true,
+              "tags": [
+                "api"
+              ],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "api-quirk",
+                      "description": "DELETE /booking/:id answers 201 Created (not 200/204); a repeated DELETE answers 405."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "api",
+                  "projectName": "api",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 104,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-21T18:53:52.487Z",
+                      "annotations": [
+                        {
+                          "type": "api-quirk",
+                          "description": "DELETE /booking/:id answers 201 Created (not 200/204); a repeated DELETE answers 405."
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a3a10f2351dcc49e1cb9-575b3a627d82c2ccc33d",
+              "file": "tests/api/booking.spec.ts",
+              "line": 84,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-21T18:53:44.901Z",
+    "duration": 7855.08,
+    "expected": 4,
+    "skipped": 0,
+    "unexpected": 4,
+    "flaky": 0
+  }
+}

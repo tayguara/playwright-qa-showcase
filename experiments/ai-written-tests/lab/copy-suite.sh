@@ -4,7 +4,8 @@
 #   copy-suite.sh <suite-a|suite-b>
 #
 # Steps: refuse a suite that contains symbolic links; copy with `rsync -rt --no-links` and without
-# node_modules, .git, test-results, playwright-report, blob-report and .claude; write the manifest
+# node_modules, .git, .npm (npm's debug logs hold lab paths), test-results, playwright-report,
+# blob-report and .claude; write the manifest
 # (`find ... -type f | sort | xargs sha256sum`, paths relative to the suite folder) next to the lab
 # copy; copy it to experiments/ai-written-tests/<suite>.sha256; verify the repository copy with
 # `sha256sum -c`. It never runs git in the lab (the agent controls the lab repository's config)
@@ -40,17 +41,17 @@ manifest_repo="$EXP/$name.sha256"
 [ ! -e "$dest" ] && [ ! -e "$manifest_repo" ] || die "$dest or $manifest_repo already exists; the copy is immutable"
 
 # A symlink can point the analysers at host files (for example under ~/.ssh).
-links=$(find "$src" \( -name node_modules -o -name .git \) -prune -o -type l -print)
+links=$(find "$src" \( -name node_modules -o -name .git -o -name .npm \) -prune -o -type l -print)
 [ -z "$links" ] || die "the suite contains symbolic links, refusing to copy: $links"
 
-excludes=(--exclude node_modules --exclude .git --exclude test-results --exclude playwright-report --exclude blob-report --exclude .claude)
+excludes=(--exclude node_modules --exclude .git --exclude test-results --exclude playwright-report --exclude blob-report --exclude .claude --exclude .npm)
 rsync -rt --no-links "${excludes[@]}" "$src/" "$dest/"
 
 # Manifest from the lab copy, with the same exclusions; paths relative to the suite folder.
 (
   cd "$src"
   find . \( -name node_modules -o -name .git -o -name test-results -o -name playwright-report \
-    -o -name blob-report -o -name .claude \) -prune -o -type f -print0 | sort -z | xargs -0 sha256sum
+    -o -name blob-report -o -name .claude -o -name .npm \) -prune -o -type f -print0 | sort -z | xargs -0 sha256sum
 ) > "$manifest_lab"
 cp "$manifest_lab" "$manifest_repo"
 

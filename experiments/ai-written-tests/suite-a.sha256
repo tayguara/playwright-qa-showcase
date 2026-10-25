@@ -1,0 +1,6 @@
+a1b9b3aabbabe90958f5b13afee01981b529713cc1a54d5109e4ba88c5b0c77f  ./.gitignore
+799f988e8ff89ef110515537effe4b9730c650eeba0ec8526b766decdeeed908  ./package.json
+c5069ee7274036dfd83be31d86e45be0d0820573fcf257afc54d9fb42f1ca4da  ./package-lock.json
+ea7662b51abd321417a59eb87e4a28ef2a919ffe06e812ff4e59f129de2f3e07  ./playwright.config.ts
+c540d4aa5dc71657ed9a7015a6227a8f1df94b1a14659df65c2db1cafaa8d741  ./tests/booker.spec.ts
+472ea416764623a167e9805a5216d83dfdcba0de1992999129f5788d53327367  ./tsconfig.json

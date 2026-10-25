@@ -1,0 +1,32 @@
+{
+  "nodeVersion": "v22.21.0",
+  "playwrightVersion": "1.63.0",
+  "os": {
+    "platform": "linux",
+    "release": "6.19.14-108.fc42.x86_64",
+    "arch": "x64"
+  },
+  "gitSha": "55737d1720376a91da999429422e82da386792b0",
+  "gitDirty": true,
+  "date": "2026-10-21T19:01:30.731Z",
+  "stubSha256": "3768a2ba1cd2177a909141ce24724e3e52983de687900f2150568f12b84e4380",
+  "offline": true,
+  "modes": {
+    "faults": {
+      "at": "2026-10-21T18:53:28.453Z",
+      "offline": true
+    },
+    "repeat": {
+      "at": "2026-10-21T19:00:07.531Z",
+      "offline": true
+    },
+    "lint": {
+      "at": "2026-10-21T19:00:56.665Z",
+      "offline": false
+    },
+    "public": {
+      "at": "2026-10-21T19:01:30.719Z",
+      "offline": false
+    }
+  }
+}

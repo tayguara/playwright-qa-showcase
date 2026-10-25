@@ -1,0 +1,3230 @@
+{
+  "config": {
+    "argv": [
+      "<home>/.nvm/versions/node/v22.21.0/bin/node",
+      "<repo>/node_modules/@playwright/test/cli.js",
+      "test",
+      "--workers=1",
+      "--reporter=json",
+      "--repeat-each=5",
+      "--output=/tmp/pw-output"
+    ],
+    "configFile": "<repo>/experiments/ai-written-tests/suite-b/playwright.config.ts",
+    "rootDir": "<repo>/experiments/ai-written-tests/suite-b/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/tmp/pw-output",
+        "repeatEach": 5,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "<repo>/experiments/ai-written-tests/suite-b/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "auth.spec.ts",
+      "file": "auth.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "valid credentials return a token that authorises a write",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 117,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:32.675Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d748ac400d08b85935ef-290b9a12598f111359a5",
+          "file": "auth.spec.ts",
+          "line": 5,
+          "column": 5
+        },
+        {
+          "title": "wrong password yields no token",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 25,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:32.871Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d748ac400d08b85935ef-bd66978ccb06fabfed53",
+          "file": "auth.spec.ts",
+          "line": 21,
+          "column": 5
+        },
+        {
+          "title": "unknown user yields no token",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 28,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:32.940Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d748ac400d08b85935ef-964b535665198700ebde",
+          "file": "auth.spec.ts",
+          "line": 29,
+          "column": 5
+        },
+        {
+          "title": "an invalid token is rejected and the booking is unchanged",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 55,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:33.000Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d748ac400d08b85935ef-ff8fe46cb7a1f40c5576",
+          "file": "auth.spec.ts",
+          "line": 36,
+          "column": 5
+        },
+        {
+          "title": "valid credentials return a token that authorises a write",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 101,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:34.804Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d748ac400d08b85935ef-3ce9d3617b10b16aaf4b",
+          "file": "auth.spec.ts",
+          "line": 5,
+          "column": 5
+        },
+        {
+          "title": "wrong password yields no token",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 17,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:34.983Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d748ac400d08b85935ef-b190d4badc673d61b53e",
+          "file": "auth.spec.ts",
+          "line": 21,
+          "column": 5
+        },
+        {
+          "title": "unknown user yields no token",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 21,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:35.040Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d748ac400d08b85935ef-9e8c8460b21ad063951a",
+          "file": "auth.spec.ts",
+          "line": 29,
+          "column": 5
+        },
+        {
+          "title": "an invalid token is rejected and the booking is unchanged",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 53,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:35.085Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d748ac400d08b85935ef-53c4d82fc688e0f88493",
+          "file": "auth.spec.ts",
+          "line": 36,
+          "column": 5
+        },
+        {
+          "title": "valid credentials return a token that authorises a write",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 116,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:36.869Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d748ac400d08b85935ef-9fae0b5e605b2886a04e",
+          "file": "auth.spec.ts",
+          "line": 5,
+          "column": 5
+        },
+        {
+          "title": "wrong password yields no token",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 26,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:37.075Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d748ac400d08b85935ef-943a4b1b96d243837db4",
+          "file": "auth.spec.ts",
+          "line": 21,
+          "column": 5
+        },
+        {
+          "title": "unknown user yields no token",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 27,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:37.138Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d748ac400d08b85935ef-a77b4436b8adb2e4874a",
+          "file": "auth.spec.ts",
+          "line": 29,
+          "column": 5
+        },
+        {
+          "title": "an invalid token is rejected and the booking is unchanged",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 56,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:37.202Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d748ac400d08b85935ef-b17e5a3ab7f75c70129a",
+          "file": "auth.spec.ts",
+          "line": 36,
+          "column": 5
+        },
+        {
+          "title": "valid credentials return a token that authorises a write",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 103,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:38.910Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d748ac400d08b85935ef-bcccb2ae88308bfa5fed",
+          "file": "auth.spec.ts",
+          "line": 5,
+          "column": 5
+        },
+        {
+          "title": "wrong password yields no token",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 29,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:39.088Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d748ac400d08b85935ef-892e10479ea9f320e8f7",
+          "file": "auth.spec.ts",
+          "line": 21,
+          "column": 5
+        },
+        {
+          "title": "unknown user yields no token",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 23,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:39.146Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d748ac400d08b85935ef-b6d20d7aceb710c78175",
+          "file": "auth.spec.ts",
+          "line": 29,
+          "column": 5
+        },
+        {
+          "title": "an invalid token is rejected and the booking is unchanged",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 49,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:39.198Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d748ac400d08b85935ef-3fd8ed3645ecf2f2b310",
+          "file": "auth.spec.ts",
+          "line": 36,
+          "column": 5
+        },
+        {
+          "title": "valid credentials return a token that authorises a write",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 119,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:41.040Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d748ac400d08b85935ef-640755f62a696a800f86",
+          "file": "auth.spec.ts",
+          "line": 5,
+          "column": 5
+        },
+        {
+          "title": "wrong password yields no token",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 27,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:41.251Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d748ac400d08b85935ef-1d2345f0c9275402a61c",
+          "file": "auth.spec.ts",
+          "line": 21,
+          "column": 5
+        },
+        {
+          "title": "unknown user yields no token",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 23,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:41.307Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d748ac400d08b85935ef-1534160c3ef7b77d7428",
+          "file": "auth.spec.ts",
+          "line": 29,
+          "column": 5
+        },
+        {
+          "title": "an invalid token is rejected and the booking is unchanged",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 46,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:41.354Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d748ac400d08b85935ef-767a14d745165a6d6bd5",
+          "file": "auth.spec.ts",
+          "line": 36,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "booking.spec.ts",
+      "file": "booking.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "create a booking and read it back",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 44,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:33.091Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-532b0f98d129ab5577bd",
+          "file": "booking.spec.ts",
+          "line": 4,
+          "column": 5
+        },
+        {
+          "title": "reading an unknown booking returns 404",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 18,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:33.164Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-4ced4795b7f712c05b70",
+          "file": "booking.spec.ts",
+          "line": 18,
+          "column": 5
+        },
+        {
+          "title": "creating a booking with an incomplete payload is rejected",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 14,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:33.209Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-dcd826d633fdf6807603",
+          "file": "booking.spec.ts",
+          "line": 24,
+          "column": 5
+        },
+        {
+          "title": "find a booking by first and last name",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 34,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:33.249Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-7b2899078d66c29a9178",
+          "file": "booking.spec.ts",
+          "line": 30,
+          "column": 5
+        },
+        {
+          "title": "searching with a non-matching last name finds nothing",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 28,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:33.306Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-d4fb03a7e504eb4741ff",
+          "file": "booking.spec.ts",
+          "line": 43,
+          "column": 5
+        },
+        {
+          "title": "PUT fully replaces the booking",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 39,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:33.356Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-fb43ddde8fffb0164478",
+          "file": "booking.spec.ts",
+          "line": 52,
+          "column": 5
+        },
+        {
+          "title": "PUT drops optional fields omitted from the replacement",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [
+                {
+                  "type": "fail",
+                  "description": "Restful Booker keeps additionalneeds when a PUT omits it",
+                  "location": {
+                    "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                    "line": 72,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "failed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 31,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 0\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[33m@@ -1,6 +1,7 @@\u001b[39m\n\u001b[2m  Object {\u001b[22m\n\u001b[31m+   \"additionalneeds\": \"Breakfast\",\u001b[39m\n\u001b[2m    \"bookingdates\": Object {\u001b[22m\n\u001b[2m      \"checkin\": \"2030-01-01\",\u001b[22m\n\u001b[2m      \"checkout\": \"2030-01-10\",\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"depositpaid\": true,\u001b[22m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 0\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[33m@@ -1,6 +1,7 @@\u001b[39m\n\u001b[2m  Object {\u001b[22m\n\u001b[31m+   \"additionalneeds\": \"Breakfast\",\u001b[39m\n\u001b[2m    \"bookingdates\": Object {\u001b[22m\n\u001b[2m      \"checkin\": \"2030-01-01\",\u001b[22m\n\u001b[2m      \"checkout\": \"2030-01-10\",\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"depositpaid\": true,\u001b[22m\n    at <repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts:81:49",
+                    "location": {
+                      "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                      "column": 49,
+                      "line": 81
+                    },
+                    "snippet": "  79 |   expect(res.status()).toBe(200);\n  80 |   const get = await request.get(`/booking/${booking.id}`);\n> 81 |   expect(bookingSchema.parse(await get.json())).toEqual(replacement);\n     |                                                 ^\n  82 | });\n  83 |\n  84 | // Regression: PUT with a valid token on a non-existent booking succeeds."
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                        "column": 49,
+                        "line": 81
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 0\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[33m@@ -1,6 +1,7 @@\u001b[39m\n\u001b[2m  Object {\u001b[22m\n\u001b[31m+   \"additionalneeds\": \"Breakfast\",\u001b[39m\n\u001b[2m    \"bookingdates\": Object {\u001b[22m\n\u001b[2m      \"checkin\": \"2030-01-01\",\u001b[22m\n\u001b[2m      \"checkout\": \"2030-01-10\",\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"depositpaid\": true,\u001b[22m\n\n  79 |   expect(res.status()).toBe(200);\n  80 |   const get = await request.get(`/booking/${booking.id}`);\n> 81 |   expect(bookingSchema.parse(await get.json())).toEqual(replacement);\n     |                                                 ^\n  82 | });\n  83 |\n  84 | // Regression: PUT with a valid token on a non-existent booking succeeds.\n    at <repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts:81:49"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:33.421Z",
+                  "annotations": [
+                    {
+                      "type": "fail",
+                      "description": "Restful Booker keeps additionalneeds when a PUT omits it",
+                      "location": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                        "line": 72,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/tmp/pw-output/booking-PUT-drops-optional-c65dc-mitted-from-the-replacement/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                    "column": 49,
+                    "line": 81
+                  }
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-03f682a58232d55fe827",
+          "file": "booking.spec.ts",
+          "line": 71,
+          "column": 5
+        },
+        {
+          "title": "PUT on an unknown booking is not successful",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 19,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:33.478Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-b29da4ff717e4db568a2",
+          "file": "booking.spec.ts",
+          "line": 85,
+          "column": 5
+        },
+        {
+          "title": "PATCH updates only the given fields",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 33,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:33.521Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-6da994f9ab96efa4f80c",
+          "file": "booking.spec.ts",
+          "line": 94,
+          "column": 5
+        },
+        {
+          "title": "PATCH without a token is rejected and changes nothing",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 36,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:33.578Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-4894142792fc1094b4fd",
+          "file": "booking.spec.ts",
+          "line": 108,
+          "column": 5
+        },
+        {
+          "title": "PUT without a token returns 403 and changes nothing",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 30,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:33.638Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-4081753a5480b1001cb2",
+          "file": "booking.spec.ts",
+          "line": 116,
+          "column": 5
+        },
+        {
+          "title": "DELETE answers 201 and the booking is gone",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 39,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:33.693Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-41bf1a129c9027a09887",
+          "file": "booking.spec.ts",
+          "line": 127,
+          "column": 5
+        },
+        {
+          "title": "DELETE without a token is rejected and the booking remains",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 35,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:33.759Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-ef14cdb319618a9d66ca",
+          "file": "booking.spec.ts",
+          "line": 139,
+          "column": 5
+        },
+        {
+          "title": "create a booking and read it back",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 46,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:35.179Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-a8d9b121d553ec320871",
+          "file": "booking.spec.ts",
+          "line": 4,
+          "column": 5
+        },
+        {
+          "title": "reading an unknown booking returns 404",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 19,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:35.254Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-f8f754c9a83535f8152c",
+          "file": "booking.spec.ts",
+          "line": 18,
+          "column": 5
+        },
+        {
+          "title": "creating a booking with an incomplete payload is rejected",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 10,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:35.298Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-4a8a60a69a4785bbac8f",
+          "file": "booking.spec.ts",
+          "line": 24,
+          "column": 5
+        },
+        {
+          "title": "find a booking by first and last name",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 40,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:35.331Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-f000e2456b7b67bb67ee",
+          "file": "booking.spec.ts",
+          "line": 30,
+          "column": 5
+        },
+        {
+          "title": "searching with a non-matching last name finds nothing",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 27,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:35.393Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-a343833923954d93f941",
+          "file": "booking.spec.ts",
+          "line": 43,
+          "column": 5
+        },
+        {
+          "title": "PUT fully replaces the booking",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 35,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:35.445Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-371d99a13af9b5a7b371",
+          "file": "booking.spec.ts",
+          "line": 52,
+          "column": 5
+        },
+        {
+          "title": "PUT drops optional fields omitted from the replacement",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [
+                {
+                  "type": "fail",
+                  "description": "Restful Booker keeps additionalneeds when a PUT omits it",
+                  "location": {
+                    "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                    "line": 72,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "failed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 49,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 0\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[33m@@ -1,6 +1,7 @@\u001b[39m\n\u001b[2m  Object {\u001b[22m\n\u001b[31m+   \"additionalneeds\": \"Breakfast\",\u001b[39m\n\u001b[2m    \"bookingdates\": Object {\u001b[22m\n\u001b[2m      \"checkin\": \"2030-01-01\",\u001b[22m\n\u001b[2m      \"checkout\": \"2030-01-10\",\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"depositpaid\": true,\u001b[22m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 0\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[33m@@ -1,6 +1,7 @@\u001b[39m\n\u001b[2m  Object {\u001b[22m\n\u001b[31m+   \"additionalneeds\": \"Breakfast\",\u001b[39m\n\u001b[2m    \"bookingdates\": Object {\u001b[22m\n\u001b[2m      \"checkin\": \"2030-01-01\",\u001b[22m\n\u001b[2m      \"checkout\": \"2030-01-10\",\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"depositpaid\": true,\u001b[22m\n    at <repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts:81:49",
+                    "location": {
+                      "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                      "column": 49,
+                      "line": 81
+                    },
+                    "snippet": "  79 |   expect(res.status()).toBe(200);\n  80 |   const get = await request.get(`/booking/${booking.id}`);\n> 81 |   expect(bookingSchema.parse(await get.json())).toEqual(replacement);\n     |                                                 ^\n  82 | });\n  83 |\n  84 | // Regression: PUT with a valid token on a non-existent booking succeeds."
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                        "column": 49,
+                        "line": 81
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 0\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[33m@@ -1,6 +1,7 @@\u001b[39m\n\u001b[2m  Object {\u001b[22m\n\u001b[31m+   \"additionalneeds\": \"Breakfast\",\u001b[39m\n\u001b[2m    \"bookingdates\": Object {\u001b[22m\n\u001b[2m      \"checkin\": \"2030-01-01\",\u001b[22m\n\u001b[2m      \"checkout\": \"2030-01-10\",\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"depositpaid\": true,\u001b[22m\n\n  79 |   expect(res.status()).toBe(200);\n  80 |   const get = await request.get(`/booking/${booking.id}`);\n> 81 |   expect(bookingSchema.parse(await get.json())).toEqual(replacement);\n     |                                                 ^\n  82 | });\n  83 |\n  84 | // Regression: PUT with a valid token on a non-existent booking succeeds.\n    at <repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts:81:49"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:35.504Z",
+                  "annotations": [
+                    {
+                      "type": "fail",
+                      "description": "Restful Booker keeps additionalneeds when a PUT omits it",
+                      "location": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                        "line": 72,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/tmp/pw-output/booking-PUT-drops-optional-c65dc-mitted-from-the-replacement-repeat1/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                    "column": 49,
+                    "line": 81
+                  }
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-4c5ec6209bc741c6b2a0",
+          "file": "booking.spec.ts",
+          "line": 71,
+          "column": 5
+        },
+        {
+          "title": "PUT on an unknown booking is not successful",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 15,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:35.584Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-88032a85e45f360c6593",
+          "file": "booking.spec.ts",
+          "line": 85,
+          "column": 5
+        },
+        {
+          "title": "PATCH updates only the given fields",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 31,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:35.618Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-ca1a1daddcaa57f19902",
+          "file": "booking.spec.ts",
+          "line": 94,
+          "column": 5
+        },
+        {
+          "title": "PATCH without a token is rejected and changes nothing",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 37,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:35.672Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-bea89a987cf72b53e35f",
+          "file": "booking.spec.ts",
+          "line": 108,
+          "column": 5
+        },
+        {
+          "title": "PUT without a token returns 403 and changes nothing",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 34,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:35.736Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-5a0e8563ef1b580ec638",
+          "file": "booking.spec.ts",
+          "line": 116,
+          "column": 5
+        },
+        {
+          "title": "DELETE answers 201 and the booking is gone",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 36,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:35.801Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-93b9a96df5f69847b694",
+          "file": "booking.spec.ts",
+          "line": 127,
+          "column": 5
+        },
+        {
+          "title": "DELETE without a token is rejected and the booking remains",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 32,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:35.864Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-15dcd385f492f73c4de9",
+          "file": "booking.spec.ts",
+          "line": 139,
+          "column": 5
+        },
+        {
+          "title": "create a booking and read it back",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 34,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:37.307Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-cd338a5fb681e7ccc4a9",
+          "file": "booking.spec.ts",
+          "line": 4,
+          "column": 5
+        },
+        {
+          "title": "reading an unknown booking returns 404",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 12,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:37.360Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-584422a61b0162676be8",
+          "file": "booking.spec.ts",
+          "line": 18,
+          "column": 5
+        },
+        {
+          "title": "creating a booking with an incomplete payload is rejected",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 11,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:37.390Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-44718df3b6f2cab9c477",
+          "file": "booking.spec.ts",
+          "line": 24,
+          "column": 5
+        },
+        {
+          "title": "find a booking by first and last name",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 38,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:37.429Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-7779e907cca531f80f77",
+          "file": "booking.spec.ts",
+          "line": 30,
+          "column": 5
+        },
+        {
+          "title": "searching with a non-matching last name finds nothing",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 47,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:37.490Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-bc80756e5f1a47df6a00",
+          "file": "booking.spec.ts",
+          "line": 43,
+          "column": 5
+        },
+        {
+          "title": "PUT fully replaces the booking",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 29,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:37.576Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-a395f92b812151b7c107",
+          "file": "booking.spec.ts",
+          "line": 52,
+          "column": 5
+        },
+        {
+          "title": "PUT drops optional fields omitted from the replacement",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [
+                {
+                  "type": "fail",
+                  "description": "Restful Booker keeps additionalneeds when a PUT omits it",
+                  "location": {
+                    "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                    "line": 72,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "failed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 35,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 0\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[33m@@ -1,6 +1,7 @@\u001b[39m\n\u001b[2m  Object {\u001b[22m\n\u001b[31m+   \"additionalneeds\": \"Breakfast\",\u001b[39m\n\u001b[2m    \"bookingdates\": Object {\u001b[22m\n\u001b[2m      \"checkin\": \"2030-01-01\",\u001b[22m\n\u001b[2m      \"checkout\": \"2030-01-10\",\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"depositpaid\": true,\u001b[22m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 0\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[33m@@ -1,6 +1,7 @@\u001b[39m\n\u001b[2m  Object {\u001b[22m\n\u001b[31m+   \"additionalneeds\": \"Breakfast\",\u001b[39m\n\u001b[2m    \"bookingdates\": Object {\u001b[22m\n\u001b[2m      \"checkin\": \"2030-01-01\",\u001b[22m\n\u001b[2m      \"checkout\": \"2030-01-10\",\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"depositpaid\": true,\u001b[22m\n    at <repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts:81:49",
+                    "location": {
+                      "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                      "column": 49,
+                      "line": 81
+                    },
+                    "snippet": "  79 |   expect(res.status()).toBe(200);\n  80 |   const get = await request.get(`/booking/${booking.id}`);\n> 81 |   expect(bookingSchema.parse(await get.json())).toEqual(replacement);\n     |                                                 ^\n  82 | });\n  83 |\n  84 | // Regression: PUT with a valid token on a non-existent booking succeeds."
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                        "column": 49,
+                        "line": 81
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 0\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[33m@@ -1,6 +1,7 @@\u001b[39m\n\u001b[2m  Object {\u001b[22m\n\u001b[31m+   \"additionalneeds\": \"Breakfast\",\u001b[39m\n\u001b[2m    \"bookingdates\": Object {\u001b[22m\n\u001b[2m      \"checkin\": \"2030-01-01\",\u001b[22m\n\u001b[2m      \"checkout\": \"2030-01-10\",\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"depositpaid\": true,\u001b[22m\n\n  79 |   expect(res.status()).toBe(200);\n  80 |   const get = await request.get(`/booking/${booking.id}`);\n> 81 |   expect(bookingSchema.parse(await get.json())).toEqual(replacement);\n     |                                                 ^\n  82 | });\n  83 |\n  84 | // Regression: PUT with a valid token on a non-existent booking succeeds.\n    at <repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts:81:49"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:37.628Z",
+                  "annotations": [
+                    {
+                      "type": "fail",
+                      "description": "Restful Booker keeps additionalneeds when a PUT omits it",
+                      "location": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                        "line": 72,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/tmp/pw-output/booking-PUT-drops-optional-c65dc-mitted-from-the-replacement-repeat2/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                    "column": 49,
+                    "line": 81
+                  }
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-c343d9a9e2df26c05502",
+          "file": "booking.spec.ts",
+          "line": 71,
+          "column": 5
+        },
+        {
+          "title": "PUT on an unknown booking is not successful",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 13,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:37.689Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-569b51e272ea20de3c27",
+          "file": "booking.spec.ts",
+          "line": 85,
+          "column": 5
+        },
+        {
+          "title": "PATCH updates only the given fields",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 28,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:37.718Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-f5c7caeb6874b0772740",
+          "file": "booking.spec.ts",
+          "line": 94,
+          "column": 5
+        },
+        {
+          "title": "PATCH without a token is rejected and changes nothing",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 22,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:37.765Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-44ac10cb4166bcd0223a",
+          "file": "booking.spec.ts",
+          "line": 108,
+          "column": 5
+        },
+        {
+          "title": "PUT without a token returns 403 and changes nothing",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 27,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:37.801Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-8d34a87fa213a4697d72",
+          "file": "booking.spec.ts",
+          "line": 116,
+          "column": 5
+        },
+        {
+          "title": "DELETE answers 201 and the booking is gone",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 26,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:37.849Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-46637e653c2e937938c9",
+          "file": "booking.spec.ts",
+          "line": 127,
+          "column": 5
+        },
+        {
+          "title": "DELETE without a token is rejected and the booking remains",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 32,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:37.890Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-56161d265e78235e72ef",
+          "file": "booking.spec.ts",
+          "line": 139,
+          "column": 5
+        },
+        {
+          "title": "create a booking and read it back",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 40,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:39.289Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-e660307d04c564cf9e98",
+          "file": "booking.spec.ts",
+          "line": 4,
+          "column": 5
+        },
+        {
+          "title": "reading an unknown booking returns 404",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 15,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:39.362Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-5aa9c4c502e62b5acd54",
+          "file": "booking.spec.ts",
+          "line": 18,
+          "column": 5
+        },
+        {
+          "title": "creating a booking with an incomplete payload is rejected",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 9,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:39.402Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-586554ed759dc6d7e0f8",
+          "file": "booking.spec.ts",
+          "line": 24,
+          "column": 5
+        },
+        {
+          "title": "find a booking by first and last name",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 44,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:39.435Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-43c1a31a5c49cc1f7b4c",
+          "file": "booking.spec.ts",
+          "line": 30,
+          "column": 5
+        },
+        {
+          "title": "searching with a non-matching last name finds nothing",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 32,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:39.509Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-c965eee13894c44f2d57",
+          "file": "booking.spec.ts",
+          "line": 43,
+          "column": 5
+        },
+        {
+          "title": "PUT fully replaces the booking",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 43,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:39.568Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-9669a42c5bd494b8c108",
+          "file": "booking.spec.ts",
+          "line": 52,
+          "column": 5
+        },
+        {
+          "title": "PUT drops optional fields omitted from the replacement",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [
+                {
+                  "type": "fail",
+                  "description": "Restful Booker keeps additionalneeds when a PUT omits it",
+                  "location": {
+                    "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                    "line": 72,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "failed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 40,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 0\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[33m@@ -1,6 +1,7 @@\u001b[39m\n\u001b[2m  Object {\u001b[22m\n\u001b[31m+   \"additionalneeds\": \"Breakfast\",\u001b[39m\n\u001b[2m    \"bookingdates\": Object {\u001b[22m\n\u001b[2m      \"checkin\": \"2030-01-01\",\u001b[22m\n\u001b[2m      \"checkout\": \"2030-01-10\",\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"depositpaid\": true,\u001b[22m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 0\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[33m@@ -1,6 +1,7 @@\u001b[39m\n\u001b[2m  Object {\u001b[22m\n\u001b[31m+   \"additionalneeds\": \"Breakfast\",\u001b[39m\n\u001b[2m    \"bookingdates\": Object {\u001b[22m\n\u001b[2m      \"checkin\": \"2030-01-01\",\u001b[22m\n\u001b[2m      \"checkout\": \"2030-01-10\",\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"depositpaid\": true,\u001b[22m\n    at <repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts:81:49",
+                    "location": {
+                      "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                      "column": 49,
+                      "line": 81
+                    },
+                    "snippet": "  79 |   expect(res.status()).toBe(200);\n  80 |   const get = await request.get(`/booking/${booking.id}`);\n> 81 |   expect(bookingSchema.parse(await get.json())).toEqual(replacement);\n     |                                                 ^\n  82 | });\n  83 |\n  84 | // Regression: PUT with a valid token on a non-existent booking succeeds."
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                        "column": 49,
+                        "line": 81
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 0\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[33m@@ -1,6 +1,7 @@\u001b[39m\n\u001b[2m  Object {\u001b[22m\n\u001b[31m+   \"additionalneeds\": \"Breakfast\",\u001b[39m\n\u001b[2m    \"bookingdates\": Object {\u001b[22m\n\u001b[2m      \"checkin\": \"2030-01-01\",\u001b[22m\n\u001b[2m      \"checkout\": \"2030-01-10\",\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"depositpaid\": true,\u001b[22m\n\n  79 |   expect(res.status()).toBe(200);\n  80 |   const get = await request.get(`/booking/${booking.id}`);\n> 81 |   expect(bookingSchema.parse(await get.json())).toEqual(replacement);\n     |                                                 ^\n  82 | });\n  83 |\n  84 | // Regression: PUT with a valid token on a non-existent booking succeeds.\n    at <repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts:81:49"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:39.639Z",
+                  "annotations": [
+                    {
+                      "type": "fail",
+                      "description": "Restful Booker keeps additionalneeds when a PUT omits it",
+                      "location": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                        "line": 72,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/tmp/pw-output/booking-PUT-drops-optional-c65dc-mitted-from-the-replacement-repeat3/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                    "column": 49,
+                    "line": 81
+                  }
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-5aff218571c8033f665a",
+          "file": "booking.spec.ts",
+          "line": 71,
+          "column": 5
+        },
+        {
+          "title": "PUT on an unknown booking is not successful",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 15,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:39.700Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-261504a2cbe3bb66f08f",
+          "file": "booking.spec.ts",
+          "line": 85,
+          "column": 5
+        },
+        {
+          "title": "PATCH updates only the given fields",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 32,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:39.736Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-cf9e1eeb21584eab5c15",
+          "file": "booking.spec.ts",
+          "line": 94,
+          "column": 5
+        },
+        {
+          "title": "PATCH without a token is rejected and changes nothing",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 32,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:39.792Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-0a7a2dde3f689233327e",
+          "file": "booking.spec.ts",
+          "line": 108,
+          "column": 5
+        },
+        {
+          "title": "PUT without a token returns 403 and changes nothing",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 31,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:39.849Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-504efa1fb836cc90dce4",
+          "file": "booking.spec.ts",
+          "line": 116,
+          "column": 5
+        },
+        {
+          "title": "DELETE answers 201 and the booking is gone",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 44,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:39.909Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-3c5b0fde55c8aaaab85c",
+          "file": "booking.spec.ts",
+          "line": 127,
+          "column": 5
+        },
+        {
+          "title": "DELETE without a token is rejected and the booking remains",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 37,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:39.985Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-78aaba22e5c85400132a",
+          "file": "booking.spec.ts",
+          "line": 139,
+          "column": 5
+        },
+        {
+          "title": "create a booking and read it back",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 41,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:41.440Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-1de684d788b7674ec792",
+          "file": "booking.spec.ts",
+          "line": 4,
+          "column": 5
+        },
+        {
+          "title": "reading an unknown booking returns 404",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 15,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:41.504Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-638ae255ce65cb6952af",
+          "file": "booking.spec.ts",
+          "line": 18,
+          "column": 5
+        },
+        {
+          "title": "creating a booking with an incomplete payload is rejected",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 9,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:41.542Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-c7bd38cdc22e434d3c6f",
+          "file": "booking.spec.ts",
+          "line": 24,
+          "column": 5
+        },
+        {
+          "title": "find a booking by first and last name",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 42,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:41.571Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-a023b215b3877d202a53",
+          "file": "booking.spec.ts",
+          "line": 30,
+          "column": 5
+        },
+        {
+          "title": "searching with a non-matching last name finds nothing",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 31,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:41.634Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-64a644fdf6be72ae28cd",
+          "file": "booking.spec.ts",
+          "line": 43,
+          "column": 5
+        },
+        {
+          "title": "PUT fully replaces the booking",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 29,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:41.687Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-a459b168eb4a694d8173",
+          "file": "booking.spec.ts",
+          "line": 52,
+          "column": 5
+        },
+        {
+          "title": "PUT drops optional fields omitted from the replacement",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [
+                {
+                  "type": "fail",
+                  "description": "Restful Booker keeps additionalneeds when a PUT omits it",
+                  "location": {
+                    "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                    "line": 72,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "failed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 30,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 0\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[33m@@ -1,6 +1,7 @@\u001b[39m\n\u001b[2m  Object {\u001b[22m\n\u001b[31m+   \"additionalneeds\": \"Breakfast\",\u001b[39m\n\u001b[2m    \"bookingdates\": Object {\u001b[22m\n\u001b[2m      \"checkin\": \"2030-01-01\",\u001b[22m\n\u001b[2m      \"checkout\": \"2030-01-10\",\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"depositpaid\": true,\u001b[22m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 0\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[33m@@ -1,6 +1,7 @@\u001b[39m\n\u001b[2m  Object {\u001b[22m\n\u001b[31m+   \"additionalneeds\": \"Breakfast\",\u001b[39m\n\u001b[2m    \"bookingdates\": Object {\u001b[22m\n\u001b[2m      \"checkin\": \"2030-01-01\",\u001b[22m\n\u001b[2m      \"checkout\": \"2030-01-10\",\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"depositpaid\": true,\u001b[22m\n    at <repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts:81:49",
+                    "location": {
+                      "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                      "column": 49,
+                      "line": 81
+                    },
+                    "snippet": "  79 |   expect(res.status()).toBe(200);\n  80 |   const get = await request.get(`/booking/${booking.id}`);\n> 81 |   expect(bookingSchema.parse(await get.json())).toEqual(replacement);\n     |                                                 ^\n  82 | });\n  83 |\n  84 | // Regression: PUT with a valid token on a non-existent booking succeeds."
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                        "column": 49,
+                        "line": 81
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 0\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[33m@@ -1,6 +1,7 @@\u001b[39m\n\u001b[2m  Object {\u001b[22m\n\u001b[31m+   \"additionalneeds\": \"Breakfast\",\u001b[39m\n\u001b[2m    \"bookingdates\": Object {\u001b[22m\n\u001b[2m      \"checkin\": \"2030-01-01\",\u001b[22m\n\u001b[2m      \"checkout\": \"2030-01-10\",\u001b[22m\n\u001b[2m    },\u001b[22m\n\u001b[2m    \"depositpaid\": true,\u001b[22m\n\n  79 |   expect(res.status()).toBe(200);\n  80 |   const get = await request.get(`/booking/${booking.id}`);\n> 81 |   expect(bookingSchema.parse(await get.json())).toEqual(replacement);\n     |                                                 ^\n  82 | });\n  83 |\n  84 | // Regression: PUT with a valid token on a non-existent booking succeeds.\n    at <repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts:81:49"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:41.738Z",
+                  "annotations": [
+                    {
+                      "type": "fail",
+                      "description": "Restful Booker keeps additionalneeds when a PUT omits it",
+                      "location": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                        "line": 72,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/tmp/pw-output/booking-PUT-drops-optional-c65dc-mitted-from-the-replacement-repeat4/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                    "column": 49,
+                    "line": 81
+                  }
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-381165a3711cf8f9ab29",
+          "file": "booking.spec.ts",
+          "line": 71,
+          "column": 5
+        },
+        {
+          "title": "PUT on an unknown booking is not successful",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 14,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:41.792Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-d87d6330faf77207407a",
+          "file": "booking.spec.ts",
+          "line": 85,
+          "column": 5
+        },
+        {
+          "title": "PATCH updates only the given fields",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 24,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:41.822Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-81bf879c5357a365ba61",
+          "file": "booking.spec.ts",
+          "line": 94,
+          "column": 5
+        },
+        {
+          "title": "PATCH without a token is rejected and changes nothing",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 30,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:41.862Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-d752f5dc4285e8e76925",
+          "file": "booking.spec.ts",
+          "line": 108,
+          "column": 5
+        },
+        {
+          "title": "PUT without a token returns 403 and changes nothing",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 28,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:41.910Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-f2e826cd4ca8978f8863",
+          "file": "booking.spec.ts",
+          "line": 116,
+          "column": 5
+        },
+        {
+          "title": "DELETE answers 201 and the booking is gone",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 32,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:41.960Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-2267635c6f2702f25f54",
+          "file": "booking.spec.ts",
+          "line": 127,
+          "column": 5
+        },
+        {
+          "title": "DELETE without a token is rejected and the booking remains",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 34,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T19:00:42.015Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-8a7a78a3c05abb969cf2",
+          "file": "booking.spec.ts",
+          "line": 139,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-21T19:00:31.403Z",
+    "duration": 10696.333,
+    "expected": 85,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

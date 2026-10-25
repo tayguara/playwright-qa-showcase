@@ -1,0 +1,1543 @@
+{
+  "config": {
+    "argv": [
+      "<home>/.nvm/versions/node/v22.21.0/bin/node",
+      "<repo>/node_modules/@playwright/test/cli.js",
+      "test",
+      "--workers=1",
+      "--reporter=json",
+      "--output=/tmp/pw-output"
+    ],
+    "configFile": "<repo>/experiments/ai-written-tests/suite-b/playwright.config.ts",
+    "rootDir": "<repo>/experiments/ai-written-tests/suite-b/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/tmp/pw-output",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "<repo>/experiments/ai-written-tests/suite-b/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "auth.spec.ts",
+      "file": "auth.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "valid credentials return a token that authorises a write",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 107,
+                  "error": {
+                    "message": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]",
+                    "stack": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]\n    at <repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:71:34\n    at <repo>/experiments/ai-written-tests/suite-b/tests/auth.spec.ts:10:24",
+                    "location": {
+                      "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                      "column": 34,
+                      "line": 71
+                    },
+                    "snippet": "   at helpers.ts:71\n\n  69 |       const res = await request.post('/booking', { data });\n  70 |       expect(res.status()).toBe(200);\n> 71 |       const body = createdSchema.parse(await res.json());\n     |                                  ^\n  72 |       trackedIds.push(body.bookingid);\n  73 |       return { id: body.bookingid, data };\n  74 |     });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                        "column": 34,
+                        "line": 71
+                      },
+                      "message": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]\n\n   at helpers.ts:71\n\n  69 |       const res = await request.post('/booking', { data });\n  70 |       expect(res.status()).toBe(200);\n> 71 |       const body = createdSchema.parse(await res.json());\n     |                                  ^\n  72 |       trackedIds.push(body.bookingid);\n  73 |       return { id: body.bookingid, data };\n  74 |     });\n    at <repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:71:34\n    at <repo>/experiments/ai-written-tests/suite-b/tests/auth.spec.ts:10:24"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T18:58:55.450Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/tmp/pw-output/auth-valid-credentials-ret-f2066-ken-that-authorises-a-write/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                    "column": 34,
+                    "line": 71
+                  }
+                },
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 105,
+                  "error": {
+                    "message": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]",
+                    "stack": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]\n    at <repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:71:34\n    at <repo>/experiments/ai-written-tests/suite-b/tests/auth.spec.ts:10:24",
+                    "location": {
+                      "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                      "column": 34,
+                      "line": 71
+                    },
+                    "snippet": "   at helpers.ts:71\n\n  69 |       const res = await request.post('/booking', { data });\n  70 |       expect(res.status()).toBe(200);\n> 71 |       const body = createdSchema.parse(await res.json());\n     |                                  ^\n  72 |       trackedIds.push(body.bookingid);\n  73 |       return { id: body.bookingid, data };\n  74 |     });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                        "column": 34,
+                        "line": 71
+                      },
+                      "message": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]\n\n   at helpers.ts:71\n\n  69 |       const res = await request.post('/booking', { data });\n  70 |       expect(res.status()).toBe(200);\n> 71 |       const body = createdSchema.parse(await res.json());\n     |                                  ^\n  72 |       trackedIds.push(body.bookingid);\n  73 |       return { id: body.bookingid, data };\n  74 |     });\n    at <repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:71:34\n    at <repo>/experiments/ai-written-tests/suite-b/tests/auth.spec.ts:10:24"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-10-21T18:58:56.740Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/tmp/pw-output/auth-valid-credentials-ret-f2066-ken-that-authorises-a-write-retry1/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                    "column": 34,
+                    "line": 71
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "d748ac400d08b85935ef-290b9a12598f111359a5",
+          "file": "auth.spec.ts",
+          "line": 5,
+          "column": 5
+        },
+        {
+          "title": "wrong password yields no token",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 65,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T18:58:57.994Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d748ac400d08b85935ef-bd66978ccb06fabfed53",
+          "file": "auth.spec.ts",
+          "line": 21,
+          "column": 5
+        },
+        {
+          "title": "unknown user yields no token",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 28,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T18:58:58.126Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d748ac400d08b85935ef-964b535665198700ebde",
+          "file": "auth.spec.ts",
+          "line": 29,
+          "column": 5
+        },
+        {
+          "title": "an invalid token is rejected and the booking is unchanged",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 39,
+                  "error": {
+                    "message": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]",
+                    "stack": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]\n    at <repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:71:34\n    at Object.booking (<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:77:15)",
+                    "location": {
+                      "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                      "column": 34,
+                      "line": 71
+                    },
+                    "snippet": "   at helpers.ts:71\n\n  69 |       const res = await request.post('/booking', { data });\n  70 |       expect(res.status()).toBe(200);\n> 71 |       const body = createdSchema.parse(await res.json());\n     |                                  ^\n  72 |       trackedIds.push(body.bookingid);\n  73 |       return { id: body.bookingid, data };\n  74 |     });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                        "column": 34,
+                        "line": 71
+                      },
+                      "message": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]\n\n   at helpers.ts:71\n\n  69 |       const res = await request.post('/booking', { data });\n  70 |       expect(res.status()).toBe(200);\n> 71 |       const body = createdSchema.parse(await res.json());\n     |                                  ^\n  72 |       trackedIds.push(body.bookingid);\n  73 |       return { id: body.bookingid, data };\n  74 |     });\n    at <repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:71:34\n    at Object.booking (<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:77:15)"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T18:58:58.185Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/tmp/pw-output/auth-an-invalid-token-is-r-e898a-nd-the-booking-is-unchanged/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                    "column": 34,
+                    "line": 71
+                  }
+                },
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 70,
+                  "error": {
+                    "message": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]",
+                    "stack": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]\n    at <repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:71:34\n    at Object.booking (<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:77:15)",
+                    "location": {
+                      "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                      "column": 34,
+                      "line": 71
+                    },
+                    "snippet": "   at helpers.ts:71\n\n  69 |       const res = await request.post('/booking', { data });\n  70 |       expect(res.status()).toBe(200);\n> 71 |       const body = createdSchema.parse(await res.json());\n     |                                  ^\n  72 |       trackedIds.push(body.bookingid);\n  73 |       return { id: body.bookingid, data };\n  74 |     });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                        "column": 34,
+                        "line": 71
+                      },
+                      "message": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]\n\n   at helpers.ts:71\n\n  69 |       const res = await request.post('/booking', { data });\n  70 |       expect(res.status()).toBe(200);\n> 71 |       const body = createdSchema.parse(await res.json());\n     |                                  ^\n  72 |       trackedIds.push(body.bookingid);\n  73 |       return { id: body.bookingid, data };\n  74 |     });\n    at <repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:71:34\n    at Object.booking (<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:77:15)"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-10-21T18:58:59.178Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/tmp/pw-output/auth-an-invalid-token-is-r-e898a-nd-the-booking-is-unchanged-retry1/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                    "column": 34,
+                    "line": 71
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "d748ac400d08b85935ef-ff8fe46cb7a1f40c5576",
+          "file": "auth.spec.ts",
+          "line": 36,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "booking.spec.ts",
+      "file": "booking.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "create a booking and read it back",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 74,
+                  "error": {
+                    "message": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]",
+                    "stack": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]\n    at <repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts:8:33",
+                    "location": {
+                      "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                      "column": 33,
+                      "line": 8
+                    },
+                    "snippet": "   6 |   const res = await request.post('/booking', { data });\n   7 |   expect(res.status()).toBe(200);\n>  8 |   const created = createdSchema.parse(await res.json());\n     |                                 ^\n   9 |   trackBooking(created.bookingid);\n  10 |   expect(created.booking).toEqual(data);\n  11 |"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                        "column": 33,
+                        "line": 8
+                      },
+                      "message": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]\n\n   6 |   const res = await request.post('/booking', { data });\n   7 |   expect(res.status()).toBe(200);\n>  8 |   const created = createdSchema.parse(await res.json());\n     |                                 ^\n   9 |   trackBooking(created.bookingid);\n  10 |   expect(created.booking).toEqual(data);\n  11 |\n    at <repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts:8:33"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T18:59:00.289Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/tmp/pw-output/booking-create-a-booking-and-read-it-back/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                    "column": 33,
+                    "line": 8
+                  }
+                },
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 75,
+                  "error": {
+                    "message": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]",
+                    "stack": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]\n    at <repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts:8:33",
+                    "location": {
+                      "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                      "column": 33,
+                      "line": 8
+                    },
+                    "snippet": "   6 |   const res = await request.post('/booking', { data });\n   7 |   expect(res.status()).toBe(200);\n>  8 |   const created = createdSchema.parse(await res.json());\n     |                                 ^\n   9 |   trackBooking(created.bookingid);\n  10 |   expect(created.booking).toEqual(data);\n  11 |"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                        "column": 33,
+                        "line": 8
+                      },
+                      "message": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]\n\n   6 |   const res = await request.post('/booking', { data });\n   7 |   expect(res.status()).toBe(200);\n>  8 |   const created = createdSchema.parse(await res.json());\n     |                                 ^\n   9 |   trackBooking(created.bookingid);\n  10 |   expect(created.booking).toEqual(data);\n  11 |\n    at <repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts:8:33"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-10-21T18:59:01.387Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/tmp/pw-output/booking-create-a-booking-and-read-it-back-retry1/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "<repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts",
+                    "column": 33,
+                    "line": 8
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-532b0f98d129ab5577bd",
+          "file": "booking.spec.ts",
+          "line": 4,
+          "column": 5
+        },
+        {
+          "title": "reading an unknown booking returns 404",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 58,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T18:59:02.502Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-4ced4795b7f712c05b70",
+          "file": "booking.spec.ts",
+          "line": 18,
+          "column": 5
+        },
+        {
+          "title": "creating a booking with an incomplete payload is rejected",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 27,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T18:59:02.634Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-dcd826d633fdf6807603",
+          "file": "booking.spec.ts",
+          "line": 24,
+          "column": 5
+        },
+        {
+          "title": "find a booking by first and last name",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 34,
+                  "error": {
+                    "message": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]",
+                    "stack": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]\n    at <repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:71:34\n    at <repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts:31:24",
+                    "location": {
+                      "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                      "column": 34,
+                      "line": 71
+                    },
+                    "snippet": "   at helpers.ts:71\n\n  69 |       const res = await request.post('/booking', { data });\n  70 |       expect(res.status()).toBe(200);\n> 71 |       const body = createdSchema.parse(await res.json());\n     |                                  ^\n  72 |       trackedIds.push(body.bookingid);\n  73 |       return { id: body.bookingid, data };\n  74 |     });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                        "column": 34,
+                        "line": 71
+                      },
+                      "message": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]\n\n   at helpers.ts:71\n\n  69 |       const res = await request.post('/booking', { data });\n  70 |       expect(res.status()).toBe(200);\n> 71 |       const body = createdSchema.parse(await res.json());\n     |                                  ^\n  72 |       trackedIds.push(body.bookingid);\n  73 |       return { id: body.bookingid, data };\n  74 |     });\n    at <repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:71:34\n    at <repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts:31:24"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T18:59:02.694Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/tmp/pw-output/booking-find-a-booking-by-first-and-last-name/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                    "column": 34,
+                    "line": 71
+                  }
+                },
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 81,
+                  "error": {
+                    "message": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]",
+                    "stack": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]\n    at <repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:71:34\n    at <repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts:31:24",
+                    "location": {
+                      "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                      "column": 34,
+                      "line": 71
+                    },
+                    "snippet": "   at helpers.ts:71\n\n  69 |       const res = await request.post('/booking', { data });\n  70 |       expect(res.status()).toBe(200);\n> 71 |       const body = createdSchema.parse(await res.json());\n     |                                  ^\n  72 |       trackedIds.push(body.bookingid);\n  73 |       return { id: body.bookingid, data };\n  74 |     });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                        "column": 34,
+                        "line": 71
+                      },
+                      "message": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]\n\n   at helpers.ts:71\n\n  69 |       const res = await request.post('/booking', { data });\n  70 |       expect(res.status()).toBe(200);\n> 71 |       const body = createdSchema.parse(await res.json());\n     |                                  ^\n  72 |       trackedIds.push(body.bookingid);\n  73 |       return { id: body.bookingid, data };\n  74 |     });\n    at <repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:71:34\n    at <repo>/experiments/ai-written-tests/suite-b/tests/booking.spec.ts:31:24"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-10-21T18:59:03.754Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/tmp/pw-output/booking-find-a-booking-by-first-and-last-name-retry1/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                    "column": 34,
+                    "line": 71
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-7b2899078d66c29a9178",
+          "file": "booking.spec.ts",
+          "line": 30,
+          "column": 5
+        },
+        {
+          "title": "searching with a non-matching last name finds nothing",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 70,
+                  "error": {
+                    "message": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]",
+                    "stack": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]\n    at <repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:71:34\n    at Object.booking (<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:77:15)",
+                    "location": {
+                      "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                      "column": 34,
+                      "line": 71
+                    },
+                    "snippet": "   at helpers.ts:71\n\n  69 |       const res = await request.post('/booking', { data });\n  70 |       expect(res.status()).toBe(200);\n> 71 |       const body = createdSchema.parse(await res.json());\n     |                                  ^\n  72 |       trackedIds.push(body.bookingid);\n  73 |       return { id: body.bookingid, data };\n  74 |     });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                        "column": 34,
+                        "line": 71
+                      },
+                      "message": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]\n\n   at helpers.ts:71\n\n  69 |       const res = await request.post('/booking', { data });\n  70 |       expect(res.status()).toBe(200);\n> 71 |       const body = createdSchema.parse(await res.json());\n     |                                  ^\n  72 |       trackedIds.push(body.bookingid);\n  73 |       return { id: body.bookingid, data };\n  74 |     });\n    at <repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:71:34\n    at Object.booking (<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:77:15)"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T18:59:04.863Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/tmp/pw-output/booking-searching-with-a-n-0cf10-ing-last-name-finds-nothing/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                    "column": 34,
+                    "line": 71
+                  }
+                },
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 83,
+                  "error": {
+                    "message": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]",
+                    "stack": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]\n    at <repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:71:34\n    at Object.booking (<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:77:15)",
+                    "location": {
+                      "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                      "column": 34,
+                      "line": 71
+                    },
+                    "snippet": "   at helpers.ts:71\n\n  69 |       const res = await request.post('/booking', { data });\n  70 |       expect(res.status()).toBe(200);\n> 71 |       const body = createdSchema.parse(await res.json());\n     |                                  ^\n  72 |       trackedIds.push(body.bookingid);\n  73 |       return { id: body.bookingid, data };\n  74 |     });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                        "column": 34,
+                        "line": 71
+                      },
+                      "message": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]\n\n   at helpers.ts:71\n\n  69 |       const res = await request.post('/booking', { data });\n  70 |       expect(res.status()).toBe(200);\n> 71 |       const body = createdSchema.parse(await res.json());\n     |                                  ^\n  72 |       trackedIds.push(body.bookingid);\n  73 |       return { id: body.bookingid, data };\n  74 |     });\n    at <repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:71:34\n    at Object.booking (<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:77:15)"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-10-21T18:59:05.905Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/tmp/pw-output/booking-searching-with-a-n-0cf10-ing-last-name-finds-nothing-retry1/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                    "column": 34,
+                    "line": 71
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-d4fb03a7e504eb4741ff",
+          "file": "booking.spec.ts",
+          "line": 43,
+          "column": 5
+        },
+        {
+          "title": "PUT fully replaces the booking",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 10,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 81,
+                  "error": {
+                    "message": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]",
+                    "stack": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]\n    at <repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:71:34\n    at Object.booking (<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:77:15)",
+                    "location": {
+                      "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                      "column": 34,
+                      "line": 71
+                    },
+                    "snippet": "   at helpers.ts:71\n\n  69 |       const res = await request.post('/booking', { data });\n  70 |       expect(res.status()).toBe(200);\n> 71 |       const body = createdSchema.parse(await res.json());\n     |                                  ^\n  72 |       trackedIds.push(body.bookingid);\n  73 |       return { id: body.bookingid, data };\n  74 |     });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                        "column": 34,
+                        "line": 71
+                      },
+                      "message": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]\n\n   at helpers.ts:71\n\n  69 |       const res = await request.post('/booking', { data });\n  70 |       expect(res.status()).toBe(200);\n> 71 |       const body = createdSchema.parse(await res.json());\n     |                                  ^\n  72 |       trackedIds.push(body.bookingid);\n  73 |       return { id: body.bookingid, data };\n  74 |     });\n    at <repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:71:34\n    at Object.booking (<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:77:15)"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T18:59:07.022Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/tmp/pw-output/booking-PUT-fully-replaces-the-booking/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                    "column": 34,
+                    "line": 71
+                  }
+                },
+                {
+                  "workerIndex": 11,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 85,
+                  "error": {
+                    "message": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]",
+                    "stack": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]\n    at <repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:71:34\n    at Object.booking (<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:77:15)",
+                    "location": {
+                      "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                      "column": 34,
+                      "line": 71
+                    },
+                    "snippet": "   at helpers.ts:71\n\n  69 |       const res = await request.post('/booking', { data });\n  70 |       expect(res.status()).toBe(200);\n> 71 |       const body = createdSchema.parse(await res.json());\n     |                                  ^\n  72 |       trackedIds.push(body.bookingid);\n  73 |       return { id: body.bookingid, data };\n  74 |     });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                        "column": 34,
+                        "line": 71
+                      },
+                      "message": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]\n\n   at helpers.ts:71\n\n  69 |       const res = await request.post('/booking', { data });\n  70 |       expect(res.status()).toBe(200);\n> 71 |       const body = createdSchema.parse(await res.json());\n     |                                  ^\n  72 |       trackedIds.push(body.bookingid);\n  73 |       return { id: body.bookingid, data };\n  74 |     });\n    at <repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:71:34\n    at Object.booking (<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:77:15)"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-10-21T18:59:08.129Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/tmp/pw-output/booking-PUT-fully-replaces-the-booking-retry1/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                    "column": 34,
+                    "line": 71
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-fb43ddde8fffb0164478",
+          "file": "booking.spec.ts",
+          "line": 52,
+          "column": 5
+        },
+        {
+          "title": "PUT drops optional fields omitted from the replacement",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 12,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 89,
+                  "error": {
+                    "message": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]",
+                    "stack": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]\n    at <repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:71:34\n    at Object.booking (<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:77:15)",
+                    "location": {
+                      "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                      "column": 34,
+                      "line": 71
+                    },
+                    "snippet": "   at helpers.ts:71\n\n  69 |       const res = await request.post('/booking', { data });\n  70 |       expect(res.status()).toBe(200);\n> 71 |       const body = createdSchema.parse(await res.json());\n     |                                  ^\n  72 |       trackedIds.push(body.bookingid);\n  73 |       return { id: body.bookingid, data };\n  74 |     });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                        "column": 34,
+                        "line": 71
+                      },
+                      "message": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]\n\n   at helpers.ts:71\n\n  69 |       const res = await request.post('/booking', { data });\n  70 |       expect(res.status()).toBe(200);\n> 71 |       const body = createdSchema.parse(await res.json());\n     |                                  ^\n  72 |       trackedIds.push(body.bookingid);\n  73 |       return { id: body.bookingid, data };\n  74 |     });\n    at <repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:71:34\n    at Object.booking (<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:77:15)"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T18:59:09.192Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/tmp/pw-output/booking-PUT-drops-optional-c65dc-mitted-from-the-replacement/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                    "column": 34,
+                    "line": 71
+                  }
+                },
+                {
+                  "workerIndex": 13,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 78,
+                  "error": {
+                    "message": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]",
+                    "stack": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]\n    at <repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:71:34\n    at Object.booking (<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:77:15)",
+                    "location": {
+                      "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                      "column": 34,
+                      "line": 71
+                    },
+                    "snippet": "   at helpers.ts:71\n\n  69 |       const res = await request.post('/booking', { data });\n  70 |       expect(res.status()).toBe(200);\n> 71 |       const body = createdSchema.parse(await res.json());\n     |                                  ^\n  72 |       trackedIds.push(body.bookingid);\n  73 |       return { id: body.bookingid, data };\n  74 |     });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                        "column": 34,
+                        "line": 71
+                      },
+                      "message": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]\n\n   at helpers.ts:71\n\n  69 |       const res = await request.post('/booking', { data });\n  70 |       expect(res.status()).toBe(200);\n> 71 |       const body = createdSchema.parse(await res.json());\n     |                                  ^\n  72 |       trackedIds.push(body.bookingid);\n  73 |       return { id: body.bookingid, data };\n  74 |     });\n    at <repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:71:34\n    at Object.booking (<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:77:15)"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-10-21T18:59:10.318Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/tmp/pw-output/booking-PUT-drops-optional-c65dc-mitted-from-the-replacement-retry1/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                    "column": 34,
+                    "line": 71
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-03f682a58232d55fe827",
+          "file": "booking.spec.ts",
+          "line": 71,
+          "column": 5
+        },
+        {
+          "title": "PUT on an unknown booking is not successful",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 14,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 76,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T18:59:11.415Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-b29da4ff717e4db568a2",
+          "file": "booking.spec.ts",
+          "line": 85,
+          "column": 5
+        },
+        {
+          "title": "PATCH updates only the given fields",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 14,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 42,
+                  "error": {
+                    "message": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]",
+                    "stack": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]\n    at <repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:71:34\n    at Object.booking (<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:77:15)",
+                    "location": {
+                      "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                      "column": 34,
+                      "line": 71
+                    },
+                    "snippet": "   at helpers.ts:71\n\n  69 |       const res = await request.post('/booking', { data });\n  70 |       expect(res.status()).toBe(200);\n> 71 |       const body = createdSchema.parse(await res.json());\n     |                                  ^\n  72 |       trackedIds.push(body.bookingid);\n  73 |       return { id: body.bookingid, data };\n  74 |     });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                        "column": 34,
+                        "line": 71
+                      },
+                      "message": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]\n\n   at helpers.ts:71\n\n  69 |       const res = await request.post('/booking', { data });\n  70 |       expect(res.status()).toBe(200);\n> 71 |       const body = createdSchema.parse(await res.json());\n     |                                  ^\n  72 |       trackedIds.push(body.bookingid);\n  73 |       return { id: body.bookingid, data };\n  74 |     });\n    at <repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:71:34\n    at Object.booking (<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:77:15)"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T18:59:11.565Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/tmp/pw-output/booking-PATCH-updates-only-the-given-fields/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                    "column": 34,
+                    "line": 71
+                  }
+                },
+                {
+                  "workerIndex": 15,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 91,
+                  "error": {
+                    "message": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]",
+                    "stack": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]\n    at <repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:71:34\n    at Object.booking (<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:77:15)",
+                    "location": {
+                      "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                      "column": 34,
+                      "line": 71
+                    },
+                    "snippet": "   at helpers.ts:71\n\n  69 |       const res = await request.post('/booking', { data });\n  70 |       expect(res.status()).toBe(200);\n> 71 |       const body = createdSchema.parse(await res.json());\n     |                                  ^\n  72 |       trackedIds.push(body.bookingid);\n  73 |       return { id: body.bookingid, data };\n  74 |     });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                        "column": 34,
+                        "line": 71
+                      },
+                      "message": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]\n\n   at helpers.ts:71\n\n  69 |       const res = await request.post('/booking', { data });\n  70 |       expect(res.status()).toBe(200);\n> 71 |       const body = createdSchema.parse(await res.json());\n     |                                  ^\n  72 |       trackedIds.push(body.bookingid);\n  73 |       return { id: body.bookingid, data };\n  74 |     });\n    at <repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:71:34\n    at Object.booking (<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:77:15)"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-10-21T18:59:12.606Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/tmp/pw-output/booking-PATCH-updates-only-the-given-fields-retry1/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                    "column": 34,
+                    "line": 71
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-6da994f9ab96efa4f80c",
+          "file": "booking.spec.ts",
+          "line": 94,
+          "column": 5
+        },
+        {
+          "title": "PATCH without a token is rejected and changes nothing",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 16,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 83,
+                  "error": {
+                    "message": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]",
+                    "stack": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]\n    at <repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:71:34\n    at Object.booking (<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:77:15)",
+                    "location": {
+                      "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                      "column": 34,
+                      "line": 71
+                    },
+                    "snippet": "   at helpers.ts:71\n\n  69 |       const res = await request.post('/booking', { data });\n  70 |       expect(res.status()).toBe(200);\n> 71 |       const body = createdSchema.parse(await res.json());\n     |                                  ^\n  72 |       trackedIds.push(body.bookingid);\n  73 |       return { id: body.bookingid, data };\n  74 |     });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                        "column": 34,
+                        "line": 71
+                      },
+                      "message": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]\n\n   at helpers.ts:71\n\n  69 |       const res = await request.post('/booking', { data });\n  70 |       expect(res.status()).toBe(200);\n> 71 |       const body = createdSchema.parse(await res.json());\n     |                                  ^\n  72 |       trackedIds.push(body.bookingid);\n  73 |       return { id: body.bookingid, data };\n  74 |     });\n    at <repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:71:34\n    at Object.booking (<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:77:15)"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T18:59:13.717Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/tmp/pw-output/booking-PATCH-without-a-to-cffef-ejected-and-changes-nothing/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                    "column": 34,
+                    "line": 71
+                  }
+                },
+                {
+                  "workerIndex": 17,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 106,
+                  "error": {
+                    "message": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]",
+                    "stack": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]\n    at <repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:71:34\n    at Object.booking (<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:77:15)",
+                    "location": {
+                      "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                      "column": 34,
+                      "line": 71
+                    },
+                    "snippet": "   at helpers.ts:71\n\n  69 |       const res = await request.post('/booking', { data });\n  70 |       expect(res.status()).toBe(200);\n> 71 |       const body = createdSchema.parse(await res.json());\n     |                                  ^\n  72 |       trackedIds.push(body.bookingid);\n  73 |       return { id: body.bookingid, data };\n  74 |     });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                        "column": 34,
+                        "line": 71
+                      },
+                      "message": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]\n\n   at helpers.ts:71\n\n  69 |       const res = await request.post('/booking', { data });\n  70 |       expect(res.status()).toBe(200);\n> 71 |       const body = createdSchema.parse(await res.json());\n     |                                  ^\n  72 |       trackedIds.push(body.bookingid);\n  73 |       return { id: body.bookingid, data };\n  74 |     });\n    at <repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:71:34\n    at Object.booking (<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:77:15)"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-10-21T18:59:14.851Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/tmp/pw-output/booking-PATCH-without-a-to-cffef-ejected-and-changes-nothing-retry1/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                    "column": 34,
+                    "line": 71
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-4894142792fc1094b4fd",
+          "file": "booking.spec.ts",
+          "line": 108,
+          "column": 5
+        },
+        {
+          "title": "PUT without a token returns 403 and changes nothing",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 18,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 108,
+                  "error": {
+                    "message": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]",
+                    "stack": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]\n    at <repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:71:34\n    at Object.booking (<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:77:15)",
+                    "location": {
+                      "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                      "column": 34,
+                      "line": 71
+                    },
+                    "snippet": "   at helpers.ts:71\n\n  69 |       const res = await request.post('/booking', { data });\n  70 |       expect(res.status()).toBe(200);\n> 71 |       const body = createdSchema.parse(await res.json());\n     |                                  ^\n  72 |       trackedIds.push(body.bookingid);\n  73 |       return { id: body.bookingid, data };\n  74 |     });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                        "column": 34,
+                        "line": 71
+                      },
+                      "message": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]\n\n   at helpers.ts:71\n\n  69 |       const res = await request.post('/booking', { data });\n  70 |       expect(res.status()).toBe(200);\n> 71 |       const body = createdSchema.parse(await res.json());\n     |                                  ^\n  72 |       trackedIds.push(body.bookingid);\n  73 |       return { id: body.bookingid, data };\n  74 |     });\n    at <repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:71:34\n    at Object.booking (<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:77:15)"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T18:59:16.279Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/tmp/pw-output/booking-PUT-without-a-token-returns-403-and-changes-nothing/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                    "column": 34,
+                    "line": 71
+                  }
+                },
+                {
+                  "workerIndex": 19,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 85,
+                  "error": {
+                    "message": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]",
+                    "stack": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]\n    at <repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:71:34\n    at Object.booking (<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:77:15)",
+                    "location": {
+                      "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                      "column": 34,
+                      "line": 71
+                    },
+                    "snippet": "   at helpers.ts:71\n\n  69 |       const res = await request.post('/booking', { data });\n  70 |       expect(res.status()).toBe(200);\n> 71 |       const body = createdSchema.parse(await res.json());\n     |                                  ^\n  72 |       trackedIds.push(body.bookingid);\n  73 |       return { id: body.bookingid, data };\n  74 |     });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                        "column": 34,
+                        "line": 71
+                      },
+                      "message": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]\n\n   at helpers.ts:71\n\n  69 |       const res = await request.post('/booking', { data });\n  70 |       expect(res.status()).toBe(200);\n> 71 |       const body = createdSchema.parse(await res.json());\n     |                                  ^\n  72 |       trackedIds.push(body.bookingid);\n  73 |       return { id: body.bookingid, data };\n  74 |     });\n    at <repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:71:34\n    at Object.booking (<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:77:15)"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-10-21T18:59:17.634Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/tmp/pw-output/booking-PUT-without-a-token-returns-403-and-changes-nothing-retry1/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                    "column": 34,
+                    "line": 71
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-4081753a5480b1001cb2",
+          "file": "booking.spec.ts",
+          "line": 116,
+          "column": 5
+        },
+        {
+          "title": "DELETE answers 201 and the booking is gone",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 20,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 73,
+                  "error": {
+                    "message": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]",
+                    "stack": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]\n    at <repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:71:34\n    at Object.booking (<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:77:15)",
+                    "location": {
+                      "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                      "column": 34,
+                      "line": 71
+                    },
+                    "snippet": "   at helpers.ts:71\n\n  69 |       const res = await request.post('/booking', { data });\n  70 |       expect(res.status()).toBe(200);\n> 71 |       const body = createdSchema.parse(await res.json());\n     |                                  ^\n  72 |       trackedIds.push(body.bookingid);\n  73 |       return { id: body.bookingid, data };\n  74 |     });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                        "column": 34,
+                        "line": 71
+                      },
+                      "message": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]\n\n   at helpers.ts:71\n\n  69 |       const res = await request.post('/booking', { data });\n  70 |       expect(res.status()).toBe(200);\n> 71 |       const body = createdSchema.parse(await res.json());\n     |                                  ^\n  72 |       trackedIds.push(body.bookingid);\n  73 |       return { id: body.bookingid, data };\n  74 |     });\n    at <repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:71:34\n    at Object.booking (<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:77:15)"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T18:59:18.763Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/tmp/pw-output/booking-DELETE-answers-201-and-the-booking-is-gone/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                    "column": 34,
+                    "line": 71
+                  }
+                },
+                {
+                  "workerIndex": 21,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 68,
+                  "error": {
+                    "message": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]",
+                    "stack": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]\n    at <repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:71:34\n    at Object.booking (<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:77:15)",
+                    "location": {
+                      "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                      "column": 34,
+                      "line": 71
+                    },
+                    "snippet": "   at helpers.ts:71\n\n  69 |       const res = await request.post('/booking', { data });\n  70 |       expect(res.status()).toBe(200);\n> 71 |       const body = createdSchema.parse(await res.json());\n     |                                  ^\n  72 |       trackedIds.push(body.bookingid);\n  73 |       return { id: body.bookingid, data };\n  74 |     });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                        "column": 34,
+                        "line": 71
+                      },
+                      "message": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]\n\n   at helpers.ts:71\n\n  69 |       const res = await request.post('/booking', { data });\n  70 |       expect(res.status()).toBe(200);\n> 71 |       const body = createdSchema.parse(await res.json());\n     |                                  ^\n  72 |       trackedIds.push(body.bookingid);\n  73 |       return { id: body.bookingid, data };\n  74 |     });\n    at <repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:71:34\n    at Object.booking (<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:77:15)"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-10-21T18:59:19.800Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/tmp/pw-output/booking-DELETE-answers-201-and-the-booking-is-gone-retry1/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                    "column": 34,
+                    "line": 71
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-41bf1a129c9027a09887",
+          "file": "booking.spec.ts",
+          "line": 127,
+          "column": 5
+        },
+        {
+          "title": "DELETE without a token is rejected and the booking remains",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 22,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 78,
+                  "error": {
+                    "message": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]",
+                    "stack": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]\n    at <repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:71:34\n    at Object.booking (<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:77:15)",
+                    "location": {
+                      "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                      "column": 34,
+                      "line": 71
+                    },
+                    "snippet": "   at helpers.ts:71\n\n  69 |       const res = await request.post('/booking', { data });\n  70 |       expect(res.status()).toBe(200);\n> 71 |       const body = createdSchema.parse(await res.json());\n     |                                  ^\n  72 |       trackedIds.push(body.bookingid);\n  73 |       return { id: body.bookingid, data };\n  74 |     });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                        "column": 34,
+                        "line": 71
+                      },
+                      "message": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]\n\n   at helpers.ts:71\n\n  69 |       const res = await request.post('/booking', { data });\n  70 |       expect(res.status()).toBe(200);\n> 71 |       const body = createdSchema.parse(await res.json());\n     |                                  ^\n  72 |       trackedIds.push(body.bookingid);\n  73 |       return { id: body.bookingid, data };\n  74 |     });\n    at <repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:71:34\n    at Object.booking (<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:77:15)"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-21T18:59:20.916Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/tmp/pw-output/booking-DELETE-without-a-t-2f78d-ted-and-the-booking-remains/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                    "column": 34,
+                    "line": 71
+                  }
+                },
+                {
+                  "workerIndex": 23,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 83,
+                  "error": {
+                    "message": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]",
+                    "stack": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]\n    at <repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:71:34\n    at Object.booking (<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:77:15)",
+                    "location": {
+                      "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                      "column": 34,
+                      "line": 71
+                    },
+                    "snippet": "   at helpers.ts:71\n\n  69 |       const res = await request.post('/booking', { data });\n  70 |       expect(res.status()).toBe(200);\n> 71 |       const body = createdSchema.parse(await res.json());\n     |                                  ^\n  72 |       trackedIds.push(body.bookingid);\n  73 |       return { id: body.bookingid, data };\n  74 |     });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                        "column": 34,
+                        "line": 71
+                      },
+                      "message": "ZodError: [\n  {\n    \"expected\": \"boolean\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"booking\",\n      \"depositpaid\"\n    ],\n    \"message\": \"Invalid input: expected boolean, received string\"\n  }\n]\n\n   at helpers.ts:71\n\n  69 |       const res = await request.post('/booking', { data });\n  70 |       expect(res.status()).toBe(200);\n> 71 |       const body = createdSchema.parse(await res.json());\n     |                                  ^\n  72 |       trackedIds.push(body.bookingid);\n  73 |       return { id: body.bookingid, data };\n  74 |     });\n    at <repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:71:34\n    at Object.booking (<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts:77:15)"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-10-21T18:59:22.092Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/tmp/pw-output/booking-DELETE-without-a-t-2f78d-ted-and-the-booking-remains-retry1/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "<repo>/experiments/ai-written-tests/suite-b/tests/helpers.ts",
+                    "column": 34,
+                    "line": 71
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "a3a10f2351dcc49e1cb9-ef14cdb319618a9d66ca",
+          "file": "booking.spec.ts",
+          "line": 139,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-21T18:58:54.129Z",
+    "duration": 28164.657,
+    "expected": 5,
+    "skipped": 0,
+    "unexpected": 12,
+    "flaky": 0
+  }
+}

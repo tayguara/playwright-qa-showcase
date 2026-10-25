@@ -1,0 +1,20 @@
+commit 0da491c7affe99231509a32f0d0cd4dbaae22fe4
+Author: lab <lab@lab.invalid>
+Date:   Wed Oct 21 14:53:36 2026 -0300
+
+    add guardrails
+
+ CLAUDE.md | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
+
+commit bd52fc61de3a20494ad63310861dfd4f18662500
+Author: lab <lab@lab.invalid>
+Date:   Wed Oct 21 14:53:36 2026 -0300
+
+    scaffold
+
+ .gitignore        |    3 +
+ package-lock.json | 1443 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ package.json      |   17 +
+ tsconfig.json     |   17 +
+ 4 files changed, 1480 insertions(+)

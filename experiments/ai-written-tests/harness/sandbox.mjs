@@ -19,7 +19,7 @@
 //
 // Suite H is the author's own reviewed code and still runs directly (see the README).
 
-import { cpSync, mkdirSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs';
+import { cpSync, existsSync, mkdirSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { assertNoSymlinks, readSandboxFile } from './guard.mjs';
@@ -45,14 +45,14 @@ const ETC_FILES = [
  * Run by pasta inside its namespace before bwrap starts: unreachable routes for the private
  * ranges. The sandbox cannot remove them (no capabilities over this namespace). It fails closed
  * (`set -e`, exec only after every route was added). 169.254.0.0/16 is left alone because the DNS
- * forward lives at 169.254.1.1. pasta runs with -4 and the script disables IPv6 in the namespace:
+ * forward lives at 169.254.1.1; only the cloud metadata address 169.254.169.254/32 is blocked. pasta runs with -4 and the script disables IPv6 in the namespace:
  * otherwise the host's IPv6 link-local address would reach host services listening on [::], and the
  * kernel would still give the tap interface a link-local address of its own.
  */
 export const ROUTE_SCRIPT =
   'set -e; echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6; ' +
   'echo 1 > /proc/sys/net/ipv6/conf/default/disable_ipv6; ' +
-  'for n in 10.0.0.0/8 172.16.0.0/12 192.168.0.0/16 100.64.0.0/10; do ' +
+  'for n in 10.0.0.0/8 172.16.0.0/12 192.168.0.0/16 100.64.0.0/10 169.254.169.254/32; do ' +
   'ip route add unreachable "$n"; done; exec "$@"';
 
 export const PASTA = [
@@ -139,6 +139,9 @@ export function bwrapArgs({
     EXPERIMENT_DIR,
     EXPERIMENT_DIR,
   );
+  // Hides any npmrc that lives in the node install (some installs keep one in etc/); bwrap cannot
+  // create the mount point on a read-only bind, so only when the folder exists.
+  if (existing(path.join(NODE_ROOT, 'etc'))) args.push('--tmpfs', path.join(NODE_ROOT, 'etc'));
   // The writable paths, both inside the per-run scratch folder. The suite copy is bound after the
   // read-only experiment folder, so it replaces the suite's own path.
   if (suiteCopy) args.push('--bind', suiteCopy, suiteDir);
@@ -184,6 +187,7 @@ export function runInSandbox({ suite, command, args, network, withOut = false, a
         outDir: withOut ? outDir : undefined,
         suiteCopy,
         suiteDir: suite.cwd,
+        existing: existsSync,
       }),
       '--chdir',
       suite.cwd,

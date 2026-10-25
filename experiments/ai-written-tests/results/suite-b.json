@@ -1,0 +1,287 @@
+{
+  "suite": "B",
+  "label": "AI agent, with guardrails",
+  "source": "experiments/ai-written-tests/suite-b",
+  "gitSha": "55737d1720376a91da999429422e82da386792b0",
+  "stubSha256": "3768a2ba1cd2177a909141ce24724e3e52983de687900f2150568f12b84e4380",
+  "stub": {
+    "complete": true,
+    "completedAt": "2026-10-21T19:00:07.211Z",
+    "stubSha256": "3768a2ba1cd2177a909141ce24724e3e52983de687900f2150568f12b84e4380",
+    "clean": {
+      "total": 17,
+      "passed": 17,
+      "failed": 0,
+      "flaky": 0,
+      "skipped": 0,
+      "passRate": 1,
+      "requests": 67,
+      "globalErrors": 0,
+      "tests": [
+        {
+          "key": " › auth.spec.ts › valid credentials return a token that authorises a write",
+          "status": "expected"
+        },
+        {
+          "key": " › auth.spec.ts › wrong password yields no token",
+          "status": "expected"
+        },
+        {
+          "key": " › auth.spec.ts › unknown user yields no token",
+          "status": "expected"
+        },
+        {
+          "key": " › auth.spec.ts › an invalid token is rejected and the booking is unchanged",
+          "status": "expected"
+        },
+        {
+          "key": " › booking.spec.ts › create a booking and read it back",
+          "status": "expected"
+        },
+        {
+          "key": " › booking.spec.ts › reading an unknown booking returns 404",
+          "status": "expected"
+        },
+        {
+          "key": " › booking.spec.ts › creating a booking with an incomplete payload is rejected",
+          "status": "expected"
+        },
+        {
+          "key": " › booking.spec.ts › find a booking by first and last name",
+          "status": "expected"
+        },
+        {
+          "key": " › booking.spec.ts › searching with a non-matching last name finds nothing",
+          "status": "expected"
+        },
+        {
+          "key": " › booking.spec.ts › PUT fully replaces the booking",
+          "status": "expected"
+        },
+        {
+          "key": " › booking.spec.ts › PUT drops optional fields omitted from the replacement",
+          "status": "expected"
+        },
+        {
+          "key": " › booking.spec.ts › PUT on an unknown booking is not successful",
+          "status": "expected"
+        },
+        {
+          "key": " › booking.spec.ts › PATCH updates only the given fields",
+          "status": "expected"
+        },
+        {
+          "key": " › booking.spec.ts › PATCH without a token is rejected and changes nothing",
+          "status": "expected"
+        },
+        {
+          "key": " › booking.spec.ts › PUT without a token returns 403 and changes nothing",
+          "status": "expected"
+        },
+        {
+          "key": " › booking.spec.ts › DELETE answers 201 and the booking is gone",
+          "status": "expected"
+        },
+        {
+          "key": " › booking.spec.ts › DELETE without a token is rejected and the booking remains",
+          "status": "expected"
+        }
+      ]
+    },
+    "faults": [
+      {
+        "fault": 1,
+        "slug": "get-wrong-totalprice",
+        "status": "caught",
+        "failingTests": [
+          " › auth.spec.ts › valid credentials return a token that authorises a write",
+          " › booking.spec.ts › DELETE without a token is rejected and the booking remains",
+          " › booking.spec.ts › PATCH updates only the given fields",
+          " › booking.spec.ts › PATCH without a token is rejected and changes nothing",
+          " › booking.spec.ts › PUT fully replaces the booking",
+          " › booking.spec.ts › PUT without a token returns 403 and changes nothing",
+          " › booking.spec.ts › create a booking and read it back"
+        ],
+        "flakyTests": [],
+        "newGlobalErrors": 0,
+        "unknownFailingTests": [],
+        "requests": 102
+      },
+      {
+        "fault": 2,
+        "slug": "get-omits-additionalneeds",
+        "status": "caught",
+        "failingTests": [
+          " › booking.spec.ts › DELETE without a token is rejected and the booking remains",
+          " › booking.spec.ts › PATCH updates only the given fields",
+          " › booking.spec.ts › PATCH without a token is rejected and changes nothing",
+          " › booking.spec.ts › PUT drops optional fields omitted from the replacement",
+          " › booking.spec.ts › PUT fully replaces the booking",
+          " › booking.spec.ts › PUT without a token returns 403 and changes nothing",
+          " › booking.spec.ts › create a booking and read it back"
+        ],
+        "flakyTests": [],
+        "newGlobalErrors": 0,
+        "unknownFailingTests": [],
+        "requests": 101
+      },
+      {
+        "fault": 3,
+        "slug": "patch-changes-unsent-fields",
+        "status": "caught",
+        "failingTests": [
+          " › booking.spec.ts › PATCH updates only the given fields"
+        ],
+        "flakyTests": [],
+        "newGlobalErrors": 0,
+        "unknownFailingTests": [],
+        "requests": 70
+      },
+      {
+        "fault": 4,
+        "slug": "put-without-token-accepted",
+        "status": "caught",
+        "failingTests": [
+          " › auth.spec.ts › an invalid token is rejected and the booking is unchanged",
+          " › booking.spec.ts › PUT without a token returns 403 and changes nothing"
+        ],
+        "flakyTests": [],
+        "newGlobalErrors": 0,
+        "unknownFailingTests": [],
+        "requests": 73
+      },
+      {
+        "fault": 5,
+        "slug": "delete-not-deleting",
+        "status": "caught",
+        "failingTests": [
+          " › booking.spec.ts › DELETE answers 201 and the booking is gone"
+        ],
+        "flakyTests": [],
+        "newGlobalErrors": 0,
+        "unknownFailingTests": [],
+        "requests": 71
+      },
+      {
+        "fault": 6,
+        "slug": "name-filter-ignored",
+        "status": "caught",
+        "failingTests": [
+          " › booking.spec.ts › DELETE answers 201 and the booking is gone",
+          " › booking.spec.ts › find a booking by first and last name",
+          " › booking.spec.ts › searching with a non-matching last name finds nothing"
+        ],
+        "flakyTests": [],
+        "newGlobalErrors": 0,
+        "unknownFailingTests": [],
+        "requests": 83
+      },
+      {
+        "fault": 7,
+        "slug": "auth-accepts-any-credentials",
+        "status": "caught",
+        "failingTests": [
+          " › auth.spec.ts › unknown user yields no token",
+          " › auth.spec.ts › wrong password yields no token"
+        ],
+        "flakyTests": [],
+        "newGlobalErrors": 0,
+        "unknownFailingTests": [],
+        "requests": 69
+      },
+      {
+        "fault": 8,
+        "slug": "dates-swapped-on-read",
+        "status": "caught",
+        "failingTests": [
+          " › booking.spec.ts › DELETE without a token is rejected and the booking remains",
+          " › booking.spec.ts › PATCH updates only the given fields",
+          " › booking.spec.ts › PATCH without a token is rejected and changes nothing",
+          " › booking.spec.ts › PUT fully replaces the booking",
+          " › booking.spec.ts › PUT without a token returns 403 and changes nothing",
+          " › booking.spec.ts › create a booking and read it back"
+        ],
+        "flakyTests": [],
+        "newGlobalErrors": 0,
+        "unknownFailingTests": [],
+        "requests": 96
+      },
+      {
+        "fault": 9,
+        "slug": "depositpaid-as-string",
+        "status": "caught",
+        "failingTests": [
+          " › auth.spec.ts › an invalid token is rejected and the booking is unchanged",
+          " › auth.spec.ts › valid credentials return a token that authorises a write",
+          " › booking.spec.ts › DELETE answers 201 and the booking is gone",
+          " › booking.spec.ts › DELETE without a token is rejected and the booking remains",
+          " › booking.spec.ts › PATCH updates only the given fields",
+          " › booking.spec.ts › PATCH without a token is rejected and changes nothing",
+          " › booking.spec.ts › PUT drops optional fields omitted from the replacement",
+          " › booking.spec.ts › PUT fully replaces the booking",
+          " › booking.spec.ts › PUT without a token returns 403 and changes nothing",
+          " › booking.spec.ts › create a booking and read it back",
+          " › booking.spec.ts › find a booking by first and last name",
+          " › booking.spec.ts › searching with a non-matching last name finds nothing"
+        ],
+        "flakyTests": [],
+        "newGlobalErrors": 0,
+        "unknownFailingTests": [],
+        "requests": 56
+      },
+      {
+        "fault": 10,
+        "slug": "every-5th-request-500",
+        "status": "caught",
+        "failingTests": [
+          " › auth.spec.ts › valid credentials return a token that authorises a write",
+          " › booking.spec.ts › DELETE answers 201 and the booking is gone",
+          " › booking.spec.ts › DELETE without a token is rejected and the booking remains",
+          " › booking.spec.ts › PATCH updates only the given fields",
+          " › booking.spec.ts › PATCH without a token is rejected and changes nothing",
+          " › booking.spec.ts › PUT without a token returns 403 and changes nothing",
+          " › booking.spec.ts › find a booking by first and last name"
+        ],
+        "flakyTests": [
+          " › auth.spec.ts › an invalid token is rejected and the booking is unchanged",
+          " › booking.spec.ts › reading an unknown booking returns 404",
+          " › booking.spec.ts › searching with a non-matching last name finds nothing"
+        ],
+        "newGlobalErrors": 0,
+        "unknownFailingTests": [],
+        "requests": 106
+      }
+    ],
+    "fault10Deterministic": true,
+    "faultsCaught": 10
+  },
+  "repeat": {
+    "repeatEach": 5,
+    "executions": 85,
+    "stubSha256": "3768a2ba1cd2177a909141ce24724e3e52983de687900f2150568f12b84e4380",
+    "flakyTests": [],
+    "consistentlyFailing": []
+  },
+  "lint": {
+    "files": 5,
+    "errors": 4,
+    "warnings": 0,
+    "fatal": 0,
+    "byRule": {
+      "@typescript-eslint/no-unsafe-assignment": 2,
+      "@typescript-eslint/no-unsafe-member-access": 2
+    }
+  },
+  "typecheck": {
+    "errors": 0
+  },
+  "public": {
+    "ranAt": "2026-10-21T19:01:50.741Z",
+    "total": 17,
+    "passed": 17,
+    "failed": 0,
+    "flaky": 0,
+    "skipped": 0,
+    "passRate": 1
+  }
+}
