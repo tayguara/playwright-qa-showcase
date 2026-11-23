@@ -34,13 +34,13 @@ Versions are the ones in use at the time of writing; `package.json` and the lock
 | Tool                                                              | Version                 | Used for                                                          |
 | ----------------------------------------------------------------- | ----------------------- | ----------------------------------------------------------------- |
 | Node.js                                                           | 22 (`.nvmrc`)           | Runtime                                                           |
-| [@playwright/test](https://playwright.dev)                        | 1.63.0                  | Test runner, browser and API testing                              |
+| [@playwright/test](https://playwright.dev)                        | 1.64.1                  | Test runner, browser and API testing                              |
 | [playwright-bdd](https://github.com/vitalets/playwright-bdd)      | 9.2.1                   | Runs Gherkin `.feature` files on the Playwright runner            |
-| [@axe-core/playwright](https://github.com/dequelabs/axe-core-npm) | 4.13.0                  | Automated accessibility checks                                    |
-| [zod](https://zod.dev)                                            | 4.6.5                   | Runtime validation of API contracts and of the a11y baseline file |
+| [@axe-core/playwright](https://github.com/dequelabs/axe-core-npm) | 4.14.0                  | Automated accessibility checks                                    |
+| [zod](https://zod.dev)                                            | 4.6.7                   | Runtime validation of API contracts and of the a11y baseline file |
 | TypeScript                                                        | 6.0.3                   | `strict` and `noUncheckedIndexedAccess`                           |
-| ESLint, typescript-eslint, eslint-plugin-playwright               | 10.11.0, 8.71.0, 2.12.0 | Type-aware linting with Playwright rules                          |
-| Prettier                                                          | 3.9.9                   | Formatting                                                        |
+| ESLint, typescript-eslint, eslint-plugin-playwright               | 10.13.0, 8.71.2, 2.12.1 | Type-aware linting with Playwright rules                          |
+| Prettier                                                          | 3.9.10                  | Formatting                                                        |
 
 TypeScript is pinned below 7 because `typescript-eslint` does not support it yet.
 
