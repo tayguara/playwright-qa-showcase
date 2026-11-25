@@ -22,7 +22,7 @@ jobs:
           persist-credentials: false
       # Blocks PRs that add dependencies with known vulnerabilities (moderate or worse).
       # No PR comment, so the token needs no write access.
-      - uses: actions/dependency-review-action@v5.0.0
+      - uses: actions/dependency-review-action@v5.0.1
         with:
           fail-on-severity: moderate
           comment-summary-in-pr: never
